@@ -1,0 +1,50 @@
+.preloader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 6000;
+    width: 100vw;
+    background: #f7f7f7;
+}
+
+.preloader .preloader-child {
+    margin: auto;
+    width: 40px;
+    height: 40px;
+    position: relative;
+}
+
+.preloader .preloader-child .spinner {
+    width: 100%;
+    animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        opacity: 0.1;
+    }
+
+    20% {
+        opacity: 0.3;
+    }
+
+    40% {
+        opacity: 0.5;
+    }
+
+    60% {
+        opacity: 0.6;
+    }
+
+    80% {
+        opacity: 0.8;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,281 @@
+.insModelWrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #a9a9a900;
+    -webkit-backdrop-filter: blur(30px) brightness(0.97);
+    backdrop-filter: blur(30px) brightness(0.97);
+    overflow: hidden;
+    font-size: 15px;
+    z-index: 20;
+}
+
+.insModelWrapperHide {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #a9a9a900;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+}
+
+.isnModeParent1 {
+    width: 100%;
+    background-color: #a9a9a900;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(10px);
+    height: 75%;
+    margin-top: 6%;
+    display: flex;
+
+}
+
+.tss-1akey0g-MUIDataTableHeadCell-data {
+    font-size: 11px;
+}
+
+.tss-1vd39vz-MUIDataTableBodyCell-stackedCommon {
+    font-size: 11px;
+    margin-left: 25%;
+}
+
+.MuiTableCell-head {
+    padding: 0 !important;
+}
+
+.MuiTableCell-body {
+    padding: 0 !important;
+}
+
+.insParent2 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.child2-1Head {
+    font-weight: bold;
+    margin-top: 3%;
+    margin-bottom: 4%;
+}
+
+.child2-2Main {
+    font-size: 80%;
+    color: #91C251;
+    cursor: pointer;
+}
+
+.child2-2MainSpan {
+    margin-left: 5%;
+    color: black;
+}
+
+.multiLevel2Show {
+    display: block;
+}
+
+.multiLevel2Hide {
+    display: none;
+}
+
+.multiLevel1Show {
+    margin-top: 5%;
+    overflow: auto;
+    height: 47%;
+}
+
+.insInputLabels {
+    font-size: 11px;
+}
+
+.multiLevel1Hide {
+    display: none;
+}
+
+.patch {
+    background: white;
+    padding: 9%;
+    border-radius: 10px;
+}
+
+.insModelButtonStyle1 {
+    position: absolute;
+    background: white;
+    font-weight: bold;
+    font-size: 150%;
+    border-radius: 5px;
+    width: 35px;
+    margin-left: 25%;
+    margin-top: 3%;
+    cursor: pointer;
+}
+
+.insModelChild1-1Style1 {
+    display: none;
+    width: 0;
+    background: white;
+}
+
+.insModelChild1-2Style1 {
+    /* width: 50%; */
+    background: white;
+    margin-left: 25%;
+    border-radius: 10px;
+    padding: 1%;
+}
+
+.insParent2 p {
+    font-size: 13px;
+}
+
+.insChild2-1Style1 {
+    width: 45%;
+    background: white;
+    padding: 3%;
+}
+
+.insChild2-2Style1 {
+    width: 55%;
+    overflow: auto;
+    background: white;
+}
+.uploaderStyle1{
+    display: block;
+}
+/*---------------------- Style 2 --------------------------*/
+.insModelChild1-2Style2 {
+    /* width: 80%; */
+    background: white;
+    margin-left: 20%;
+    border-radius: 10px;
+    padding: 1%;
+}
+
+.insModelButtonStyle2 {
+    cursor: pointer;
+    position: absolute;
+    background: white;
+    font-weight: bold;
+    font-size: 150%;
+    border-radius: 5px;
+    width: 35px;
+    margin-left: 20%;
+    margin-top: 3%;
+}
+
+.insChild2-2Style2 {
+    width: 60%;
+    overflow: auto;
+    background: white;
+}
+
+.insChild2-1Style2 {
+    width: 40%;
+    background: white;
+    padding: 3%;
+}
+.uploaderStyle2{
+    display: none;
+}
+/*------------------ Style 3------------------------*/
+.insModelChild1-2Style3 {
+    /* width: 100%; */
+    background: white;
+    margin-left: 0;
+    border-radius: 10px;
+    padding: 1%;
+}
+
+.insModelButtonStyle3 {
+    cursor: pointer;
+    position: absolute;
+    background: white;
+    font-weight: bold;
+    font-size: 150%;
+    border-radius: 5px;
+    width: 35px;
+    margin-left: 0%;
+    margin-top: 3%;
+}
+
+.insChild2-2Style3 {
+    width: 65%;
+    overflow: auto;
+    background: white;
+}
+
+.insChild2-1Style3 {
+    width: 35%;
+    background: white;
+    padding: 3%;
+}
+.uploaderStyle3{
+    display: none;
+}
+/*--------------- Style 4-------------------------*/
+.insModelChild1-1Style4 {
+    width: 20%;
+    background-color: #a9a9a900;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(10px);
+    margin-left: 5%;
+    padding-left: 2%;
+}
+
+.insModelChild1-2Style4 {
+    width: 40%!important;
+    background: white;
+    margin-left: 2%;
+    border-radius: 10px;
+    padding: 1%;
+}
+
+.insModelButtonStyle4 {
+    cursor: pointer;
+    position: absolute;
+    background: white;
+    font-weight: bold;
+    font-size: 150%;
+    border-radius: 5px;
+    width: 35px;
+    margin-left: 27%;
+    margin-top: 3%;
+}
+
+.insChild2-2Style4 {
+    width: 60%;
+    overflow: auto;
+    background: white;
+}
+
+.insChild2-1Style4 {
+    width: 40%;
+    background: white;
+    padding: 3%;
+}
+
+
+
+
+.uploaderStyle4{
+    display: none;
+}
+
+.insChild2-1Style2 p {
+    font-size: 13px;
+}
+
+.insChild2-2Style1::-webkit-scrollbar,
+.insChild2-2Style2::-webkit-scrollbar,
+.insChild2-2Style3::-webkit-scrollbar,
+.insChild2-2Style4::-webkit-scrollbar,
+.multiLevel1Show::-webkit-scrollbar,
+.MuiTablePagination-root::-webkit-scrollbar {
+    display: none;
+}
