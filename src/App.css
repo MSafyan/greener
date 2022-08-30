@@ -21,6 +21,7 @@ p, h1, h2 {
 a {
   text-decoration: none;
   text-transform: none;
+  color: #212121 !important;
 }
 
 li {

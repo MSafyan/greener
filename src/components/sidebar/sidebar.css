@@ -63,7 +63,8 @@
     width: 100%;
 }
 
-.sidebar-cont-top ul li:not(:last-child) {
+.sidebar-cont-top ul li:not(:last-child),
+.link_li {
     margin-bottom: 22px;
 }
 
@@ -99,7 +100,7 @@
     margin-right: 4px;
 }
 
-.sidebar-icon>li:hover svg, .sidebar-icon1:hover svg, .sidebar-icon3>li:hover svg {
+.sidebar-icon>li:hover svg, .sidebar-icon1:hover svg, .sidebar-icon3>li:hover svg, .link_li:hover svg {
     color: #91c251;
     transition: .3s;
 }

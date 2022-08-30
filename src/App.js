@@ -5,6 +5,7 @@ import './App.css';
 import { useEffect } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import DashboardPanel from "./components/dashboardpanel/dashboardpanel";
+import Expedition from './pages/Expedition';
 import Preloader from "./components/preloader/preloader";
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
     <div className="App">
       <Router>
         <Route exact path={'/'} component={DashboardPanel} />
+        <Route exact path={'/expedition'} component={Expedition} />
       </Router>
     </div >
     </>

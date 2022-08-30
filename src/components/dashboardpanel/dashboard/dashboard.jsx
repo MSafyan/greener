@@ -37,7 +37,7 @@ function Dashboard() {
 }
 
 
-function Header() {
+export function Header() {
     return (
         <div className="dashboard-top d-flex a-center j-bw">
             <p className='dashboard-head-title'>Bonjour username</p>

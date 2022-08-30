@@ -1,0 +1,28 @@
+.confirmees_div{
+  grid-area: confirmees;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.confirmees_div > div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+}
+
+.confirmees-progress{
+  height: 0.3vw;
+  width: 100%;
+  background-color: blue;
+  border-radius: 1vw;
+  margin: 0.6vw;
+}
+
+
+/* methods  */
+.methods_div{
+  grid-area: methods;
+}

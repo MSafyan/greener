@@ -1,0 +1,51 @@
+
+:root {
+  --bg-card: #F8F9F9;
+  --primary: #91C251;
+  --secondary: #283C7E;
+  --tertiary:#149AD7;
+  --lc:#666666
+}
+
+/* colors */
+.bg-card{
+  background-color:  var(--bg-card);
+}
+
+bg-main{
+  background-color: var(--primary);
+}
+
+.lc{
+  color:var(--lc)
+}
+
+.mc{
+  color:var(--primary)
+}
+
+.sc{
+  color:var(--secondary)
+}
+
+.tc{
+  color:var(--tertiary)
+}
+
+/* fontsizes */
+.fs-30{
+  font-size: 1.6vw;
+}
+.fs-20{
+  font-size: 1vw;
+}
+
+.fs-16{
+  font-size: .8vw;
+}
+
+
+/* icons */
+.s-icon {
+  color: #283c7e;
+}

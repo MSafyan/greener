@@ -1,0 +1,44 @@
+.datetime_div{
+  grid-area: dateTime;
+}
+
+/* filters */
+.filters_div{
+  grid-area: filters;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.status-card{
+  padding: .4vw 0.7vw .4vw 0.7vw;
+  border-radius:0.7vw;
+}
+
+.filter-heading{
+  
+}
+.filter_list{
+ display: flex;
+  
+}
+.filter_item{
+ padding-left:1vw;
+}
+
+.reset-btn{
+  border: none;
+}
+
+/* export */
+.export_div{
+  grid-area: export;
+  justify-self: right;
+}
+
+.export_div div{
+  width:fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

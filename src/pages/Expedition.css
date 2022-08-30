@@ -1,0 +1,9 @@
+.expedition_div{
+  display:grid;
+  grid-template-rows: 1fr 4fr 20fr;
+  grid-template-columns: 5fr 10fr 1.6fr;
+  grid-template-areas: "dateTime filters export"
+                       "confirmees methods methods"
+                       "info info info";
+  grid-gap: 1vw;
+}
