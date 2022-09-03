@@ -1,21 +1,28 @@
 import React from "react";
-import BarChart from "./barChart/barChart";
-import Expand from "./expand/expand";
-import PieChart from "./pieChart/pieChart";
-import SidebarStats from "./sidebarStats/sidebarStats";
+import BarChart from "./barChart";
+import Expand from "./expand";
+import PieChart from "./pieChart";
+import SidebarStats from "./sidebarStats";
 import "./index.css";
+import { dashboardDataAction } from "../../../../store/actions/dashboardAction";
+import { connect } from "react-redux";
 
-const index = () => {
+const Index = ({ dashboardDataAction }) => {
+	React.useEffect(() => {
+		dashboardDataAction();
+	}, []);
 	return (
-		<div className="info_div">
+		<div className="info_div status-card bg-card">
 			<SidebarStats />
-			<div>
+			<div className="graphs_div">
 				<PieChart />
 				<Expand />
+				<BarChart />
 			</div>
-			<BarChart />
 		</div>
 	);
 };
 
-export default index;
+export default connect(null, {
+	dashboardDataAction,
+})(Index);

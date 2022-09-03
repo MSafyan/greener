@@ -21,8 +21,37 @@
   margin: 0.6vw;
 }
 
-
 /* methods  */
 .methods_div{
   grid-area: methods;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.top-scrollbars {
+  transform: rotateX(180deg);
+}
+.top-scrollbars > div {
+  transform: rotateX(180deg);
+}
+
+.items_wrapper_method{
+  display:flex;
+  justify-content: left;
+  align-items: flex-start;
+  overflow: auto;
+  direction: inherit;
+}
+
+.subitem_wrapper_method{
+  max-height: 10vh;
+  overflow: auto;
+  min-width: 200px;
+  margin:0 1rem;
+  direction: rtl;
+}
+
+.subitem_wrapper_method *{
+  direction: ltr;
 }

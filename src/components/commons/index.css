@@ -4,7 +4,14 @@
   --primary: #91C251;
   --secondary: #283C7E;
   --tertiary:#149AD7;
-  --lc:#666666
+  --dc:#212121;
+  --lc:#666666;
+  --lc2:#bcbcbc;
+
+  --firstColumn:5;
+  --secondColumn:10;
+  --thirdColumn:1.6;
+  --twoColumns:11.6;
 }
 
 /* colors */
@@ -12,7 +19,7 @@
   background-color:  var(--bg-card);
 }
 
-bg-main{
+.bg-main{
   background-color: var(--primary);
 }
 
@@ -30,6 +37,9 @@ bg-main{
 
 .tc{
   color:var(--tertiary)
+}
+.lc{
+  color:var(--lc)
 }
 
 /* fontsizes */
@@ -49,3 +59,18 @@ bg-main{
 .s-icon {
   color: #283c7e;
 }
+
+* ::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+}
+
+* ::-webkit-scrollbar-track {
+  background: var(--lc2);
+  margin-right: 10px;
+}
+
+* ::-webkit-scrollbar-thumb {
+  background: var(--lc);
+} 
