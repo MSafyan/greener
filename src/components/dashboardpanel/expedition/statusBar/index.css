@@ -24,10 +24,22 @@
 }
 .filter_item{
  padding-left:1vw;
+ cursor: pointer;
+ position: relative;
+}
+
+.filter_item_icon{
+  position: absolute;
+  top:-8px;
+  right: -1vw;
+  background-color: var(--bg-card);
+  border-radius: 50%;
+  padding:0.5vw;
 }
 
 .reset-btn{
   border: none;
+  background-color: var(--bg-card);
 }
 
 /* export */

@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import Layout from "../components/layout/Index";
 import {
 	Datatime,
@@ -21,14 +22,20 @@ const Expedition = ({ dashboardFiltersAction }) => {
 	}, []);
 	return (
 		<Layout>
-			<div className="expedition_div">
+			<motion.div
+				initial="original"
+				whileHover="confirmeesHover"
+				animate="original"
+				className="expedition_div"
+			>
 				<Datatime />
 				<Export />
 				<Filters />
+				
 				<Confirmees />
 				<Methods />
 				<Info />
-			</div>
+			</motion.div>
 		</Layout>
 	);
 };

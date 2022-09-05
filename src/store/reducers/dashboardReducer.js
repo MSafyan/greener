@@ -5,6 +5,8 @@ import {
 	DASHBOARD_DATA_FAIL,
 	DASHBOARD_FILTER_SUCCESS,
 	DASHBOARD_FILTER_FAIL,
+	CHART_EXPAND,
+	PHASE_CHANGE,
 } from "../types";
 
 const INITAL_AUTH_STATE = {
@@ -14,6 +16,8 @@ const INITAL_AUTH_STATE = {
 		max: 0,
 	},
 	loading: false,
+	chartExpand:false,
+	phaseOpen:false
 };
 
 export default function dashboardReducer(state = INITAL_AUTH_STATE, action) {
@@ -44,6 +48,16 @@ export default function dashboardReducer(state = INITAL_AUTH_STATE, action) {
 				...state,
 				loading: false,
 				dashboardFilter: null,
+			};
+		case CHART_EXPAND:
+			return {
+				...state,
+				chartExpand:action.payload
+			};
+		case PHASE_CHANGE:
+			return {
+				...state,
+				phaseOpen: !state.phaseOpen,
 			};
 		case SET_DASHBOARD_LOADING:
 			return {

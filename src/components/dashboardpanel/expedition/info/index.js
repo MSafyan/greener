@@ -6,23 +6,34 @@ import SidebarStats from "./sidebarStats";
 import "./index.css";
 import { dashboardDataAction } from "../../../../store/actions/dashboardAction";
 import { connect } from "react-redux";
+import { motion } from "framer-motion";
+import { infoMotion } from "../../../../helper/framermotion/phaseClick";
 
-const Index = ({ dashboardDataAction }) => {
+
+const Index = ({ dashboardDataAction, phaseOpen }) => {
 	React.useEffect(() => {
 		dashboardDataAction();
 	}, []);
 	return (
-		<div className="info_div status-card bg-card">
+		<motion.div
+			variants={infoMotion}
+			animate={phaseOpen ? "open" : "closed"}
+			className="info_div status-card bg-card"
+		>
 			<SidebarStats />
 			<div className="graphs_div">
 				<PieChart />
 				<Expand />
 				<BarChart />
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 
-export default connect(null, {
+const mapStateToProps = (state) => ({
+	phaseOpen: state.dashboard.phaseOpen,
+});
+
+export default connect(mapStateToProps, {
 	dashboardDataAction,
 })(Index);

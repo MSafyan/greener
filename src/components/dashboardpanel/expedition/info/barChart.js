@@ -8,7 +8,7 @@ const BarChart = ({ dashboardData }) => {
 			<span className="vertical_text">Expéditions crées</span>
 			<SelectionDropdown />
 			<div className="bars_wrapper">
-				{dashboardData.data?.data?.columns[0]?.map((_, i) => (
+				{dashboardData?.data?.data?.columns[0]?.map((_, i) => (
 					<div className="">
 						<div
 							key={i}
@@ -17,7 +17,7 @@ const BarChart = ({ dashboardData }) => {
 								height: `calc(20vh * calc(${_} / ${dashboardData.max})`,
 							}}
 						></div>
-						<p className="mx-1 lc">{_}</p>
+						<p className="mx-1 lc fs-20">{_}</p>
 					</div>
 				))}
 			</div>

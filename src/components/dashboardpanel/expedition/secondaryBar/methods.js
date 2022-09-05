@@ -1,27 +1,43 @@
 import React from "react";
 import { connect } from "react-redux";
+import { motion } from "framer-motion";
+import {
+	methodMotion,
+	subItemAndHeadMotion,
+	subitemMotion,
+} from "../../../../helper/framermotion/phaseClick";
 
-const Methods = ({ global = [] }) => {
+const Methods = ({ global = [], phaseOpen }) => {
 	return (
-		<div className="methods_div status-card bg-card">
+		<motion.div
+			variants={methodMotion}
+			whileHover="hover"
+			initial="rest"
+			animate={phaseOpen ? "open" : "closed"}
+			className="methods_div status-card bg-card"
+		>
 			<div className="items_wrapper_method top-scrollbars">
 				{Object.keys(global)?.map((key) => {
 					return (
-						<div key={key} className="subitem_wrapper_method">
-							<div className="fs-20 lc py-2">{key}</div>
+						<motion.div
+							variants={subItemAndHeadMotion}
+							key={key}
+							className="subitem_heading_wrapper"
+						>
+							<div className="fs-20 lc py-1">{key}</div>
 							<SubItem columnData={global[key]} />
-						</div>
+						</motion.div>
 					);
 				})}
 			</div>
 			<i className="fas fa-chevron-down fs-16 s-icon mx-auto"></i>
-		</div>
+		</motion.div>
 	);
 };
 
 export const SubItem = ({ columnData, vertical }) => {
 	return (
-		<div>
+		<motion.div variants={subitemMotion} className="subitem_wrapper_method">
 			{columnData?.map((_, i) => {
 				return (
 					<div key={i} className="fs-20 sc d-flex justify-content-between">
@@ -37,12 +53,13 @@ export const SubItem = ({ columnData, vertical }) => {
 					</div>
 				);
 			})}
-		</div>
+		</motion.div>
 	);
 };
 
 const mapStateToProps = (state) => ({
 	global: state.dashboard.dashboardFilter?.filters.global,
+	phaseOpen: state.dashboard.phaseOpen,
 });
 
 export default connect(mapStateToProps)(Methods);

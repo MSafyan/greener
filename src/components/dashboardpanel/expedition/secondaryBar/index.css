@@ -1,16 +1,13 @@
 .confirmees_div{
   grid-area: confirmees;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .confirmees_div > div{
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  width: fit-content;
+  padding: 3vh;
+
 }
 
 .confirmees-progress{
@@ -21,19 +18,31 @@
   margin: 0.6vw;
 }
 
+.item_wrapper_phase{
+width: -webkit-fill-available;
+
+}
+
+.color-bar{
+  width: 1.5vw;
+  height: 0.3vw;
+  display:'inline-black';
+}
+
 /* methods  */
 .methods_div{
   grid-area: methods;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  cursor: pointer;
 }
 
 .top-scrollbars {
-  transform: rotateX(180deg);
+  /* transform: rotateX(180deg); */
 }
 .top-scrollbars > div {
-  transform: rotateX(180deg);
+  /* transform: rotateX(180deg); */
 }
 
 .items_wrapper_method{
@@ -42,16 +51,22 @@
   align-items: flex-start;
   overflow: auto;
   direction: inherit;
+  height: calc(100% - 6vh);
 }
 
-.subitem_wrapper_method{
-  max-height: 10vh;
-  overflow: auto;
-  min-width: 200px;
+.subitem_heading_wrapper{
+  min-width:12vw ;
   margin:0 1rem;
+  margin-left:1vw;
+}
+
+.subitem_wrapper_method,
+.item_wrapper_phase{
+  overflow: auto;
   direction: rtl;
 }
 
-.subitem_wrapper_method *{
+.subitem_wrapper_method *,
+.item_wrapper_phase *{
   direction: ltr;
 }

@@ -4,6 +4,8 @@ import {
 	SET_DASHBOARD_LOADING,
 	DASHBOARD_FILTER_SUCCESS,
 	DASHBOARD_FILTER_FAIL,
+	PHASE_CHANGE,
+	CHART_EXPAND,
 } from "../types";
 import { APIClient } from "../../api/apiCore";
 import {
@@ -42,4 +44,12 @@ export const dashboardFiltersAction = () => async (dispatch) => {
 	} catch (error) {
 		dispatch({ type: DASHBOARD_FILTER_FAIL });
 	}
+};
+
+export const phaseAction = () => (dispatch) => {
+	dispatch({ type: PHASE_CHANGE });
+};
+
+export const chartExpandAction = (data) => (dispatch) => {
+	dispatch({ type: CHART_EXPAND, payload: data });
 };

@@ -4,6 +4,7 @@
   --primary: #91C251;
   --secondary: #283C7E;
   --tertiary:#149AD7;
+  --red:red;
   --dc:#212121;
   --lc:#666666;
   --lc2:#bcbcbc;
@@ -42,6 +43,10 @@
   color:var(--lc)
 }
 
+.rc{
+  color:var(--red);
+}
+
 /* fontsizes */
 .fs-30{
   font-size: 1.6vw;
@@ -61,9 +66,9 @@
 }
 
 * ::-webkit-scrollbar {
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
+  width: 3px;
+  height: 3px;
+  border-radius: 100%;
 }
 
 * ::-webkit-scrollbar-track {

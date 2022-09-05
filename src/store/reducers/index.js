@@ -9,6 +9,7 @@ const persistConfig = {
 	blacklist: ["auth.loading"],
 };
 
+
 const rootReducer = combineReducers({
 	dashboard: dashboardReducer,
 });
