@@ -1,10 +1,9 @@
 .info_div {
 	grid-area: info;
 	display: grid;
-	grid-template-columns: 20vw 65vw;
+	grid-template-columns: 1fr 3.3fr;
 	grid-template-areas: 'sidebarStat graphs';
 	grid-gap: 1vw;
-	max-height: 70vh;
 }
 
 /* sidebar stat */
@@ -12,7 +11,6 @@
 	grid-area: sidebarStat;
 	width: 18vw;
 	padding-left: 3vw;
-	max-height: 58vh;
 	overflow: auto;
 }
 
@@ -40,7 +38,7 @@
 .graphs_div {
 	grid-area: graphs;
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 1.5fr 1fr;
 	grid-template-rows: 1fr 1fr;
 	grid-template-areas: 'pieChart expand' 'barChart barChart';
 	grid-gap: 1vw;
@@ -48,17 +46,21 @@
 
 .pie_div {
 	grid-area: pieChart;
-	display: flex;
-	justify-content: center;
+	display: grid;
+	grid-template-columns: 1fr 1.3fr;
+	grid-template-areas: 'pie pieInfo';
 	align-items: center;
+	margin-left: auto;
 }
 
 .pie_wrapper {
-	width: 8vw;
-	height: 8vw;
+	grid-area: pie;
+	width: 65%;
+	margin-left: 30%;
 }
 
 .pie_text_wrapper {
+	grid-area: pieInfo;
 }
 
 .pie_div_1 {

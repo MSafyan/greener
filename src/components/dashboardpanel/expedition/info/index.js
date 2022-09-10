@@ -1,27 +1,37 @@
-import React from "react";
-import BarChart from "./barChart";
-import Expand from "./expand";
-import PieChart from "./pieChart";
-import SidebarStats from "./sidebarStats";
-import "./index.css";
-import { dashboardDataAction } from "../../../../store/actions/dashboardAction";
-import { connect } from "react-redux";
-import { motion } from "framer-motion";
-import { infoMotion } from "../../../../helper/framermotion/phaseClick";
+import React from 'react';
+import BarChart from './barChart';
+import Expand from './expand';
+import PieChart from './pieChart';
+import SidebarStats from './sidebarStats';
+import './index.css';
+import { dashboardDataAction } from '../../../../store/actions/dashboardAction';
+import { connect } from 'react-redux';
+import { motion } from 'framer-motion';
+import { infoMotion } from '../../../../helper/framermotion/phaseClick';
 
-
-const Index = ({ dashboardDataAction, phaseOpen }) => {
+const Index = ({ dashboardDataAction, phaseOpen, chartExpand }) => {
+	const animate = () => {
+		if (!chartExpand) {
+			if (phaseOpen) {
+				return 'open';
+			} else {
+				return 'closed';
+			}
+		} else {
+			return 'expanded';
+		}
+	};
 	React.useEffect(() => {
 		dashboardDataAction();
 	}, []);
 	return (
 		<motion.div
 			variants={infoMotion}
-			animate={phaseOpen ? "open" : "closed"}
-			className="info_div status-card bg-card"
+			animate={animate}
+			className='info_div status-card bg-card'
 		>
 			<SidebarStats />
-			<div className="graphs_div">
+			<div className='graphs_div'>
 				<PieChart />
 				<Expand />
 				<BarChart />
@@ -32,6 +42,7 @@ const Index = ({ dashboardDataAction, phaseOpen }) => {
 
 const mapStateToProps = (state) => ({
 	phaseOpen: state.dashboard.phaseOpen,
+	chartExpand: state.dashboard.chartExpand,
 });
 
 export default connect(mapStateToProps, {

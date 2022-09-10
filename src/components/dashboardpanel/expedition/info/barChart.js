@@ -8,22 +8,15 @@ const BarChart = ({ dashboardData }) => {
 	return (
 		<div className='barChart_div'>
 			<span className='vertical_text'>Expéditions crées</span>
-			{/* <Linkf
-				activeClass='active'
-				to='section1'
-				spy={true}
-				smooth={true}
-				offset={70}
-				duration={500}
-			> */}
+			<SelectionDropdown />
 			<div
+				style={{ paddingBottom: '15%' }}
 				onClick={() => {
-					console.log(ref.current.offsetLeft);
+					ref.current.scrollLeft -= '800';
 				}}
 			>
-				<SelectionDropdown />
+				<i className='fas fa-arrow-left fs-16 s-icon'></i>
 			</div>
-			{/* </Link> */}
 			<div className='bars_wrapper' ref={ref}>
 				{dashboardData?.data?.data?.columns[0]?.map((_, i) => (
 					<div className=''>
@@ -37,6 +30,14 @@ const BarChart = ({ dashboardData }) => {
 						<p className='mx-1 lc fs-20'>{_}</p>
 					</div>
 				))}
+			</div>
+			<div
+				style={{ paddingBottom: '15%' }}
+				onClick={() => {
+					ref.current.scrollLeft += '800';
+				}}
+			>
+				<i className='fas fa-arrow-right fs-16 s-icon'></i>
 			</div>
 		</div>
 	);
