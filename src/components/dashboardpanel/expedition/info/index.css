@@ -101,13 +101,65 @@
 	color: var(--lc);
 }
 
+.arrow_bars_wrapper {
+	position: relative;
+	width: 85%;
+}
+
+.arrow_info {
+	padding-bottom: 15%;
+	position: absolute;
+	top: 50%;
+}
+
+.chevron-left {
+	position: relative;
+}
+.chevron-right {
+	position: relative;
+	right: -1rem;
+}
+.chevron-left::after {
+	content: '';
+	position: absolute;
+	z-index: 1;
+	bottom: -4rem;
+	left: 0.6rem;
+	pointer-events: none;
+	background-image: linear-gradient(
+		to left,
+		rgba(255, 255, 255, 0),
+		rgba(255, 255, 255, 1) 100%,
+		rgba(255, 255, 255, 0) 30%
+	);
+	width: 3rem;
+	height: 13rem;
+}
+
+.chevron-right::after {
+	content: '';
+	position: absolute;
+	z-index: 1;
+	bottom: -4rem;
+	right: 0.3rem;
+	pointer-events: none;
+	background-image: linear-gradient(
+		to right,
+		rgba(255, 255, 255, 0),
+		rgba(255, 255, 255, 1) 100%,
+		rgba(255, 255, 255, 0) 30%
+	);
+	width: 3rem;
+	height: 13rem;
+}
+
 .bars_wrapper {
 	display: flex;
 	justify-content: left;
 	align-items: flex-end;
-	overflow: auto;
 	padding-bottom: 1rem;
 	margin-left: 1vw;
+	overflow: auto;
 }
 
 .bar_wrapper {
