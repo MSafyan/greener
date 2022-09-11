@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 import { motion } from 'framer-motion';
 import { infoMotion } from '../../../../helper/framermotion/phaseClick';
 
-const Index = ({ dashboardDataAction, phaseOpen, chartExpand }) => {
+const Index = ({ dashboardDataAction, phaseOpen, chartExpand, donutChart }) => {
 	const animate = () => {
 		if (!chartExpand) {
 			if (phaseOpen) {
@@ -32,7 +32,7 @@ const Index = ({ dashboardDataAction, phaseOpen, chartExpand }) => {
 		>
 			<SidebarStats />
 			<div className='graphs_div'>
-				<PieChart />
+				<PieChart donutChart={donutChart} />
 				<Expand />
 				<BarChart />
 			</div>
@@ -42,6 +42,7 @@ const Index = ({ dashboardDataAction, phaseOpen, chartExpand }) => {
 
 const mapStateToProps = (state) => ({
 	phaseOpen: state.dashboard.phaseOpen,
+	donutChart: state.dashboard.dashboardData?.data?.donutChart,
 	chartExpand: state.dashboard.chartExpand,
 });
 

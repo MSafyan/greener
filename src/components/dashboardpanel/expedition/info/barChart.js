@@ -4,41 +4,64 @@ import { connect } from 'react-redux';
 import { Link, animateScroll as scroll } from 'react-scroll';
 
 const BarChart = ({ dashboardData }) => {
-	const ref = React.useRef(null);
+	const barRef = React.useRef(null);
+	const [showLeft, setShowLeft] = React.useState(false);
+	const [showRight, setShowRight] = React.useState(false);
+
+	const onScroll = (e) => {
+		setShowLeft(e.target.scrollLeft > 0);
+		setShowRight(
+			!(e.target.scrollWidth <= e.target.scrollLeft + e.target.clientWidth)
+		);
+	};
+
+	const Arrow = (icon) => {
+		var right = icon.includes('right');
+
+		const show = () => {
+			if ((right && showRight) || (!right && showLeft)) {
+				return 'block';
+			}
+			return 'none';
+		};
+		return (
+			<div
+				style={{
+					paddingBottom: '15%',
+					display: show(),
+				}}
+				onClick={() => {
+					if (right) {
+						barRef.current.scrollLeft += barRef.current.clientWidth;
+					} else {
+						barRef.current.scrollLeft -= barRef.current.clientWidth;
+					}
+				}}
+			>
+				<i className={`fas ${icon} fs-16 s-icon`}></i>
+			</div>
+		);
+	};
+
 	return (
 		<div className='barChart_div'>
 			<span className='vertical_text'>Expéditions crées</span>
 			<SelectionDropdown />
-			<div
-				style={{ paddingBottom: '15%' }}
-				onClick={() => {
-					ref.current.scrollLeft -= '800';
-				}}
-			>
-				<i className='fas fa-arrow-left fs-16 s-icon'></i>
-			</div>
-			<div className='bars_wrapper' ref={ref}>
+			{Arrow('fa-arrow-left')}
+			<div className='bars_wrapper' ref={barRef} onScroll={onScroll}>
 				{dashboardData?.data?.data?.columns[0]?.map((_, i) => (
-					<div className=''>
+					<div className='bar_wrapper' key={i}>
 						<div
-							key={i}
 							className='bar bg-main'
 							style={{
 								height: `calc(20vh * calc(${_} / ${dashboardData.max})`,
 							}}
 						></div>
-						<p className='mx-1 lc fs-20'>{_}</p>
+						<p className='lc fs-20'>{_}</p>
 					</div>
 				))}
 			</div>
-			<div
-				style={{ paddingBottom: '15%' }}
-				onClick={() => {
-					ref.current.scrollLeft += '800';
-				}}
-			>
-				<i className='fas fa-arrow-right fs-16 s-icon'></i>
-			</div>
+			{Arrow('fa-arrow-right')}
 		</div>
 	);
 };

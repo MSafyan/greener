@@ -110,9 +110,16 @@
 	margin-left: 1vw;
 }
 
+.bar_wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 2px;
+}
+
 .bar {
 	width: 1.3vw;
 	border-radius: 10px;
 	height: 100px;
-	margin-right: 10px;
 }

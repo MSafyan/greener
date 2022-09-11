@@ -17,6 +17,43 @@ const confimeesMotion = {
 	},
 };
 
+const phaseRing1Motion = {
+	closed: {
+		x: [0, -1000, -1000, -100, 0],
+		y: [0, -1000, 1000, 100, 0],
+		transition: {
+			...transition,
+			times: [0, 1, 0.1, 0.1, 1],
+		},
+	},
+	open: {
+		x: [0, -100, -1000, -1000, 0],
+		y: [0, 100, 1000, -1000, 0],
+		transition: {
+			...transition,
+			times: [0, 1, 0.1, 0.1, 1],
+		},
+	},
+};
+const methodRing1Motion = {
+	rest: {
+		x: [0, 1000, 1000, 100, 0],
+		y: [0, -1000, 1000, 100, 0],
+		transition: {
+			...transition,
+			times: [0, 1, 0.1, 0.1, 1],
+		},
+	},
+	open: {
+		x: [0, 100, 1000, 1000, 0],
+		y: [0, 100, 1000, -1000, 0],
+		transition: {
+			...transition,
+			times: [0, 1, 0.1, 0.1, 1],
+		},
+	},
+};
+
 const itemsMotion = {
 	rest: {
 		opacity: 0,
@@ -89,6 +126,8 @@ const infoMotion = {
 
 export {
 	confimeesMotion,
+	phaseRing1Motion,
+	methodRing1Motion,
 	itemsMotion,
 	methodMotion,
 	subItemAndHeadMotion,

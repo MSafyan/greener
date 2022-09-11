@@ -5,9 +5,9 @@ import { chartExpandAction } from '../../../../store/actions/dashboardAction';
 const Expand = ({ chartExpand, chartExpandAction }) => {
 	return (
 		<div className='expand_div'>
-			<div class='form-check' style={{ marginLeft: 'auto' }}>
+			<div className='form-check' style={{ paddingLeft: '100%' }}>
 				<input
-					class='form-check-input'
+					className='form-check-input'
 					type='checkbox'
 					value=''
 					id='flexCheckDefault'

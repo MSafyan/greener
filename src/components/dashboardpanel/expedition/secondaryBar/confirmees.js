@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import {
 	confimeesMotion,
 	itemsMotion,
+	phaseRing1Motion,
 } from '../../../../helper/framermotion/phaseClick';
 import { phaseColorBar } from '../../../../data/colors';
 
@@ -18,7 +19,15 @@ const Confirmees = ({ phaseAction, phaseOpen, phase }) => {
 				phaseAction();
 			}}
 		>
-			<div>
+			<motion.div
+				variants={phaseRing1Motion}
+				className='phase_ring1'
+			></motion.div>
+			<motion.div
+				variants={phaseRing1Motion}
+				className='phase_ring2'
+			></motion.div>
+			<div className='confimees_inner_div'>
 				<div className='fs-20 lc'>
 					<span className='fs-30 px-1'>20</span>
 					Expéditions confirmées
@@ -27,7 +36,7 @@ const Confirmees = ({ phaseAction, phaseOpen, phase }) => {
 					{phase?.map((_, i) => (
 						<div
 							key={i}
-							class='progress-bar'
+							className='progress-bar'
 							role='progressbar'
 							aria-valuenow='40'
 							aria-valuemin='0'

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { motion } from 'framer-motion';
 import {
 	methodMotion,
+	methodRing1Motion,
 	subItemAndHeadMotion,
 	subitemMotion,
 } from '../../../../helper/framermotion/phaseClick';
@@ -39,6 +40,14 @@ const Methods = ({ global = [], phaseOpen }) => {
 			animate={phaseOpen ? 'open' : 'closed'}
 			className='methods_div status-card bg-card'
 		>
+			<motion.div
+				variants={methodRing1Motion}
+				className='method_ring1'
+			></motion.div>
+			<motion.div
+				variants={methodRing1Motion}
+				className='method_ring2'
+			></motion.div>
 			<div className='items_wrapper_method top-scrollbars'>
 				{Object.keys(global)?.map((key) => {
 					return (
