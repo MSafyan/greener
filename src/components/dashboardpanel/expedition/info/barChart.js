@@ -39,7 +39,7 @@ const BarChart = ({ dashboardData }) => {
 					display: show(),
 					right: right ? '1px' : '',
 				}}
-				className='arrow_info'
+				className={right ? 'chevron-right' : 'chevron-left'}
 				onClick={() => {
 					if (right) {
 						barRef.current.scrollLeft += barRef.current.clientWidth;
@@ -48,9 +48,7 @@ const BarChart = ({ dashboardData }) => {
 					}
 				}}
 			>
-				<div className={right ? 'chevron-right' : 'chevron-left'}>
-					<i className={`fas ${icon} fs-16 s-icon`}></i>
-				</div>
+				<i className={`fas ${icon} fs-16 s-icon`}></i>
 			</div>
 		);
 	};
@@ -61,7 +59,7 @@ const BarChart = ({ dashboardData }) => {
 			<SelectionDropdown />
 			<div className='arrow_bars_wrapper'>
 				{Arrow('fa-chevron-left')}
-				<div className='bars_wrapper' ref={barRef}>
+				<div className='bars_wrapper smooth_scroll' ref={barRef}>
 					{dashboardData?.data?.data?.columns[0]?.map((_, i) => (
 						<div className='bar_wrapper' key={i}>
 							<div
