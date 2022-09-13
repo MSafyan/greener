@@ -1,7 +1,6 @@
 import React from 'react';
 import SelectionDropdown from './selectionDropdown';
 import { connect } from 'react-redux';
-// import { Link, animateScroll as scroll } from 'react-scroll';
 
 const BarChart = ({ dashboardData }) => {
 	const barRef = React.useRef(null);
@@ -21,7 +20,7 @@ const BarChart = ({ dashboardData }) => {
 		};
 		barRef.current.addEventListener('scroll', onScroll);
 
-		return () => barRef.current.removeEventListener('scroll', onScroll);
+		return () => barRef?.current?.removeEventListener('scroll', onScroll);
 	}, [showLeft]);
 
 	const Arrow = (icon) => {
@@ -74,13 +73,6 @@ const BarChart = ({ dashboardData }) => {
 				</div>
 				{Arrow('fa-chevron-right')}
 			</div>
-			{/* {
-				<p style={{}}>
-					{barRef?.current?.scrollWidth +
-						'=' +
-						(barRef?.current?.scrollLeft + barRef?.current?.clientWidth)}
-				</p>
-			} */}
 		</div>
 	);
 };

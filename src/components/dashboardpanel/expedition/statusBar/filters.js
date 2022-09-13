@@ -1,11 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import {
-	filtertextMotion,
-	filterIconMotion,
-	filtersMotion,
-} from '../../../../helper/framermotion/statusBar';
-import { Animate } from '../../../../helper/functions';
+import { filterIconMotion } from '../../../../helper/framermotion/statusBar';
 import { useSelector } from 'react-redux';
 
 const list = [
@@ -24,7 +19,6 @@ const Filters = () => {
 	const { chartExpand } = useSelector((state) => state.dashboard);
 	return (
 		<motion.div
-			variants={filtersMotion}
 			animate={chartExpand ? 'infoExpanded' : 'initial'}
 			className='bg-card fs-20 status-card filters_div'
 		>
@@ -47,16 +41,13 @@ const FilterItem = ({ key, item }) => {
 	return (
 		<motion.div
 			whileHover='hover'
-			animate={Animate}
+			initial='initial'
+			animate='initial'
 			key={key}
 			className='filter_item mc d-flex'
 		>
 			<span>{item}</span>
-			<motion.div
-				animate={Animate}
-				className='filter_item_icon'
-				variants={filterIconMotion}
-			>
+			<motion.div className='filter_item_icon' variants={filterIconMotion}>
 				<i className='fas fa-xmark-circle fs-16 rc'></i>
 			</motion.div>
 		</motion.div>

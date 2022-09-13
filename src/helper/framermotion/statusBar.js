@@ -1,14 +1,5 @@
 import { transition } from './common';
-const filtertextMotion = {
-	initial: {
-		x: 0,
-		transition,
-	},
-	hover: {
-		x: 0,
-		transition,
-	},
-};
+
 const filterIconMotion = {
 	initial: { opacity: 0, transition },
 	hover: {
@@ -29,4 +20,4 @@ const filtersMotion = {
 	},
 };
 
-export { filtertextMotion, filterIconMotion, filtersMotion };
+export { filterIconMotion, filtersMotion };

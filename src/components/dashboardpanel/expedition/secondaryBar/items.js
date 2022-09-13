@@ -1,8 +1,7 @@
 import React from 'react';
-import { animate, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { subItemAndHeadMotion } from '../../../../helper/framermotion/phaseClick';
 import SubItem from './subItems';
-import WithArrows from './withArrows';
 import { Animate } from '../../../../helper/functions';
 
 export const Items = ({ global }) => {
@@ -23,7 +22,7 @@ export const Items = ({ global }) => {
 		};
 		methodRef.current.addEventListener('scroll', onScroll);
 
-		return () => methodRef.current.removeEventListener('scroll', onScroll);
+		return () => methodRef?.current?.removeEventListener('scroll', onScroll);
 	}, [showLeft]);
 
 	const Arrow = (icon) => {

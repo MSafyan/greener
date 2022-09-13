@@ -8,3 +8,7 @@
 		'info info info';
 	grid-gap: 1vw;
 }
+
+.expand_arrow {
+	display: inline-block;
+}

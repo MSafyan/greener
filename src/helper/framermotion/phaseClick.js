@@ -2,10 +2,12 @@ import { transition } from './common';
 
 const phaseMotion = {
 	initial: {
+		opacity: 1,
 		height: '16vh',
 		transition,
 	},
 	phaseOpened: {
+		opacity: 1,
 		height: '32vh',
 		transition,
 	},
@@ -55,12 +57,10 @@ const methodRing1Motion = {
 
 const itemsMotion = {
 	initial: {
-		opacity: 0,
 		display: 'none',
 		transition,
 	},
 	phaseOpened: {
-		opacity: 1,
 		display: 'block',
 		transition,
 	},
@@ -79,6 +79,7 @@ const methodMotion = {
 	},
 	infoExpanded: {
 		opacity: 0,
+
 		transition,
 	},
 };
