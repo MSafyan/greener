@@ -2,14 +2,13 @@ import React from 'react';
 // import { SubItem } from "../secondaryBar/methods";
 import { connect } from 'react-redux';
 import { motion } from 'framer-motion';
-import { subitemMotion } from '../../../../helper/framermotion/phaseClick';
 
 const SidebarStats = ({ sub = [] }) => {
 	return (
 		<div className='sidebarStat_div status-card bg-card'>
 			{Object.keys(sub)?.map((key) => {
 				return (
-					<div key={key} className='subitem_heading scroll my-2'>
+					<div key={key} className='subitem_heading scroll'>
 						<div className='fs-20 lc py-2 px-2'>{key}</div>
 						<SubItem vertical columnData={sub[key]} />
 					</div>
@@ -21,7 +20,7 @@ const SidebarStats = ({ sub = [] }) => {
 
 export const SubItem = ({ columnData, vertical }) => {
 	return (
-		<motion.div variants={subitemMotion} className='subitem_wrapper_sidebar'>
+		<div className='subitem_wrapper_sidebar'>
 			{columnData?.map((_, i) => {
 				return (
 					<div key={i} className='fs-20 sc d-flex justify-content-between px-1'>
@@ -37,7 +36,7 @@ export const SubItem = ({ columnData, vertical }) => {
 					</div>
 				);
 			})}
-		</motion.div>
+		</div>
 	);
 };
 

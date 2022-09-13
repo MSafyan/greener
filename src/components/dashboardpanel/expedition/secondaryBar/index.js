@@ -1,5 +1,5 @@
-import Confirmees from "./confirmees";
-import Methods from "./methods";
-import './index.css'
+import Phase from './phase';
+import Methods from './methods';
+import './index.css';
 
-export { Confirmees, Methods };
+export { Phase, Methods };

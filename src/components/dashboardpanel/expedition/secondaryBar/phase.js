@@ -3,18 +3,19 @@ import { motion } from 'framer-motion';
 import { phaseAction } from '../../../../store/actions/dashboardAction';
 import { connect } from 'react-redux';
 import {
-	confimeesMotion,
+	phaseMotion,
 	itemsMotion,
 	phaseRing1Motion,
 } from '../../../../helper/framermotion/phaseClick';
 import { phaseColorBar } from '../../../../data/colors';
+import { Animate } from '../../../../helper/functions';
 
-const Confirmees = ({ phaseAction, phaseOpen, phase }) => {
+const Phase = ({ phaseAction, phaseOpen, phase }) => {
 	return (
 		<motion.div
-			variants={confimeesMotion}
-			animate={phaseOpen ? 'open' : 'rest'}
-			className='confirmees_div status-card bg-card'
+			variants={phaseMotion}
+			animate={Animate}
+			className='phase_div status-card bg-card'
 			onClick={() => {
 				phaseAction();
 			}}
@@ -27,7 +28,7 @@ const Confirmees = ({ phaseAction, phaseOpen, phase }) => {
 				variants={phaseRing1Motion}
 				className='phase_ring2'
 			></motion.div>
-			<div className='confimees_inner_div'>
+			<div className='phase_inner_div'>
 				<div className='fs-20 lc'>
 					<span className='fs-30 px-1'>20</span>
 					Expéditions confirmées
@@ -57,7 +58,11 @@ const Confirmees = ({ phaseAction, phaseOpen, phase }) => {
 
 const Items = ({ columnData = [] }) => {
 	return (
-		<motion.div variants={itemsMotion} className='item_wrapper_phase px-1'>
+		<motion.div
+			variants={itemsMotion}
+			animate={Animate}
+			className='item_wrapper_phase px-1'
+		>
 			{columnData?.map((_, i) => {
 				return (
 					<div key={i} className='fs-20 sc d-flex justify-content-between'>
@@ -85,4 +90,4 @@ const mapStateToProps = (state) => ({
 
 export default connect(mapStateToProps, {
 	phaseAction,
-})(Confirmees);
+})(Phase);

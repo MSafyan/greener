@@ -8,26 +8,16 @@ import { dashboardDataAction } from '../../../../store/actions/dashboardAction';
 import { connect } from 'react-redux';
 import { motion } from 'framer-motion';
 import { infoMotion } from '../../../../helper/framermotion/phaseClick';
+import { Animate } from '../../../../helper/functions';
 
-const Index = ({ dashboardDataAction, phaseOpen, chartExpand, donutChart }) => {
-	const animate = () => {
-		if (!chartExpand) {
-			if (phaseOpen) {
-				return 'open';
-			} else {
-				return 'closed';
-			}
-		} else {
-			return 'expanded';
-		}
-	};
+const Index = ({ dashboardDataAction, donutChart }) => {
 	React.useEffect(() => {
 		dashboardDataAction();
 	}, []);
 	return (
 		<motion.div
 			variants={infoMotion}
-			animate={animate}
+			animate={Animate}
 			className='info_div status-card bg-card'
 		>
 			<SidebarStats />

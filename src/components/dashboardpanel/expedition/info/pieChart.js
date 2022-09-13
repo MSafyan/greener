@@ -2,8 +2,9 @@ import React from 'react';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
 import { motion } from 'framer-motion';
-import { pieMotion } from '../../../../helper/framermotion/phaseClick';
+import { pieMotion } from '../../../../helper/framermotion/expand';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
+import { Animate } from '../../../../helper/functions';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -37,7 +38,6 @@ export const options = {
 
 function PieChart({ donutChart = [] }) {
 	const data = {
-		labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
 		datasets: [
 			{
 				label: '# of Votes',
@@ -48,17 +48,21 @@ function PieChart({ donutChart = [] }) {
 		],
 	};
 	return (
-		<motion.div className='pie_div'>
-			<div className='pie_wrapper'>
+		<div className='pie_div'>
+			<motion.div
+				className='pie_wrapper'
+				animate={Animate}
+				variants={pieMotion}
+			>
 				<Pie plugins={[ChartDataLabels]} data={data} options={options} />
-			</div>
+			</motion.div>
 			<div className='p-2 sc'>
 				<p className='pie_heading fs-16'>
 					{`Toutes les expeditions - ${donutChart.total} exp (100%)`}
 				</p>
 				<p className='pie_heading fs-16'>{`Votre selection - ${donutChart.filteredtotal} exp (25%)`}</p>
 			</div>
-		</motion.div>
+		</div>
 	);
 }
 

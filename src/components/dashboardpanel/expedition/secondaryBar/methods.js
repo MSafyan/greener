@@ -6,14 +6,14 @@ import {
 	methodRing1Motion,
 } from '../../../../helper/framermotion/phaseClick';
 import { Items } from './items';
+import { Animate } from '../../../../helper/functions';
 
-const Methods = ({ global = [], phaseOpen }) => {
+const Methods = ({ global = [] }) => {
 	return (
 		<motion.div
 			variants={methodMotion}
+			animate={Animate}
 			whileHover='hover'
-			initial='rest'
-			animate={phaseOpen ? 'open' : 'closed'}
 			className='methods_div status-card bg-card'
 		>
 			<motion.div

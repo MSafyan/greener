@@ -1,20 +1,21 @@
-import React from "react";
-import { motion } from "framer-motion";
-import Layout from "../components/layout/Index";
+import React from 'react';
+import { motion } from 'framer-motion';
+import Layout from '../components/layout/Index';
 import {
 	Datatime,
 	Export,
 	Filters,
-	Confirmees,
+	Phase,
 	Methods,
 	Info,
-} from "../components/dashboardpanel/expedition";
+} from '../components/dashboardpanel/expedition';
 
-import { dashboardFiltersAction } from "../store/actions/dashboardAction";
-import { connect } from "react-redux";
+import { dashboardFiltersAction } from '../store/actions/dashboardAction';
+import { connect } from 'react-redux';
 
-import "./Expedition.css";
-import "../components/commons/index.css";
+import './Expedition.css';
+import '../components/commons/index.css';
+import { Animate } from '../helper/functions';
 
 const Expedition = ({ dashboardFiltersAction }) => {
 	React.useEffect(() => {
@@ -22,17 +23,12 @@ const Expedition = ({ dashboardFiltersAction }) => {
 	}, []);
 	return (
 		<Layout>
-			<motion.div
-				initial="original"
-				whileHover="confirmeesHover"
-				animate="original"
-				className="expedition_div"
-			>
+			<motion.div animate={Animate} className='expedition_div'>
 				<Datatime />
 				<Export />
 				<Filters />
-				
-				<Confirmees />
+
+				<Phase />
 				<Methods />
 				<Info />
 			</motion.div>

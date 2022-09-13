@@ -4,7 +4,7 @@
 	grid-template-columns: 22% 68% 8%;
 	grid-template-areas:
 		'dateTime filters export'
-		'confirmees methods methods'
+		'phase methods methods'
 		'info info info';
 	grid-gap: 1vw;
 }

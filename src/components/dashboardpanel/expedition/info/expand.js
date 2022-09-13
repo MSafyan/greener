@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { chartExpandAction } from '../../../../store/actions/dashboardAction';
 
-const Expand = ({ chartExpand, chartExpandAction }) => {
+const Expand = ({ chartExpandAction }) => {
 	return (
 		<div className='expand_div'>
 			<div className='form-check' style={{ paddingLeft: '100%' }}>

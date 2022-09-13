@@ -1,4 +1,4 @@
-import { dataToBarChart } from "../../helper/utils";
+import { dataToBarChart } from '../../helper/utils';
 import {
 	SET_DASHBOARD_LOADING,
 	DASHBOARD_DATA_SUCCESS,
@@ -7,7 +7,7 @@ import {
 	DASHBOARD_FILTER_FAIL,
 	CHART_EXPAND,
 	PHASE_CHANGE,
-} from "../types";
+} from '../types';
 
 const INITAL_AUTH_STATE = {
 	dashboardFilter: null,
@@ -16,8 +16,8 @@ const INITAL_AUTH_STATE = {
 		max: 0,
 	},
 	loading: false,
-	chartExpand:false,
-	phaseOpen:false
+	chartExpand: false,
+	phaseOpen: false,
 };
 
 export default function dashboardReducer(state = INITAL_AUTH_STATE, action) {
@@ -41,18 +41,18 @@ export default function dashboardReducer(state = INITAL_AUTH_STATE, action) {
 			return {
 				...state,
 				loading: false,
-				dashboardData: null,
+				// dashboardData: null,
 			};
 		case DASHBOARD_FILTER_FAIL:
 			return {
 				...state,
 				loading: false,
-				dashboardFilter: null,
+				// dashboardFilter: null,
 			};
 		case CHART_EXPAND:
 			return {
 				...state,
-				chartExpand:action.payload
+				chartExpand: action.payload,
 			};
 		case PHASE_CHANGE:
 			return {

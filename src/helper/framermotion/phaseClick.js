@@ -1,24 +1,23 @@
-const duration = 0.5;
+import { transition } from './common';
 
-const transition = {
-	duration,
-	type: 'tween',
-	ease: 'easeOut',
-};
-
-const confimeesMotion = {
-	rest: {
+const phaseMotion = {
+	initial: {
 		height: '16vh',
 		transition,
 	},
-	open: {
+	phaseOpened: {
 		height: '32vh',
+		transition,
+	},
+	infoExpanded: {
+		opacity: 0,
+		height: '16vh',
 		transition,
 	},
 };
 
 const phaseRing1Motion = {
-	closed: {
+	initial: {
 		x: [0, -1000, -1000, -100, 0],
 		y: [0, -1000, 1000, 100, 0],
 		transition: {
@@ -26,7 +25,7 @@ const phaseRing1Motion = {
 			times: [0, 1, 0.1, 0.1, 1],
 		},
 	},
-	open: {
+	phaseOpened: {
 		x: [0, -100, -1000, -1000, 0],
 		y: [0, 100, 1000, -1000, 0],
 		transition: {
@@ -36,7 +35,7 @@ const phaseRing1Motion = {
 	},
 };
 const methodRing1Motion = {
-	rest: {
+	initial: {
 		x: [0, 1000, 1000, 100, 0],
 		y: [0, -1000, 1000, 100, 0],
 		transition: {
@@ -44,7 +43,7 @@ const methodRing1Motion = {
 			times: [0, 1, 0.1, 0.1, 1],
 		},
 	},
-	open: {
+	phaseOpened: {
 		x: [0, 100, 1000, 1000, 0],
 		y: [0, 100, 1000, -1000, 0],
 		transition: {
@@ -55,12 +54,12 @@ const methodRing1Motion = {
 };
 
 const itemsMotion = {
-	rest: {
+	initial: {
 		opacity: 0,
 		display: 'none',
 		transition,
 	},
-	open: {
+	phaseOpened: {
 		opacity: 1,
 		display: 'block',
 		transition,
@@ -68,18 +67,24 @@ const itemsMotion = {
 };
 
 const methodMotion = {
-	closed: {
+	initial: {
 		height: '16vh',
+		opacity: 1,
 		transition,
 	},
-	open: {
+	phaseOpened: {
 		height: '32vh',
+		opacity: 1,
+		transition,
+	},
+	infoExpanded: {
+		opacity: 0,
 		transition,
 	},
 };
 
 const subItemAndHeadMotion = {
-	rest: {
+	initial: {
 		y: -24,
 		height: 'calc(100% - 1vh)', //7%
 		transition,
@@ -89,49 +94,35 @@ const subItemAndHeadMotion = {
 		height: 'calc(100% - 3vh)', //5%
 		transition,
 	},
-	open: {
+	phaseOpened: {
 		y: 0,
 		height: 'calc(100% - 3vh)',
 		transition,
 	},
 };
 
-const subitemMotion = {
-	rest: {
-		height: 'calc(100% - 1vh)', //7%
-		transition,
-	},
-	hover: {
-		height: 'calc(100% - 1vh)', //4%
-		transition,
-	},
-};
-const pieMotion = {};
-
 const infoMotion = {
-	closed: {
+	initial: {
 		y: 0,
-		transition,
 	},
-	open: {
+	phaseOpened: {
 		y: '16vh',
 		transition,
 	},
-	expanded: {
+	infoExpanded: {
 		y: '-24vh',
+		width: 'calc(100% + 3vw)',
+		x: '-3vw',
 		minHeight: '90vh',
-		transition,
 	},
 };
 
 export {
-	confimeesMotion,
+	phaseMotion,
 	phaseRing1Motion,
 	methodRing1Motion,
 	itemsMotion,
 	methodMotion,
 	subItemAndHeadMotion,
-	subitemMotion,
-	pieMotion,
 	infoMotion,
 };

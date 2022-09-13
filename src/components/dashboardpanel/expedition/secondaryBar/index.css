@@ -1,5 +1,5 @@
-.confirmees_div {
-	grid-area: confirmees;
+.phase_div {
+	grid-area: phase;
 	position: relative;
 	overflow: hidden;
 }
@@ -24,11 +24,13 @@
 	top: -7vw;
 }
 
-.confimees_inner_div {
+.phase_inner_div {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding: 3vh;
+	justify-content: center;
+	padding: 0px 3vh;
+	height: 100%;
 }
 
 .phaseProgress {
@@ -80,6 +82,7 @@
 .methods_arrow_wrapper {
 	display: flex;
 	align-items: center;
+	height: calc(100% - 1rem);
 }
 
 .items_wrapper_method {
@@ -88,7 +91,7 @@
 	align-items: flex-start;
 	overflow: auto;
 	direction: inherit;
-	height: calc(100% - 6vh);
+	height: calc(100% - 1vh);
 }
 
 .subitem_heading_wrapper {
@@ -96,9 +99,14 @@
 	margin: 0 0.4vw;
 }
 
+.subitem_wrapper_method > div:hover {
+	color: var(--primary);
+}
+
 .subitem_wrapper_method,
 .item_wrapper_phase {
 	overflow: auto;
+	height: calc(100% - 1vh);
 	direction: rtl;
 }
 

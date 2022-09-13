@@ -1,8 +1,9 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { animate, motion } from 'framer-motion';
 import { subItemAndHeadMotion } from '../../../../helper/framermotion/phaseClick';
 import SubItem from './subItems';
 import WithArrows from './withArrows';
+import { Animate } from '../../../../helper/functions';
 
 export const Items = ({ global }) => {
 	const methodRef = React.useRef(null);
@@ -57,7 +58,7 @@ export const Items = ({ global }) => {
 	};
 
 	return (
-		<div className='methods_arrow_wrapper' style={{ height: '100%' }}>
+		<div className='methods_arrow_wrapper'>
 			{Arrow('fa-chevron-left')}
 			<div
 				className='items_wrapper_method smooth_scroll top-scrollbars'
@@ -67,6 +68,7 @@ export const Items = ({ global }) => {
 					return (
 						<motion.div
 							variants={subItemAndHeadMotion}
+							animate={Animate}
 							key={key}
 							className='subitem_heading_wrapper'
 						>
