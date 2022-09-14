@@ -19,9 +19,11 @@ const Methods = ({ global = [] }) => {
 			<motion.div
 				variants={methodRing1Motion}
 				className='method_ring1'
+				animate={Animate}
 			></motion.div>
 			<motion.div
 				variants={methodRing1Motion}
+				animate={Animate}
 				className='method_ring2'
 			></motion.div>
 			<Items global={global} />

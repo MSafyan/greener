@@ -6,15 +6,15 @@ import {
 	DASHBOARD_FILTER_FAIL,
 	PHASE_CHANGE,
 	CHART_EXPAND,
-} from "../types";
-import { APIClient } from "../../api/apiCore";
+} from '../types';
+import { APIClient } from '../../api/apiCore';
 import {
 	dashboard,
 	dashboardDataBody,
 	dashboardDataParams,
 	dashboardFilterBody,
 	dashboardFilterParams,
-} from "../../api/url";
+} from '../../api/url';
 const api = new APIClient();
 
 export const dashboardDataAction = () => async (dispatch) => {

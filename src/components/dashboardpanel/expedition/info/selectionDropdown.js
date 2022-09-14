@@ -1,9 +1,10 @@
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
+import { connect } from 'react-redux';
 
 const variant = 'Light';
-function BasicExample() {
+function BasicExample({ sub = [] }) {
 	return (
 		<DropdownButton
 			as={ButtonGroup}
@@ -12,15 +13,17 @@ function BasicExample() {
 			title='Jour'
 			className='btn btn-light'
 		>
-			<Dropdown.Item eventKey='1'>Action</Dropdown.Item>
-			<Dropdown.Item eventKey='2'>Another action</Dropdown.Item>
-			<Dropdown.Item eventKey='3' active>
-				Active Item
-			</Dropdown.Item>
-			<Dropdown.Divider />
-			<Dropdown.Item eventKey='4'>Separated link</Dropdown.Item>
+			{Object.keys(sub).map((key) => (
+				<Dropdown.Item key={key} eventKey={key}>
+					{key}
+				</Dropdown.Item>
+			))}
 		</DropdownButton>
 	);
 }
 
-export default BasicExample;
+const mapStateToProps = (state) => ({
+	sub: state.dashboard.dashboardFilter?.filters.sub,
+});
+
+export default connect(mapStateToProps)(BasicExample);

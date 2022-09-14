@@ -50,6 +50,16 @@ const methodRing1Motion = {
 	},
 };
 
+const phaseItemMotion = {
+	initial: {
+		transition,
+	},
+	hover: {
+		scale: 1.02,
+		x: 5,
+		transition,
+	},
+};
 const itemsMotion = {
 	initial: {
 		display: 'none',
@@ -128,6 +138,7 @@ const infoInnerMotion = {
 
 export {
 	phaseMotion,
+	phaseItemMotion,
 	phaseRing1Motion,
 	methodRing1Motion,
 	itemsMotion,

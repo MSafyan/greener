@@ -2,14 +2,14 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { chartExpandAction } from '../../../../store/actions/dashboardAction';
 
-const Expand = ({ chartExpandAction }) => {
+const Expand = ({ chartExpandAction, chartExpand }) => {
 	return (
 		<div className='expand_div'>
 			<div className='form-check' style={{ paddingLeft: '100%' }}>
 				<input
 					className='form-check-input'
 					type='checkbox'
-					value=''
+					checked={chartExpand}
 					id='flexCheckDefault'
 					onChange={(_) => {
 						chartExpandAction(_.target.checked);

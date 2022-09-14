@@ -13,15 +13,19 @@ const expandHideMotion = {
 const expandShowMotion = {
 	initial: {
 		opacity: 0,
+		display: 'none',
 		transition,
 	},
 	infoExpanded: {
 		opacity: 1,
+		display: 'flex',
 		transition,
 	},
 };
 const dashboardMotion = {
 	initial: {
+		zIndex: 0,
+		position: 'relative',
 		transition,
 	},
 	infoExpanded: {

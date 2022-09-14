@@ -6,6 +6,7 @@ import {
 	phaseMotion,
 	itemsMotion,
 	phaseRing1Motion,
+	phaseItemMotion,
 } from '../../../../helper/framermotion/phaseClick';
 import { phaseColorBar } from '../../../../data/colors';
 import { Animate } from '../../../../helper/functions';
@@ -22,10 +23,12 @@ const Phase = ({ phaseAction, phaseOpen, phase }) => {
 		>
 			<motion.div
 				variants={phaseRing1Motion}
+				animate={Animate}
 				className='phase_ring1'
 			></motion.div>
 			<motion.div
 				variants={phaseRing1Motion}
+				animate={Animate}
 				className='phase_ring2'
 			></motion.div>
 			<div className='phase_inner_div'>
@@ -50,7 +53,13 @@ const Phase = ({ phaseAction, phaseOpen, phase }) => {
 					))}
 				</div>
 				<Items columnData={phase} phaseOpen={phaseOpen} />
-				<i className='fas fa-chevron-down fs-20'></i>
+				<div
+					onClick={() => {
+						console.log('hi1');
+					}}
+				>
+					<i className='fas fa-chevron-down fs-20'></i>
+				</div>
 			</div>
 		</motion.div>
 	);
@@ -65,7 +74,13 @@ const Items = ({ columnData = [] }) => {
 		>
 			{columnData?.map((_, i) => {
 				return (
-					<div key={i} className='fs-20 sc d-flex justify-content-between'>
+					<motion.div
+						variants={phaseItemMotion}
+						whileHover='hover'
+						initial='initial'
+						key={i}
+						className='fs-20 sc d-flex justify-content-between'
+					>
 						<div className='d-flex align-items-center'>
 							<span
 								className='color-bar'
@@ -73,10 +88,10 @@ const Items = ({ columnData = [] }) => {
 							/>
 							<span className='fs-20 px-1'>{_.title.substring(0, 10)}</span>
 						</div>
-						<span className='fs-20 px-1'>
+						<span className='fs-20 px-2'>
 							{_.value} ({_.percentage} %)
 						</span>
-					</div>
+					</motion.div>
 				);
 			})}
 		</motion.div>
