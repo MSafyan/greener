@@ -1,4 +1,4 @@
-const arrayToGloabl = (array) => {
+export const arrayToGloabl = (array) => {
 	const arr = array.reduce((acc, cur) => {
 		acc[cur] = cur;
 		return acc;

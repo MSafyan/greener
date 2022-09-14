@@ -29,7 +29,7 @@ const SubItem = ({ columnData }) => {
 		if (icon) {
 			return (
 				<div style={{ width: '1.3vw' }}>
-					<img src={icon.image} width='100%' />
+					<img src={icon.image} width='100%' alt='' />
 				</div>
 			);
 		}

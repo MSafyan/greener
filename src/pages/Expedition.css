@@ -1,11 +1,21 @@
 .expedition_div {
 	display: grid;
-	grid-template-rows: 4.5vh 16vh 68vh;
+	grid-template-rows: 21.5vh 68vh;
+	grid-template-columns: 22% 68% 8%;
+	grid-template-areas:
+		'upper upper upper'
+		'info info info';
+	grid-gap: 1vw;
+}
+
+.expedition_upper {
+	grid-area: upper;
+	display: grid;
+	grid-template-rows: 4.5vh 16vh;
 	grid-template-columns: 22% 68% 8%;
 	grid-template-areas:
 		'dateTime filters export'
-		'phase methods methods'
-		'info info info';
+		'phase methods methods';
 	grid-gap: 1vw;
 }
 

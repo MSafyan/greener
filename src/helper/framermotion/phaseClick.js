@@ -11,11 +11,6 @@ const phaseMotion = {
 		height: '32vh',
 		transition,
 	},
-	infoExpanded: {
-		opacity: 0,
-		height: '16vh',
-		transition,
-	},
 };
 
 const phaseRing1Motion = {
@@ -77,11 +72,6 @@ const methodMotion = {
 		opacity: 1,
 		transition,
 	},
-	infoExpanded: {
-		opacity: 0,
-
-		transition,
-	},
 };
 
 const subItemAndHeadMotion = {
@@ -105,16 +95,34 @@ const subItemAndHeadMotion = {
 const infoMotion = {
 	initial: {
 		y: 0,
+		width: '100%',
+		transition,
 	},
 	phaseOpened: {
 		y: '16vh',
+		width: '100%',
 		transition,
 	},
 	infoExpanded: {
-		y: '-24vh',
-		width: 'calc(100% + 3vw)',
-		x: '-3vw',
+		width: '100vw',
+		height: '100vh',
+		x: '-5vw',
+		y: '-30vh',
 		minHeight: '90vh',
+		transition,
+	},
+};
+const infoInnerMotion = {
+	initial: {
+		width: '100%',
+		transition,
+	},
+	infoExpanded: {
+		width: 'calc(100% - 100px)',
+		height: 'calc(100% - 10vh)',
+		y: '6vh',
+		margin: 'auto',
+		transition,
 	},
 };
 
@@ -126,4 +134,5 @@ export {
 	methodMotion,
 	subItemAndHeadMotion,
 	infoMotion,
+	infoInnerMotion,
 };

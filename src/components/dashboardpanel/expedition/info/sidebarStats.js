@@ -1,7 +1,6 @@
 import React from 'react';
 // import { SubItem } from "../secondaryBar/methods";
 import { connect } from 'react-redux';
-import { motion } from 'framer-motion';
 
 const SidebarStats = ({ sub = [] }) => {
 	return (

@@ -8,10 +8,8 @@ import Pinned from './pinned/pinned';
 import Incidents from './incidents/incidents';
 import Blog from './blog/blog';
 import InstructionModel from './instructions/instruction_model/instruction_model';
-import { useSelector } from 'react-redux';
 import { connect } from 'react-redux';
 import { chartExpandAction } from '../../../store/actions/dashboardAction';
-import { Filters } from '../expedition';
 
 function Dashboard() {
 	return (
@@ -40,33 +38,18 @@ function Dashboard() {
 	);
 }
 
-function Nav({ chartExpandAction }) {
-	const { chartExpand } = useSelector((state) => state.dashboard);
-
+function Nav() {
 	return (
 		<div className='dashboard-top d-flex a-center j-bw'>
-			{chartExpand ? (
-				<div
-					onClick={() => {
-						chartExpandAction(false);
-					}}
-				>
-					<i className='fas fa-arrow-left-long' />
-				</div>
-			) : (
-				<p className='dashboard-head-title'>Bonjour username</p>
-			)}
-			{chartExpand ? (
-				<Filters />
-			) : (
-				<div>
-					<select name='' id=''>
-						<option defaultValue={0}>AZRO (copag)</option>
-					</select>
-					<img src={chat} alt='' />
-					<img src={noti} alt='' />
-				</div>
-			)}
+			<p className='dashboard-head-title'>Bonjour username</p>
+
+			<div>
+				<select name='' id=''>
+					<option defaultValue={0}>AZRO (copag)</option>
+				</select>
+				<img src={chat} alt='' />
+				<img src={noti} alt='' />
+			</div>
 		</div>
 	);
 }
