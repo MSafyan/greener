@@ -14,39 +14,17 @@ const phaseMotion = {
 };
 
 const phaseRing1Motion = {
-	initial: {
-		x: [0, -1000, -1000, -100, 0],
-		y: [0, -1000, 1000, 100, 0],
-		transition: {
-			...transition,
-			times: [0, 1, 0.1, 0.1, 1],
-		},
-	},
 	phaseOpened: {
-		x: [0, -100, -1000, -1000, 0],
-		y: [0, 100, 1000, -1000, 0],
-		transition: {
-			...transition,
-			times: [0, 1, 0.1, 0.1, 1],
-		},
+		x: '-90px',
+		y: '50px',
+		transition,
 	},
 };
 const methodRing1Motion = {
-	initial: {
-		x: [0, 1000, 1000, 100, 0],
-		y: [0, -1000, 1000, 100, 0],
-		transition: {
-			...transition,
-			times: [0, 1, 0.1, 0.1, 1],
-		},
-	},
 	phaseOpened: {
-		x: [0, 100, 1000, 1000, 0],
-		y: [0, 100, 1000, -1000, 0],
-		transition: {
-			...transition,
-			times: [0, 1, 0.1, 0.1, 1],
-		},
+		x: '90px',
+		y: '60px',
+		transition,
 	},
 };
 
@@ -87,7 +65,7 @@ const methodMotion = {
 const subItemAndHeadMotion = {
 	initial: {
 		y: -24,
-		height: 'calc(100% - 1vh)', //7%
+		height: 'calc(100% - 0vh)', //7%
 		transition,
 	},
 	hover: {

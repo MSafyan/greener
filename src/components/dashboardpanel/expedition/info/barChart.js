@@ -38,7 +38,7 @@ const BarChart = ({ dashboardData }) => {
 					display: show(),
 					right: right ? '1px' : '',
 				}}
-				className={right ? 'chevron-right' : 'chevron-left'}
+				className={`cursor-pointer ${right ? 'chevron-right' : 'chevron-left'}`}
 				onClick={() => {
 					if (right) {
 						barRef.current.scrollLeft += barRef.current.clientWidth;

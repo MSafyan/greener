@@ -5,10 +5,13 @@ import {
 	methodMotion,
 	methodRing1Motion,
 } from '../../../../helper/framermotion/phaseClick';
+import { phaseAction } from '../../../../store/actions/dashboardAction';
+
 import { Items } from './items';
 import { Animate } from '../../../../helper/functions';
+import wave from '../../../../assets/images/wave.png';
 
-const Methods = ({ global = [] }) => {
+const Methods = ({ global = [], phaseAction }) => {
 	return (
 		<motion.div
 			variants={methodMotion}
@@ -18,16 +21,26 @@ const Methods = ({ global = [] }) => {
 		>
 			<motion.div
 				variants={methodRing1Motion}
-				className='method_ring1'
 				animate={Animate}
-			></motion.div>
-			<motion.div
-				variants={methodRing1Motion}
-				animate={Animate}
-				className='method_ring2'
-			></motion.div>
+				className='method_ring'
+			>
+				<img
+					src={wave}
+					alt=''
+					width='100%'
+					height='100%'
+					style={{ transform: 'scaleX(-1)' }}
+				/>
+			</motion.div>
 			<Items global={global} />
-			<i className='fas fa-chevron-down fs-16 s-icon mx-auto'></i>
+			<span
+				className='m-auto'
+				onClick={() => {
+					phaseAction();
+				}}
+			>
+				<i className='fas fa-chevron-down fs-16 s-icon mx-auto pointer-cursor'></i>
+			</span>
 		</motion.div>
 	);
 };
@@ -37,4 +50,4 @@ const mapStateToProps = (state) => ({
 	phaseOpen: state.dashboard.phaseOpen,
 });
 
-export default connect(mapStateToProps)(Methods);
+export default connect(mapStateToProps, { phaseAction })(Methods);

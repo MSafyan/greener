@@ -39,6 +39,7 @@ export const Items = ({ global }) => {
 				style={{
 					display: show(),
 					right: right ? '1px' : '',
+					pointer: 'cursor',
 				}}
 				className='arrow_info1'
 				onClick={() => {
@@ -71,7 +72,7 @@ export const Items = ({ global }) => {
 							key={key}
 							className='subitem_heading_wrapper'
 						>
-							<div className='fs-20 lc py-1 px-2'>{key}</div>
+							<div className='fs-20 lc pb-1 px-2'>{key}</div>
 							<SubItem columnData={global[key]} />
 						</motion.div>
 					);

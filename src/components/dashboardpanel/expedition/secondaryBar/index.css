@@ -5,8 +5,6 @@
 	cursor: pointer;
 }
 
-.phase_ring1,
-.phase_ring2,
 .method_ring1,
 .method_ring2 {
 	position: absolute;
@@ -16,13 +14,11 @@
 	border: 10px solid var(--primary);
 }
 
-.phase_ring1 {
-	right: 17.6vw;
-	top: -6vw;
-}
-.phase_ring2 {
-	right: 18.5vw;
-	top: -7vw;
+.phase_ring {
+	position: absolute;
+	top: -110px;
+	left: -30px;
+	width: 200px;
 }
 
 .phase_inner_div {
@@ -71,13 +67,11 @@
 	/* transform: rotateX(180deg); */
 }
 
-.method_ring1 {
-	right: -7.3vw;
-	top: -6vw;
-}
-.method_ring2 {
-	right: -8.3vw;
-	top: -7vw;
+.method_ring {
+	position: absolute;
+	top: -120px;
+	right: -30px;
+	width: 200px;
 }
 
 .methods_arrow_wrapper {

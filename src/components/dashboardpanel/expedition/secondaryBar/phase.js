@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { phaseAction } from '../../../../store/actions/dashboardAction';
 import { connect } from 'react-redux';
+import wave from '../../../../assets/images/wave.png';
 import {
 	phaseMotion,
 	itemsMotion,
@@ -24,13 +25,11 @@ const Phase = ({ phaseAction, phaseOpen, phase }) => {
 			<motion.div
 				variants={phaseRing1Motion}
 				animate={Animate}
-				className='phase_ring1'
-			></motion.div>
-			<motion.div
-				variants={phaseRing1Motion}
-				animate={Animate}
-				className='phase_ring2'
-			></motion.div>
+				className='phase_ring'
+			>
+				<img src={wave} alt='' width='100%' height='100%' />
+			</motion.div>
+
 			<div className='phase_inner_div'>
 				<div className='fs-20 lc'>
 					<span className='fs-30 px-1'>20</span>
@@ -53,13 +52,7 @@ const Phase = ({ phaseAction, phaseOpen, phase }) => {
 					))}
 				</div>
 				<Items columnData={phase} phaseOpen={phaseOpen} />
-				<div
-					onClick={() => {
-						console.log('hi1');
-					}}
-				>
-					<i className='fas fa-chevron-down fs-20'></i>
-				</div>
+				<i className='fas fa-chevron-down fs-20'></i>
 			</div>
 		</motion.div>
 	);
