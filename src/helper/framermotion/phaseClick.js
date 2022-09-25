@@ -80,11 +80,38 @@ const subItemAndHeadMotion = {
 	},
 };
 
+const expandTopCornor = {
+	in: {
+		x: 0,
+		y: 0,
+		transition,
+	},
+	out: {
+		x: -3,
+		y: 2,
+		transition,
+	},
+};
+const expandBottomCornor = {
+	in: {
+		rotate: 180,
+		x: 0,
+		y: 0,
+		transition,
+	},
+	out: {
+		rotate: 180,
+		x: 3,
+		y: -2,
+		transition,
+	},
+};
+
 const infoMotion = {
 	initial: {
 		y: 0,
 		width: '100%',
-		transition,
+		transition: { duration: 0.5 },
 	},
 	phaseOpened: {
 		y: '16vh',
@@ -95,8 +122,9 @@ const infoMotion = {
 		width: '100vw',
 		height: '100vh',
 		x: '-5vw',
-		y: '-30vh',
+		y: '-7vh',
 		minHeight: '90vh',
+		position: 'fixed',
 		transition,
 	},
 };
@@ -122,6 +150,8 @@ export {
 	itemsMotion,
 	methodMotion,
 	subItemAndHeadMotion,
+	expandTopCornor,
+	expandBottomCornor,
 	infoMotion,
 	infoInnerMotion,
 };

@@ -1,7 +1,7 @@
 :root {
 	--bg-card: #f8f9f9;
-	--primary: #91c251;
-	--secondary: #283c7e;
+	--primary_da: #91c251;
+	--secondary_da: #283c7e;
 	--tertiary: #149ad7;
 	--red: red;
 	--dc: #212121;
@@ -17,14 +17,28 @@
 /* colors */
 .bg-card {
 	background-color: var(--bg-card);
+	scrollbar-width: thin;
+	scrollbar-color: var(--lc);
+}
+
+.status-card {
+	padding: 0.4vw 0.7vw 0.4vw 0.7vw;
+	border-radius: 0.7vw;
 }
 
 .smooth_scroll {
 	scroll-behavior: smooth;
+	overflow: auto;
+	-ms-overflow-style: none; /* Internet Explorer 10+ */
+	scrollbar-width: none; /* Firefox */
+}
+
+.smooth_scroll::-webkit-scrollbar {
+	display: none; /* Safari and Chrome */
 }
 
 .bg-main {
-	background-color: var(--primary);
+	background-color: var(--primary_da);
 }
 
 .lc {
@@ -32,11 +46,11 @@
 }
 
 .mc {
-	color: var(--primary);
+	color: var(--primary_da);
 }
 
 .sc {
-	color: var(--secondary);
+	color: var(--secondary_da);
 }
 
 .tc {

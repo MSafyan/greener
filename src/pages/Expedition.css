@@ -6,6 +6,7 @@
 		'upper upper upper'
 		'info info info';
 	grid-gap: 1vw;
+	overflow: hidden;
 }
 
 .expedition_upper {

@@ -52,7 +52,7 @@ const Phase = ({ phaseAction, phaseOpen, phase }) => {
 					))}
 				</div>
 				<Items columnData={phase} phaseOpen={phaseOpen} />
-				<i className='fas fa-chevron-down fs-20'></i>
+				<i className='fas fa-chevron-down' variant='solid'></i>
 			</div>
 		</motion.div>
 	);

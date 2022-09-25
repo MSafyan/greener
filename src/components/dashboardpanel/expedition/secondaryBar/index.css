@@ -11,7 +11,7 @@
 	width: 10vw;
 	height: 10vw;
 	border-radius: 50%;
-	border: 10px solid var(--primary);
+	border: 10px solid var(--primary_da);
 }
 
 .phase_ring {
@@ -19,6 +19,7 @@
 	top: -110px;
 	left: -30px;
 	width: 200px;
+	opacity: 0.6;
 }
 
 .phase_inner_div {
@@ -39,8 +40,7 @@
 
 .item_wrapper_phase {
 	width: -webkit-fill-available;
-	height: 16vh;
-	overflow: auto;
+	height: calc(100% - 1vh);
 }
 
 .color-bar {
@@ -60,18 +60,12 @@
 	overflow: hidden;
 }
 
-.top-scrollbars {
-	/* transform: rotateX(180deg); */
-}
-.top-scrollbars > div {
-	/* transform: rotateX(180deg); */
-}
-
 .method_ring {
 	position: absolute;
 	top: -120px;
 	right: -30px;
 	width: 200px;
+	opacity: 0.6;
 }
 
 .methods_arrow_wrapper {
@@ -80,13 +74,24 @@
 	height: calc(100% - 1rem);
 }
 
+.methods_arrow_wrapper::after {
+	content: '';
+	position: absolute;
+	z-index: 1;
+	bottom: 1rem;
+	pointer-events: none;
+	background: url('../../../../../public/horizontalFade.png') center no-repeat;
+	width: 100%;
+	height: 30%;
+}
+
 .items_wrapper_method {
 	display: flex;
 	justify-content: left;
 	align-items: flex-start;
-	overflow: auto;
 	direction: inherit;
-	height: calc(100% - 1vh);
+	width: 97%;
+	height: calc(100% - 0.5vh);
 }
 
 .subitem_heading_wrapper {
@@ -95,13 +100,12 @@
 }
 
 .subitem_wrapper_method > div:hover {
-	color: var(--primary);
+	color: var(--primary_da);
 }
 
-.subitem_wrapper_method,
-.item_wrapper_phase {
+.subitem_wrapper_method {
 	overflow: auto;
-	height: calc(100% - 1vh);
+	height: calc(100% - 0.5vh);
 	direction: rtl;
 }
 

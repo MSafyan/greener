@@ -23,6 +23,15 @@ const BarChart = ({ dashboardData }) => {
 		return () => barRef?.current?.removeEventListener('scroll', onScroll);
 	}, [showLeft]);
 
+	React.useEffect(() => {
+		setShowRight(
+			!(
+				Math.ceil(barRef.current.scrollWidth) <=
+				Math.ceil(barRef.current.scrollLeft + barRef.current.clientWidth)
+			)
+		);
+	}, [dashboardData]);
+
 	const Arrow = (icon) => {
 		var right = icon.includes('right');
 
@@ -47,7 +56,7 @@ const BarChart = ({ dashboardData }) => {
 					}
 				}}
 			>
-				<i className={`fas ${icon} fs-16 s-icon`}></i>
+				<i className={`fas ${icon} fs-16 s-icon`} variant='solid'></i>
 			</div>
 		);
 	};
