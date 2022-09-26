@@ -26,6 +26,10 @@
 	border-radius: 0.7vw;
 }
 
+.cursor-pointer {
+	cursor: pointer;
+}
+
 .smooth_scroll {
 	scroll-behavior: smooth;
 	overflow: auto;

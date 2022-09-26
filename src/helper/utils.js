@@ -6,7 +6,7 @@ export const arrayToGloabl = (array) => {
 };
 
 export const dataToBarChart = (data) => {
-	return data.data.columns[0].reduce((acc, cur) => {
+	return data.data.columns[1].reduce((acc, cur) => {
 		return cur > acc ? cur : acc;
 	}, 0);
 };

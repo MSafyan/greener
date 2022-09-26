@@ -36,6 +36,7 @@
 	height: 20%;
 	display: flex;
 	flex-direction: column;
+	position: relative;
 }
 
 .subitem_wrapper_sidebar {
@@ -196,21 +197,28 @@
 	content: '';
 	position: absolute;
 	z-index: 1;
+	background: url('../../../../../public/fade.png') bottom center no-repeat;
+}
+
+.subitem_heading::after {
+	width: 100%;
+	height: 1rem;
+	bottom: 0px;
+	pointer-events: none;
+	content: '';
+	position: absolute;
+	background: url('../../../../../public/horizontalFade.png') center no-repeat;
 }
 
 .chevron-left::after {
-	bottom: -1rem;
+	bottom: -2rem;
 	left: 1rem;
-	/* background-image: radial-gradient(#fff 32%, var(--bg-card) 80%); */
-	background: url('../../../../../public/fade.png') bottom center no-repeat;
 	transform: rotate(270deg);
 }
 
 .chevron-right::before {
 	bottom: -2rem;
 	right: 0.5rem;
-	/* box-shadow: 0 -300px 200px -200px #fff inset; */
-	background: url('../../../../../public/fade.png') bottom center no-repeat;
 	transform: rotate(90deg);
 }
 

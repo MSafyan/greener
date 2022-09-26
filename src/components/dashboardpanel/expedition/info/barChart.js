@@ -56,7 +56,7 @@ const BarChart = ({ dashboardData }) => {
 					}
 				}}
 			>
-				<i className={`fas ${icon} fs-16 s-icon`} variant='solid'></i>
+				<i className={`fas ${icon} s-icon `} variant='solid'></i>
 			</div>
 		);
 	};
@@ -68,17 +68,20 @@ const BarChart = ({ dashboardData }) => {
 			<div className='arrow_bars_wrapper'>
 				{Arrow('fa-chevron-left')}
 				<div className='bars_wrapper smooth_scroll' ref={barRef}>
-					{dashboardData?.data?.data?.columns[0]?.map((_, i) => (
-						<div className='bar_wrapper' key={i}>
-							<div
-								className='bar bg-main'
-								style={{
-									height: `calc(20vh * calc(${_} / ${dashboardData.max})`,
-								}}
-							></div>
-							<p className='lc fs-20'>{_}</p>
-						</div>
-					))}
+					{dashboardData?.data?.data?.columns[1]?.map((_, i) => {
+						var num = (_ + 20) / dashboardData.max;
+						return (
+							<div className='bar_wrapper' key={i}>
+								<div
+									className='bar bg-main'
+									style={{
+										height: `calc(16vh * ${num})`,
+									}}
+								></div>
+								<p className='lc fs-20'>{_}</p>
+							</div>
+						);
+					})}
 				</div>
 				{Arrow('fa-chevron-right')}
 			</div>

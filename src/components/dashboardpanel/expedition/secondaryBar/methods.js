@@ -41,7 +41,7 @@ const Methods = ({ global = [], phaseAction }) => {
 			>
 				<i
 					variant='solid'
-					className='fas fa-chevron-down s-icon mx-auto pointer-cursor'
+					className='fas fa-chevron-down s-icon mx-auto cursor-pointer'
 				></i>
 			</span>
 		</motion.div>

@@ -29,6 +29,22 @@
 	position: relative;
 }
 
+.chevron-left_filter::after,
+.chevron-right_filter::before {
+	width: 2rem !important;
+	height: 8rem !important;
+}
+
+.chevron-left_filter::after {
+	bottom: -3rem !important;
+	left: 4rem !important;
+}
+
+.chevron-right_filter::before {
+	bottom: -3rem !important;
+	right: 5rem !important;
+}
+
 .filter_item_icon {
 	position: absolute;
 	top: -8px;

@@ -42,7 +42,7 @@ export const options = {
 		datalabels: {
 			color: 'white',
 			textShadowColor: 'black',
-			textShadowBlur: 10,
+			textShadowBlur: -10,
 			formatter: (value) => {
 				return value;
 			},

@@ -64,7 +64,11 @@ const Filters = ({ dashboardData }) => {
 					right: right ? '1px' : '',
 					width: '2rem',
 				}}
-				className={`cursor-pointer ${right ? 'chevron-right' : 'chevron-left'}`}
+				className={`cursor-pointer ${
+					right
+						? 'chevron-right_filter chevron-right'
+						: 'chevron-left_filter chevron-left'
+				}`}
 				onClick={() => {
 					if (right) {
 						filterRef.current.scrollLeft += filterRef.current.clientWidth;
