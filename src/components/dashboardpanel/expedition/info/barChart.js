@@ -69,16 +69,20 @@ const BarChart = ({ dashboardData }) => {
 				{Arrow('fa-chevron-left')}
 				<div className='bars_wrapper smooth_scroll' ref={barRef}>
 					{dashboardData?.data?.data?.columns[1]?.map((_, i) => {
-						var num = (_ + 20) / dashboardData.max;
+						var num = (_ + dashboardData.max / 5) / dashboardData.max;
 						return (
 							<div className='bar_wrapper' key={i}>
 								<div
 									className='bar bg-main'
 									style={{
-										height: `calc(16vh * ${num})`,
+										height: `calc(14vh * ${num})`,
 									}}
-								></div>
-								<p className='lc fs-20'>{_}</p>
+								>
+									<p className='lc bar_num'>{_}</p>
+								</div>
+								<p className='lc fs-16'>
+									{dashboardData?.data?.data?.columns[0][i].substring(1, 4)}
+								</p>
 							</div>
 						);
 					})}

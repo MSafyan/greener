@@ -40,10 +40,12 @@ const dashboardMotion = {
 const pieMotion = {
 	initial: {
 		marginLeft: '30%',
+		width: '70%',
 		transition,
 	},
 	infoExpanded: {
-		marginLeft: '10%',
+		marginLeft: '0%',
+		width: '100%',
 		transition,
 	},
 };
