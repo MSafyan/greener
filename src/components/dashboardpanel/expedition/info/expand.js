@@ -15,7 +15,7 @@ const Expand = ({ chartExpandAction, chartExpand }) => {
 					whileHover={chartExpand ? 'out' : 'in'}
 					initial={chartExpand ? 'in' : 'out'}
 					animate={chartExpand ? 'in' : 'out'}
-					class='checkmark'
+					className='checkmark'
 					onClick={(_) => {
 						chartExpandAction(!chartExpand);
 					}}

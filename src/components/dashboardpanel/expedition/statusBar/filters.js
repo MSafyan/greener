@@ -116,7 +116,7 @@ const FilterItem = ({ item, index }) => {
 		>
 			<span>{item}</span>
 			<motion.div className='filter_item_icon' variants={filterIconMotion}>
-				<i className='fas fa-xmark-circle fs-16 rc'></i>
+				<i className='fas fa-xmark-circle rc' variant='solid'></i>
 			</motion.div>
 		</motion.div>
 	);
