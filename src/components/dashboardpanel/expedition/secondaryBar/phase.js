@@ -12,7 +12,7 @@ import {
 import { phaseColorBar } from '../../../../data/colors';
 import { Animate } from '../../../../helper/functions';
 
-const Phase = ({ phaseAction, phaseOpen, phase }) => {
+const Phase = ({ phaseAction, phaseOpen, phase, ringsForward }) => {
 	return (
 		<motion.div
 			variants={phaseMotion}
@@ -24,7 +24,7 @@ const Phase = ({ phaseAction, phaseOpen, phase }) => {
 		>
 			<motion.div
 				variants={phaseRing1Motion}
-				animate={Animate}
+				animate={phaseOpen || ringsForward ? 'phaseOpened' : 'initial'}
 				className='phase_ring'
 			>
 				<img src={wave} alt='' width='100%' height='100%' />
@@ -93,6 +93,7 @@ const Items = ({ columnData = [] }) => {
 
 const mapStateToProps = (state) => ({
 	phaseOpen: state.dashboard.phaseOpen,
+	ringsForward: state.dashboard.ringsForward,
 	phase: state.dashboard.dashboardFilter?.filters?.phase.phase,
 });
 

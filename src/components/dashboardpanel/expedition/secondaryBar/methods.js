@@ -11,7 +11,7 @@ import { Items } from './items';
 import { Animate } from '../../../../helper/functions';
 import wave from '../../../../assets/images/wave.png';
 
-const Methods = ({ global = [], phaseAction }) => {
+const Methods = ({ global = [], phaseAction, ringsForward, phaseOpen }) => {
 	return (
 		<motion.div
 			variants={methodMotion}
@@ -21,7 +21,7 @@ const Methods = ({ global = [], phaseAction }) => {
 		>
 			<motion.div
 				variants={methodRing1Motion}
-				animate={Animate}
+				animate={phaseOpen || ringsForward ? 'phaseOpened' : 'initial'}
 				className='method_ring'
 			>
 				<img
@@ -51,6 +51,7 @@ const Methods = ({ global = [], phaseAction }) => {
 const mapStateToProps = (state) => ({
 	global: state.dashboard.dashboardFilter?.filters.global,
 	phaseOpen: state.dashboard.phaseOpen,
+	ringsForward: state.dashboard.ringsForward,
 });
 
 export default connect(mapStateToProps, { phaseAction })(Methods);

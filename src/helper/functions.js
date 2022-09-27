@@ -13,3 +13,18 @@ export const Animate = () => {
 		return 'infoExpanded';
 	}
 };
+
+export const ringAnimate = () => {
+	const { chartExpand, phaseOpen, ringsForward } = store.getState().dashboard;
+
+	if (!chartExpand) {
+		debugger;
+		if (phaseOpen || ringsForward) {
+			return 'phaseOpened';
+		} else {
+			return 'initial';
+		}
+	} else {
+		return 'infoExpanded';
+	}
+};

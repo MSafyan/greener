@@ -11,7 +11,7 @@ function BasicExample({ sub = [] }) {
 			id={`dropdown-variants-${variant}`}
 			variant='light'
 			title='Jour'
-			className='btn btn-light'
+			// className='btn '
 		>
 			{Object.keys(sub).map((key) => (
 				<Dropdown.Item key={key} eventKey={key}>

@@ -7,6 +7,7 @@ import {
 	DASHBOARD_FILTER_FAIL,
 	CHART_EXPAND,
 	PHASE_CHANGE,
+	RING_FORWARD,
 } from '../types';
 
 const INITAL_AUTH_STATE = {
@@ -18,6 +19,7 @@ const INITAL_AUTH_STATE = {
 	loading: false,
 	chartExpand: false,
 	phaseOpen: false,
+	ringsForward: false,
 };
 
 export default function dashboardReducer(state = INITAL_AUTH_STATE, action) {
@@ -63,6 +65,11 @@ export default function dashboardReducer(state = INITAL_AUTH_STATE, action) {
 			return {
 				...state,
 				loading: action.payload,
+			};
+		case RING_FORWARD:
+			return {
+				...state,
+				ringsForward: !state.ringsForward,
 			};
 		default:
 			return state;

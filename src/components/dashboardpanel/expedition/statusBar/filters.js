@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { filterIconMotion } from '../../../../helper/framermotion/statusBar';
 import { useSelector } from 'react-redux';
 import { connect } from 'react-redux';
+import { ringsForwardAction } from '../../../../store/actions/dashboardAction';
 
 const list = [
 	'AZRO',
@@ -17,7 +18,7 @@ const list = [
 	'Conteneur',
 ];
 
-const Filters = ({ dashboardData }) => {
+const Filters = ({ dashboardData, ringsForwardAction }) => {
 	const filterRef = React.useRef(null);
 	const [showLeft, setShowLeft] = React.useState(false);
 	const [showRight, setShowRight] = React.useState(false);
@@ -92,7 +93,11 @@ const Filters = ({ dashboardData }) => {
 					{Arrow('fa-chevron-left')}
 					<div className='filter_list smooth_scroll' ref={filterRef}>
 						{list.map((item, i) => (
-							<FilterItem item={item} index={i} />
+							<FilterItem
+								item={item}
+								index={i}
+								ringsForwardAction={ringsForwardAction}
+							/>
 						))}
 					</div>
 					{Arrow('fa-chevron-right')}
@@ -105,7 +110,7 @@ const Filters = ({ dashboardData }) => {
 	);
 };
 
-const FilterItem = ({ item, index }) => {
+const FilterItem = ({ item, index, ringsForwardAction }) => {
 	return (
 		<motion.div
 			whileHover='hover'
@@ -115,7 +120,13 @@ const FilterItem = ({ item, index }) => {
 			className='filter_item mc d-flex'
 		>
 			<span>{item}</span>
-			<motion.div className='filter_item_icon' variants={filterIconMotion}>
+			<motion.div
+				className='filter_item_icon'
+				variants={filterIconMotion}
+				onClick={() => {
+					ringsForwardAction(true);
+				}}
+			>
 				<i className='fas fa-xmark-circle rc' variant='solid'></i>
 			</motion.div>
 		</motion.div>
@@ -126,4 +137,4 @@ const mapStateToProps = (state) => ({
 	dashboardData: state.dashboard.dashboardData,
 });
 
-export default connect(mapStateToProps)(Filters);
+export default connect(mapStateToProps, { ringsForwardAction })(Filters);

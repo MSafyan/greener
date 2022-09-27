@@ -6,6 +6,7 @@ import {
 	DASHBOARD_FILTER_FAIL,
 	PHASE_CHANGE,
 	CHART_EXPAND,
+	RING_FORWARD,
 } from '../types';
 import { APIClient } from '../../api/apiCore';
 import {
@@ -52,4 +53,7 @@ export const phaseAction = () => (dispatch) => {
 
 export const chartExpandAction = (data) => (dispatch) => {
 	dispatch({ type: CHART_EXPAND, payload: data });
+};
+export const ringsForwardAction = (data) => (dispatch) => {
+	dispatch({ type: RING_FORWARD, payload: data });
 };

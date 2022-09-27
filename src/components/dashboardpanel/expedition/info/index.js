@@ -45,20 +45,9 @@ const Index = ({ dashboardDataAction, chartExpandAction, donutChart }) => {
 				</motion.div>
 				<SidebarStats />
 				<div className='graphs_div'>
-					{/* <PieChart donutChart={donutChart} />
+					<PieChart donutChart={donutChart} />
 					<Expand />
-					<BarChart /> */}
-					<div
-						style={{
-							width: { xs: '100%', md: '45vw' },
-							height: '77vh',
-						}}
-					>
-						<iframe
-							src='http://localhost:3000/frame'
-							style={{ width: '100%', height: '100%' }}
-						/>
-					</div>
+					<BarChart />
 				</div>
 			</motion.div>
 		</motion.div>

@@ -48,4 +48,21 @@ const pieMotion = {
 	},
 };
 
-export { pieMotion, dashboardMotion, expandHideMotion, expandShowMotion };
+const statCircleMotion = {
+	filled: {
+		backgroundColor: '#91c251',
+		transition,
+	},
+	empty: {
+		backgroundColor: '#f8f9f9',
+		transition,
+	},
+};
+
+export {
+	pieMotion,
+	dashboardMotion,
+	expandHideMotion,
+	expandShowMotion,
+	statCircleMotion,
+};
