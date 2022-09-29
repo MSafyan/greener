@@ -55,7 +55,10 @@ export const options = {
 
 function PieChart({ donutChart = [] }) {
 	const data = () => {
-		const dataValues = [donutChart.filteredtotal, donutChart.total];
+		const dataValues = [
+			donutChart.filteredtotal,
+			donutChart.total - donutChart.filteredtotal,
+		];
 
 		const obj = {
 			label: '# of Votes',
@@ -65,8 +68,8 @@ function PieChart({ donutChart = [] }) {
 			offsetY: 15,
 		};
 
-		if (donutChart.total >= donutChart.filteredtotal) {
-			delete donutChart.total;
+		if (donutChart.total <= donutChart.filteredtotal) {
+			delete dataValues[1];
 		}
 		console.log(obj);
 		return {

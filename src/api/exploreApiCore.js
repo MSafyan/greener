@@ -2,7 +2,7 @@ import axios from 'axios';
 import config from '../config';
 
 // default
-axios.defaults.baseURL = config.EXPLORE;
+// axios.defaults.baseURL = config.EXPLORE;
 
 // content type
 axios.defaults.headers.post['Content-Type'] = 'application/json';

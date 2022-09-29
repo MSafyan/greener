@@ -16,6 +16,7 @@ import {
 	dashboardFilterBody,
 	dashboardFilterParams,
 } from '../../api/url';
+import config from '../../config';
 const api = new APIClient();
 
 export const dashboardDataAction = () => async (dispatch) => {
@@ -23,7 +24,7 @@ export const dashboardDataAction = () => async (dispatch) => {
 		dispatch({ type: SET_DASHBOARD_LOADING, payload: true });
 
 		const res = await api.create(
-			dashboard,
+			config.API_URL + dashboard,
 			dashboardDataBody,
 			dashboardDataParams
 		);
@@ -37,7 +38,7 @@ export const dashboardFiltersAction = () => async (dispatch) => {
 	try {
 		dispatch({ type: SET_DASHBOARD_LOADING, payload: true });
 		const res = await api.create(
-			dashboard,
+			config.API_URL + dashboard,
 			dashboardFilterBody,
 			dashboardFilterParams
 		);

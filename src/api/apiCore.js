@@ -1,11 +1,11 @@
-import axios from "axios";
-import config from "../config";
+import axios from 'axios';
+import config from '../config';
 
 // default
-axios.defaults.baseURL = config.API_URL;
+// axios.defaults.baseURL = config.API_URL;
 
 // content type
-axios.defaults.headers.post["Content-Type"] = "application/json";
+axios.defaults.headers.post['Content-Type'] = 'application/json';
 
 class APIClient {
 	/**
@@ -38,7 +38,7 @@ class APIClient {
 }
 
 const getLoggedinUser = () => {
-	const user = localStorage.getItem("authUser");
+	const user = localStorage.getItem('authUser');
 	if (!user) {
 		return null;
 	} else {

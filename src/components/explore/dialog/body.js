@@ -16,7 +16,7 @@ const body = ({ orderEvents }) => {
 				</div>
 			</div>
 			<div className='body_chargements_explore'>
-				{orderEvents.map((_, i) => {
+				{orderEvents?.map((_, i) => {
 					return (
 						<div key={i} className='body_chargement_explore'>
 							<p className={i === 3 ? `fs-16` : 'fs-13 lc'}>
