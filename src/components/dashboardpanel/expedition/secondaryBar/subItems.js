@@ -6,19 +6,19 @@ import CMACGM from '../../../../assets/images/card-brand.png';
 
 const keyImageObj = [
 	{
-		key: 'Aerien',
+		key: 'aerien',
 		image: Aerien,
 	},
 	{
-		key: 'Maritime',
+		key: 'maritime',
 		image: Maritime,
 	},
 	{
-		key: 'Camion',
+		key: 'camion',
 		image: Camion,
 	},
 	{
-		key: 'CMA-CGM',
+		key: 'msc',
 		image: CMACGM,
 	},
 ];
