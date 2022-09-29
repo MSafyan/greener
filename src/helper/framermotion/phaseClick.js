@@ -111,11 +111,15 @@ const infoMotion = {
 	initial: {
 		y: 0,
 		width: '100%',
+		height: '68vh',
+		overflow: 'auto',
 		transition: { duration: 0.5 },
 	},
 	phaseOpened: {
 		y: '16vh',
 		width: '100%',
+		height: '50vh',
+		overflow: 'auto',
 		transition,
 	},
 	infoExpanded: {
@@ -131,6 +135,12 @@ const infoMotion = {
 const infoInnerMotion = {
 	initial: {
 		width: '100%',
+		height: '68vh',
+		transition,
+	},
+	phaseOpened: {
+		height: '68vh',
+		overflow: 'auto',
 		transition,
 	},
 	infoExpanded: {

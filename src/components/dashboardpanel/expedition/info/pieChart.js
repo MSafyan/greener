@@ -60,8 +60,8 @@ function PieChart({ donutChart = [] }) {
 				label: '# of Votes',
 				data: Object.values(donutChart).reverse(),
 				backgroundColor: ['#283C7E', '#91C251'],
-				offset: 8,
-				offsetY: 8,
+				offset: 15,
+				offsetY: 15,
 			},
 		],
 	};
