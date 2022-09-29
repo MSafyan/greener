@@ -3,6 +3,7 @@ export const arrayToGloabl = (array) => {
 		acc[cur] = cur;
 		return acc;
 	}, []);
+	return arr;
 };
 
 export const dataToBarChart = (data) => {

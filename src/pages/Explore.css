@@ -5,27 +5,5 @@
 
 .inner_explore {
 	width: 50vw;
-	overflow: auto;
-	background-color: white;
-	height: 90%;
 	margin: 3%;
-}
-
-.card_explore {
-	display: grid;
-	height: 100%;
-	grid-template-areas: 'heading heading' 'body sidebar';
-	grid-template-columns: 2fr 1fr;
-	grid-template-rows: 1fr 10fr;
-	grid-gap: 1vw;
-}
-
-.heading_explore {
-	grid-area: heading;
-}
-.body_explore {
-	grid-area: body;
-}
-.sidebar_explore {
-	grid-area: sidebar;
 }

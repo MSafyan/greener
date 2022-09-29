@@ -54,16 +54,24 @@ export const options = {
 };
 
 function PieChart({ donutChart = [] }) {
-	const data = {
-		datasets: [
-			{
-				label: '# of Votes',
-				data: Object.values(donutChart).reverse(),
-				backgroundColor: ['#283C7E', '#91C251'],
-				offset: 15,
-				offsetY: 15,
-			},
-		],
+	const data = () => {
+		const dataValues = [donutChart.filteredtotal, donutChart.total];
+
+		const obj = {
+			label: '# of Votes',
+			data: dataValues,
+			backgroundColor: ['#283C7E', '#91C251'],
+			offset: 15,
+			offsetY: 15,
+		};
+
+		if (donutChart.total >= donutChart.filteredtotal) {
+			delete donutChart.total;
+		}
+		console.log(obj);
+		return {
+			datasets: [obj],
+		};
 	};
 	const ShadowPlugin = {
 		beforeDraw: (chart, args, options) => {
@@ -84,7 +92,7 @@ function PieChart({ donutChart = [] }) {
 			>
 				<Pie
 					plugins={[ChartDataLabels, ShadowPlugin]}
-					data={data}
+					data={data()}
 					options={options}
 				/>
 			</motion.div>

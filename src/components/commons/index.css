@@ -79,10 +79,23 @@
 .fs-16 {
 	font-size: 0.8vw;
 }
+.fs-13 {
+	font-size: 0.6vw;
+}
 
 /* icons */
 .s-icon {
 	color: #283c7e;
+}
+
+.icon-wrapper-25 {
+	width: 25px;
+}
+.icon-wrapper-20 {
+	width: 20px;
+}
+.icon-wrapper-15 {
+	width: 15px;
 }
 
 * ::-webkit-scrollbar {

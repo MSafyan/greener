@@ -1,0 +1,112 @@
+.card_explore {
+	display: grid;
+	height: 64vh;
+	grid-template-areas: 'heading heading' 'body sidebar';
+	grid-template-columns: 33vw 14vw;
+	grid-template-rows: 4.5vh 50vh;
+	padding: 3vw 1vw 0.7vw 1vw;
+	grid-gap: 1vw;
+	background-color: white;
+}
+
+.heading_explore {
+	grid-area: heading;
+	display: flex;
+}
+
+.body_explore {
+	grid-area: body;
+}
+
+.sidebar_explore {
+	grid-area: sidebar;
+}
+
+.chip_items {
+	display: flex;
+	padding: 0.5vw;
+}
+
+.chip_item_explore {
+	height: 2vw;
+	border-radius: 5px;
+	margin: 0.5vw;
+}
+
+.chip_item_explore > div {
+	padding: 0.4px;
+	display: flex;
+	align-items: flex-end;
+	cursor: pointer;
+}
+
+.sidebar_explore > div {
+	height: 100%;
+	padding: 1.5vw;
+	border-radius: 15px;
+}
+
+.head_sidebar_explore {
+	width: 100%;
+	height: 28%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	position: relative;
+	background-color: white;
+}
+
+.head_sidebar_explore > div {
+	margin: 0 auto;
+	height: 100%;
+	overflow: hidden;
+}
+
+.img_sidebar_explore {
+	position: absolute;
+}
+
+.body_sidebar_explore {
+	padding: 1vw 0vw;
+}
+
+.body_item_explore {
+}
+
+.body_chip_explore {
+	padding: 0.5vw;
+	background-color: white;
+	display: inline-block;
+}
+
+.body_chargements_explore {
+	height: 80%;
+	overflow: auto;
+	padding: 0px 1vw;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+}
+
+.card_icons_explore {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.body_chargement_explore {
+	display: flex;
+	align-items: center;
+}
+
+.body_card_explore {
+	width: 21vw;
+	padding: 0.5vw;
+	background-color: white;
+	margin: 0.7vw;
+	border-radius: 10px;
+	height: 7.4vh;
+}
+.body_card_explore > div {
+	padding: 0.4vw;
+}
