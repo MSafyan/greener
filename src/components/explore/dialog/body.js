@@ -2,6 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import icon from '../../../assets/images/plane.png';
 import dots from '../../../assets/images/dots_explore.png';
+import NotificationRing from './popups/NoficationRing';
 
 const body = ({ orderEvents }) => {
 	return (
@@ -32,8 +33,11 @@ const body = ({ orderEvents }) => {
 							</div>
 							<div className='body_card_explore'>
 								<div className=''>
-									<p className='fs-20'>{_.message.substring(0, 39)}</p>
-									<p className='fs-16 lc'>{_.creator}</p>
+									<div>
+										<p className='fs-20'>{_.message.substring(0, 39)}</p>
+										<p className='fs-16 lc'>{_.creator}</p>
+									</div>
+									<NotificationRing />
 								</div>
 							</div>
 						</div>

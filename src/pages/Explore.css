@@ -7,3 +7,22 @@
 	width: 50vw;
 	margin: 3%;
 }
+
+.dialog-icon {
+	margin: 0 3px;
+	display: flex;
+	align-items: baseline;
+}
+
+.dialogfooter {
+	display: flex;
+	justify-content: space-between;
+}
+.dialogfooter_btn {
+	background-color: var(--tertiary);
+	color: white;
+	width: 8vw;
+	border-radius: 4px;
+	text-align: center;
+	padding: 4px;
+}

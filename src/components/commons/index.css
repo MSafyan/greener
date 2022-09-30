@@ -82,6 +82,9 @@
 .fs-13 {
 	font-size: 0.6vw;
 }
+.fs-8 {
+	font-size: 0.5vw;
+}
 
 /* icons */
 .s-icon {
@@ -95,7 +98,8 @@
 	width: 20px;
 }
 .icon-wrapper-15 {
-	width: 15px;
+	width: 13px;
+	height: 15px;
 }
 
 * ::-webkit-scrollbar {

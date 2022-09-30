@@ -1,6 +1,7 @@
 import React from 'react';
 import Layout from '../components/layout/onlySidebar';
 import { connect } from 'react-redux';
+import DialogIcons from '../components/explore/dialog/dialogIcons';
 
 import {
 	orderDetailsAction,
@@ -20,6 +21,7 @@ const Explore = ({ orderEventsAction, orderDetailsAction }) => {
 			<div className='explore_container status-card bg-card'>
 				<div className='inner_explore'>
 					<Dialog />
+					<DialogIcons />
 				</div>
 			</div>
 		</Layout>

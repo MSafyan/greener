@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import Chip from './chip';
 import Body from './body';
 import SideDrawerExplore from './sideDrawerExplore';
+import DialogHeader from './dialogHeader';
 import './dialog.css';
 
 const Dialog = ({ orderDetails, orderEvents }) => {
@@ -11,6 +12,7 @@ const Dialog = ({ orderDetails, orderEvents }) => {
 		<>
 			{orderDetails && (
 				<div className='card_explore'>
+					<DialogHeader />
 					<Chip filters={orderDetails?.filters} />
 					<Body orderEvents={orderEvents} />
 					<SideDrawerExplore chargement={orderDetails.chargement} />

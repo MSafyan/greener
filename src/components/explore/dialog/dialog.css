@@ -1,12 +1,19 @@
 .card_explore {
 	display: grid;
 	height: 64vh;
-	grid-template-areas: 'heading heading' 'body sidebar';
+	grid-template-areas: 'dialogHeader dialogHeader' 'heading heading' 'body sidebar';
 	grid-template-columns: 33vw 14vw;
-	grid-template-rows: 4.5vh 50vh;
-	padding: 3vw 1vw 0.7vw 1vw;
+	grid-template-rows: 3vh 4vh 50vh;
+	padding: 0.7vw 1vw 0.7vw 1vw;
 	grid-gap: 1vw;
 	background-color: white;
+}
+
+.dialogHeader {
+	grid-area: dialogHeader;
+	display: grid;
+	grid-template-areas: 'first second third forth';
+	grid-template-columns: 1fr 1fr 1fr 1.3fr;
 }
 
 .heading_explore {
@@ -109,4 +116,6 @@
 }
 .body_card_explore > div {
 	padding: 0.4vw;
+	display: flex;
+	justify-content: space-between;
 }
