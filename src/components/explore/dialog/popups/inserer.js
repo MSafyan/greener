@@ -5,8 +5,9 @@ import { connect } from 'react-redux';
 function Inserer({ showInserersPopAction }) {
 	const [show, setShow] = useState(false);
 
-	const handleClick = (event) => {
+	const handleClick = () => {
 		setShow(!show);
+		showInserersPopAction(null);
 	};
 
 	const arr = ['Message', 'Document', 'Incident'];
@@ -28,7 +29,7 @@ function Inserer({ showInserersPopAction }) {
 						{arr.map((_, i) => {
 							return (
 								<div
-									className='body_chip_explore m-1'
+									className='body_chip_explore m-1 cursor-pointer'
 									key={i}
 									onClick={() => {
 										showInserersPopAction(i);

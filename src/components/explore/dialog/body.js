@@ -26,7 +26,7 @@ const Body = ({ orderEvents, showInserersPop }) => {
 									<div className='icon-wrapper-20 py-1'>
 										<img src={icon} alt='' />
 									</div>
-									<div>
+									<div style={{ height: '2.2rem' }}>
 										<img src={dots} alt='' />
 									</div>
 								</div>

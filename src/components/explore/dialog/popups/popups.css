@@ -1,0 +1,13 @@
+.msgForm_icons {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 4.5vh;
+	padding-left: 0.5vw;
+}
+
+.cross_popup {
+	position: absolute;
+	right: 10px;
+	top: -5px;
+}

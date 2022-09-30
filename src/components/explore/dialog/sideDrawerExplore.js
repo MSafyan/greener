@@ -5,7 +5,7 @@ const sideDrawerExplore = ({ chargement }) => {
 	return (
 		<div className='sidebar_explore'>
 			<div className='bg-card'>
-				<div className='head_sidebar_explore py-3'>
+				<div className='head_sidebar_explore'>
 					{/* <div> */}
 					<p className='fs-13 text-center'>Prix négocié</p>
 					<div className='d-flex'>

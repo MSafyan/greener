@@ -43,7 +43,7 @@
 .chip_item_explore > div {
 	padding: 0.4px;
 	display: flex;
-	align-items: flex-end;
+	align-items: center;
 	cursor: pointer;
 }
 
@@ -56,9 +56,11 @@
 .head_sidebar_explore {
 	width: 100%;
 	height: 28%;
+	padding: 3vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	align-items: center;
 	position: relative;
 	background-color: white;
 }
@@ -116,7 +118,8 @@
 	height: 7.4vh;
 }
 .body_card_explore > div {
-	padding: 0.4vw;
+	/* padding: 0.4vw; */
 	display: flex;
 	justify-content: space-between;
+	position: relative;
 }

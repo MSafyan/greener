@@ -92,14 +92,17 @@
 }
 
 .icon-wrapper-25 {
-	width: 25px;
+	cursor: pointer;
+	width: 1.5vw;
 }
 .icon-wrapper-20 {
-	width: 20px;
+	cursor: pointer;
+	width: 1.2vw;
 }
 .icon-wrapper-15 {
-	width: 13px;
-	height: 15px;
+	cursor: pointer;
+	width: 0.9vw;
+	height: 0.9vw;
 }
 
 * ::-webkit-scrollbar {
