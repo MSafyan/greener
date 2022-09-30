@@ -15,7 +15,7 @@ const Dialog = ({ orderDetails, orderEvents }) => {
 					<DialogHeader />
 					<Chip filters={orderDetails?.filters} />
 					<Body orderEvents={orderEvents} />
-					<SideDrawerExplore chargement={orderDetails.chargement} />
+					<SideDrawerExplore chargement={orderDetails?.chargement} />
 				</div>
 			)}
 		</>

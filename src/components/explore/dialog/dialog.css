@@ -67,6 +67,7 @@
 	margin: 0 auto;
 	height: 100%;
 	overflow: hidden;
+	align-items: center;
 }
 
 .img_sidebar_explore {

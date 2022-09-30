@@ -4,6 +4,7 @@ import {
 	ORDER_EVENTS_FAIL,
 	ORDER_DETAILS_SUCCESS,
 	ORDER_DETAILS_FAIL,
+	SHOW_INSERERS_POP,
 } from '../types';
 import { APIClient } from '../../api/exploreApiCore';
 import {
@@ -11,7 +12,6 @@ import {
 	orderEventsBody,
 	orderDetails,
 } from '../../api/exploreUrls';
-import axios from 'axios';
 import config from '../../config';
 
 const api = new APIClient();
@@ -35,4 +35,11 @@ export const orderDetailsAction = () => async (dispatch) => {
 	} catch (error) {
 		dispatch({ type: ORDER_DETAILS_FAIL });
 	}
+};
+
+export const showInserersPopAction = (data) => (dispatch, getState) => {
+	if (data === getState().explore.showInserersPop) {
+		data = null;
+	}
+	dispatch({ type: SHOW_INSERERS_POP, payload: data });
 };
