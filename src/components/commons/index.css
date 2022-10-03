@@ -67,6 +67,9 @@
 .rc {
 	color: var(--red);
 }
+.dc {
+	color: var(--dc);
+}
 
 /* fontsizes */
 .fs-30 {
@@ -80,7 +83,7 @@
 	font-size: 0.8vw;
 }
 .fs-13 {
-	font-size: 0.6vw;
+	font-size: 0.68vw;
 }
 .fs-8 {
 	font-size: 0.5vw;

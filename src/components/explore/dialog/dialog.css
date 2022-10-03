@@ -116,10 +116,19 @@
 	margin: 0.7vw;
 	border-radius: 10px;
 	height: 7.4vh;
+	position: relative;
 }
 .body_card_explore > div {
 	/* padding: 0.4vw; */
 	display: flex;
 	justify-content: space-between;
-	position: relative;
+}
+
+.card_body {
+	height: 90%;
+}
+.card_body > div {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }

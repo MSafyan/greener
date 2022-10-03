@@ -8,6 +8,21 @@
 
 .cross_popup {
 	position: absolute;
-	right: 10px;
-	top: -5px;
+	right: 20px;
+	top: 0px;
+}
+
+.myselect {
+	padding: 4px;
+	margin-bottom: 4px;
+	border-radius: 4px;
+}
+.myselect-sm {
+	width: 7.8vw;
+	height: 3vh;
+}
+
+.doc3_wrapper {
+	height: 80%;
+	width: 80%;
 }
