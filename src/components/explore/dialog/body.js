@@ -39,7 +39,7 @@ const OfferCard = ({ _, i }) => {
 			<div>
 				<p className='fs-16 lc'>
 					{_.message}
-					<span className='dc font-weight-bold'>{' ' + _.price} $</span>
+					<span className='dc font_500'>{' ' + _.price} $</span>
 				</p>
 				<div className='d-flex align-items-end'>
 					<StarRatings
