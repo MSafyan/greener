@@ -8,7 +8,7 @@ import MsgForm from './popups/MsgForm';
 import StarRatings from 'react-star-ratings';
 import audioDots from '../../../assets/images/audioDots.png';
 import audioPause from '../../../assets/images/audioPause.png';
-import trajet from '../../../assets/images/bell.png';
+import trajet from '../../../assets/images/trajet.png';
 import activity from '../../../assets/images/activity.png';
 import incidents from '../../../assets/images/incidents.png';
 import document from '../../../assets/images/document.png';
