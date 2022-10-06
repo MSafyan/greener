@@ -3,6 +3,7 @@ import Form from 'react-bootstrap/Form';
 import Overlay from 'react-bootstrap/Overlay';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Button from 'react-bootstrap/Button';
+import bell from '../../../../assets/images/bell.png';
 
 function NotificationRing() {
 	const [show, setShow] = useState(false);
@@ -15,7 +16,7 @@ function NotificationRing() {
 	return (
 		<div className='' style={{ position: '' }}>
 			<div onClick={handleClick} ref={target} className='icon-wrapper-15'>
-				<i className='fas fa-regular fa-bell' />
+				<img src={bell} alt='' width='100%' />
 			</div>
 			{show && (
 				<Overlay target={target.current} show={show} placement='bottom-end'>

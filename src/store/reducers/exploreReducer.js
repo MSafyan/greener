@@ -8,12 +8,27 @@ import {
 	SELECTED_COMPONENT_TYPE,
 } from '../types';
 
+var counter = {};
+
+const typeCounter = (orderEvents) => {
+	console.log(orderEvents);
+	for (let a of orderEvents) {
+		if (!counter[a.componentType]) {
+			counter[a.componentType] = 1;
+		} else {
+			counter[a.componentType] = counter[a.componentType] + 1;
+		}
+	}
+	return counter;
+};
+
 const INITAL_AUTH_STATE = {
 	orderDetails: null,
 	orderEvents: null,
 	showInserersPop: null,
 	selectedComponentType: 'tous',
 	loading: false,
+	counter: {},
 };
 
 export default function dashboardReducer(state = INITAL_AUTH_STATE, action) {
@@ -25,10 +40,12 @@ export default function dashboardReducer(state = INITAL_AUTH_STATE, action) {
 				orderDetails: action.payload,
 			};
 		case ORDER_EVENTS_SUCCESS:
+			counter = typeCounter(action.payload);
 			return {
 				...state,
 				loading: false,
 				orderEvents: action.payload,
+				counter,
 			};
 		case SHOW_INSERERS_POP:
 			return {

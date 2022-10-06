@@ -21,8 +21,8 @@ const Chip = ({
 						}}
 					>
 						<div>
-							<p className='fs-20 px-1'>{_.value}</p>
-							<p className='fs-16'>{_.count}</p>
+							<p className='fs-20'>{_.value}</p>
+							<p className='fs-16 px-1'>{_.count}</p>
 						</div>
 					</div>
 				);

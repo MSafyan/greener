@@ -15,7 +15,7 @@ import document from '../../../assets/images/document.png';
 import msg from '../../../assets/images/msg.png';
 import offer from '../../../assets/images/offer.png';
 // import clock from '../../../assets/images/clock.png';
-import { motion } from 'framer-motion';
+import { motion, transform } from 'framer-motion';
 import {
 	cardMotion,
 	cardWrapperMotion,
@@ -100,7 +100,8 @@ const Card = ({ _, i }) => {
 	);
 };
 
-const CardWrapper = ({ _, i, selectedComponentType }) => {
+const CardWrapper = ({ _, i, selectedComponentType, counter }) => {
+	const show = selectedComponentType === 'tous' || counter[_.componentType] > 1;
 	return (
 		<motion.div
 			key={i}
@@ -120,13 +121,15 @@ const CardWrapper = ({ _, i, selectedComponentType }) => {
 			>
 				{moment(_.dateTime).format('D/MM/YYYY HH:mm')}
 			</p>
-			<div className='card_icons_explore'>
-				<div className='icon-wrapper-15 mx-1 my-6'>
-					<img src={imgNameArr[_.componentType]} alt='' width='130%' />
+			<div className={`card_icons_explore ${show && 'transform3vh'}`}>
+				<div className='icon-wrapper-20' style={{ gridArea: 'icons_icon' }}>
+					<img src={imgNameArr[_.componentType]} alt='' width='100%' />
 				</div>
-				<div style={{ height: '2.2rem' }}>
-					<img src={dots} alt='' />
-				</div>
+				{show && (
+					<div className='dotted_border'>
+						<img src={dots} alt='' />
+					</div>
+				)}
 			</div>
 			<div className='body_card_explore'>
 				<Card _={_} i={i} />
@@ -134,7 +137,12 @@ const CardWrapper = ({ _, i, selectedComponentType }) => {
 		</motion.div>
 	);
 };
-const Body = ({ orderEvents, showInserersPop, selectedComponentType }) => {
+const Body = ({
+	orderEvents,
+	showInserersPop,
+	selectedComponentType,
+	counter,
+}) => {
 	return (
 		<div className='body_explore bg-card'>
 			<Inserer />
@@ -152,6 +160,7 @@ const Body = ({ orderEvents, showInserersPop, selectedComponentType }) => {
 					{orderEvents?.map((_, i) => (
 						<CardWrapper
 							_={_}
+							counter={counter}
 							i={i}
 							selectedComponentType={selectedComponentType}
 						/>
@@ -165,6 +174,7 @@ const Body = ({ orderEvents, showInserersPop, selectedComponentType }) => {
 const mapStateToProps = (state) => ({
 	showInserersPop: state.explore.showInserersPop,
 	selectedComponentType: state.explore.selectedComponentType,
+	counter: state.explore.counter,
 });
 
 export default connect(mapStateToProps, null)(Body);
