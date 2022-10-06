@@ -90,9 +90,7 @@ const Card = ({ _, i }) => {
 						</div>
 					</>
 				) : (
-					<p className='fs-16' style={{ fontWeight: '500' }}>
-						{upperText}
-					</p>
+					<p className='fs-16 font_500'>{upperText}</p>
 				)}
 
 				{showBottomText && <p className='fs-16 lc'>{bottomText}</p>}

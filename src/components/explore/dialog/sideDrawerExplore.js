@@ -36,7 +36,7 @@ const sideDrawerExplore = ({ chargement }) => {
 							<div className='body_item_explore py-2' key={i}>
 								<p className='fs-13 lc'>{key}</p>
 								<div className={'d-flex'}>
-									<p className='fs-16'>{chargement[_]}</p>
+									<p className='fs-16 font_500'>{chargement[_]}</p>
 									{icon && icon}
 								</div>
 							</div>

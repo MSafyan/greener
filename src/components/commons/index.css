@@ -89,6 +89,11 @@
 	font-size: 0.5vw;
 }
 
+.font_500,
+.fs-16 {
+	font-weight: 500;
+}
+
 /* icons */
 .s-icon {
 	color: #283c7e;
