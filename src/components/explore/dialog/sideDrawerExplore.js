@@ -1,5 +1,6 @@
 import React from 'react';
 import money from '../../../assets/images/money.png';
+import Chargeur from './popups/chargeur';
 
 const sideDrawerExplore = ({ chargement }) => {
 	return (
@@ -22,15 +23,22 @@ const sideDrawerExplore = ({ chargement }) => {
 				<div className='body_sidebar_explore'>
 					{Object.keys(chargement).map((_, i) => {
 						var key = _;
+						var icon = null;
 						if (_ === 'chargeurId' || _ === 'price') return null;
 						if (_ === 'chargeurId') key = '_FT_Code_Unloading';
 						if (_ === 'typeService') key = 'Type Service';
 						if (_ === 'typeAssurance') key = 'Type Assurance';
-						if (_ === 'orderBillingEntityName') key = 'Entité facturée';
+						if (_ === 'orderBillingEntityName') {
+							key = 'Entité facturée';
+							icon = <Chargeur />;
+						}
 						return (
 							<div className='body_item_explore py-2' key={i}>
 								<p className='fs-13 lc'>{key}</p>
-								<p className='fs-16'>{chargement[_]}</p>
+								<div className={'d-flex'}>
+									<p className='fs-16'>{chargement[_]}</p>
+									{icon && icon}
+								</div>
 							</div>
 						);
 					})}

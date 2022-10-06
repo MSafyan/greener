@@ -1,11 +1,12 @@
 import React from 'react';
 import moment from 'moment';
-// import Form from 'react-bootstrap/Form';
 import { connect } from 'react-redux';
 import { Form } from 'react-bootstrap';
 import { showInserersPopAction } from '../../../../store/actions/exploreAction';
 
-import icon from '../../../../assets/images/msg.png';
+import msg from '../../../../assets/images/msg.png';
+import document from '../../../../assets/images/document.png';
+import incidents from '../../../../assets/images/incidents.png';
 import mic from '../../../../assets/images/mic.png';
 import paperclip from '../../../../assets/images/paperClip_blue.png';
 import cross from '../../../../assets/images/cross.png';
@@ -13,6 +14,7 @@ import cross from '../../../../assets/images/cross.png';
 import './popups.css';
 
 var options = { One: 1, Two: 2 };
+var arr = [msg, document, incidents];
 
 const Select = ({ options, lagend, size = 'lg' }) => {
 	return (
@@ -47,6 +49,7 @@ const Doc3 = () => {
 					height: '85%',
 					padding: '4px',
 					fontSize: '16px',
+					width: '100%',
 				}}
 			/>
 		</div>
@@ -91,6 +94,7 @@ const Doc = () => {
 		</div>
 	);
 };
+
 const MsgForm = ({ showInserersPopAction, showInserersPop }) => {
 	const DocRen = () => {
 		if (showInserersPop === 0) return <Doc />;
@@ -102,7 +106,7 @@ const MsgForm = ({ showInserersPopAction, showInserersPop }) => {
 			<p className='fs-16 px-2'>{moment().format('D/MM/YYYY HH:mm')}</p>
 			<div className='card_icons_explore'>
 				<div className='icon-wrapper-20 py-1'>
-					<img src={icon} alt='' />
+					<img src={arr[showInserersPop]} alt='' />
 				</div>
 			</div>
 			<div className='body_card_explore'>

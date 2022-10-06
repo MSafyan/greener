@@ -14,7 +14,7 @@ import incidents from '../../../assets/images/incidents.png';
 import document from '../../../assets/images/document.png';
 import msg from '../../../assets/images/msg.png';
 import offer from '../../../assets/images/offer.png';
-import clock from '../../../assets/images/clock.png';
+// import clock from '../../../assets/images/clock.png';
 import { motion } from 'framer-motion';
 import {
 	cardMotion,
@@ -121,8 +121,8 @@ const CardWrapper = ({ _, i, selectedComponentType }) => {
 				{moment(_.dateTime).format('D/MM/YYYY HH:mm')}
 			</p>
 			<div className='card_icons_explore'>
-				<div className='icon-wrapper-20 mx-1'>
-					<img src={imgNameArr[_.componentType]} alt='' />
+				<div className='icon-wrapper-15 mx-1 my-6'>
+					<img src={imgNameArr[_.componentType]} alt='' width='130%' />
 				</div>
 				<div style={{ height: '2.2rem' }}>
 					<img src={dots} alt='' />

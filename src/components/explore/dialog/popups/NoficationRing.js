@@ -1,45 +1,67 @@
 import React, { useState, useRef } from 'react';
-import Overlay from 'react-bootstrap/Overlay';
-import Popover from 'react-bootstrap/Popover';
 import Form from 'react-bootstrap/Form';
+import Overlay from 'react-bootstrap/Overlay';
+import InputGroup from 'react-bootstrap/InputGroup';
+import Button from 'react-bootstrap/Button';
 
 function NotificationRing() {
 	const [show, setShow] = useState(false);
-	const [target, setTarget] = useState(null);
-	const ref = useRef(null);
+	const target = useRef(null);
 
 	const handleClick = (event) => {
 		setShow(!show);
-		setTarget(event.target);
 	};
 
 	return (
-		<div ref={ref}>
-			<div onClick={handleClick}>
+		<div className='' style={{ position: '' }}>
+			<div onClick={handleClick} ref={target} className='icon-wrapper-15'>
 				<i className='fas fa-regular fa-bell' />
 			</div>
-
-			<Overlay
-				show={show}
-				target={target}
-				placement='bottom'
-				container={ref}
-				containerPadding={20}
-			>
-				<Popover id='popover-contained'>
-					<div>
-						<Form.Control
-							as='textarea'
-							placeholder='Votre message ...'
+			{show && (
+				<Overlay target={target.current} show={show} placement='bottom-end'>
+					{({ placement, arrowProps, show: _show, popper, ...props }) => (
+						<div
+							className='notification_dialog_wrapper'
+							{...props}
 							style={{
-								height: '85%',
-								padding: '4px',
-								fontSize: '16px',
+								position: 'absolute',
+								backgroundColor: 'white',
+								padding: '2px 10px',
+								color: 'white',
+								borderRadius: 3,
+								...props.style,
 							}}
-						/>
-					</div>
-				</Popover>
-			</Overlay>
+						>
+							<div style={{ display: 'flex' }}>
+								<div style={{ margin: '0.5vw' }}>
+									<p className='fs-13' style={{ color: 'black' }}>
+										notification per email
+									</p>
+									<InputGroup>
+										<Form.Control
+											placeholder='Username'
+											aria-label='Username'
+											aria-describedby='basic-addon1'
+											id='basic-url'
+										/>
+									</InputGroup>
+								</div>
+								<div style={{ margin: '0.5vw' }}>
+									<p className='fs-13' style={{ color: 'black' }}>
+										notification per whatsapp
+									</p>
+									<Form.Control
+										placeholder='Username'
+										aria-label='Username'
+										aria-describedby='basic-addon1'
+									/>
+								</div>
+							</div>
+							<Button className='notification_dialog_btn'>Valider</Button>{' '}
+						</div>
+					)}
+				</Overlay>
+			)}
 		</div>
 	);
 }

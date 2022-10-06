@@ -23,6 +23,44 @@
 }
 
 .doc3_wrapper {
-	height: 80%;
-	width: 80%;
+	height: auto;
+	width: 90%;
+}
+
+.notification_dialog_wrapper {
+	width: 20vw;
+	padding: 1vw;
+}
+
+.notification_dialog_btn {
+	color: 'white';
+	background-color: var(--tertiary);
+	width: 100%;
+	/* margin: 0.5vw; */
+}
+
+.entity_dialog_wrapper {
+	padding: 4vw 1vw 2vw 1vw;
+	width: 20vw;
+	background-color: #e1e1e194;
+	backdrop-filter: blur(4px);
+}
+
+.entity_dialog_card {
+	position: 'relative';
+	border-radius: 1rem;
+	background-color: white;
+	padding: 0.4vw;
+}
+
+.entity_cross_popup {
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+}
+
+.entity_dialog_item {
+	display: flex;
+	justify-content: space-between;
+	margin: 0.5vw;
 }
