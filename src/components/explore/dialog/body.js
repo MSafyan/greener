@@ -8,14 +8,14 @@ import MsgForm from './popups/MsgForm';
 import StarRatings from 'react-star-ratings';
 import audioDots from '../../../assets/images/audioDots.png';
 import audioPause from '../../../assets/images/audioPause.png';
-import trajet from '../../../assets/images/trajet.png';
+import trajet from '../../../assets/images/bell.png';
 import activity from '../../../assets/images/activity.png';
 import incidents from '../../../assets/images/incidents.png';
 import document from '../../../assets/images/document.png';
 import msg from '../../../assets/images/msg.png';
 import offer from '../../../assets/images/offer.png';
 // import clock from '../../../assets/images/clock.png';
-import { motion, transform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import {
 	cardMotion,
 	cardWrapperMotion,
@@ -90,7 +90,9 @@ const Card = ({ _, i }) => {
 						</div>
 					</>
 				) : (
-					<p className='fs-20'>{upperText}</p>
+					<p className='fs-16' style={{ fontWeight: '500' }}>
+						{upperText}
+					</p>
 				)}
 
 				{showBottomText && <p className='fs-16 lc'>{bottomText}</p>}
