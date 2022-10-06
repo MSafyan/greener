@@ -56,9 +56,9 @@
 	color: var(--primary_da);
 }
 
-.chip_item_explore:hover .fs-20 {
+/* .chip_item_explore:hover .fs-20 {
 	font-size: 1.02vw;
-}
+} */
 
 .chip_item_explore > div {
 	padding: 0.4vw;
