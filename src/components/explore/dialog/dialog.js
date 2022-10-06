@@ -5,6 +5,7 @@ import Chip from './chip';
 import Body from './body';
 import SideDrawerExplore from './sideDrawerExplore';
 import DialogHeader from './dialogHeader';
+
 import './dialog.css';
 
 const Dialog = ({ orderDetails, orderEvents }) => {
@@ -27,4 +28,4 @@ const mapStateToProps = (state) => ({
 	orderEvents: state.explore.orderEvents,
 });
 
-export default connect(mapStateToProps, null)(Dialog);
+export default connect(mapStateToProps)(Dialog);

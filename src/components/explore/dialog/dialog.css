@@ -23,6 +23,18 @@
 
 .body_explore {
 	grid-area: body;
+	position: relative;
+}
+
+.body_explore::after {
+	content: '';
+	position: absolute;
+	z-index: 1;
+	bottom: -3rem;
+	pointer-events: none;
+	background: url('../../../../public/shorizontalFade.png') center no-repeat;
+	width: 100%;
+	height: 30%;
 }
 
 .sidebar_explore {
@@ -83,9 +95,34 @@
 .body_item_explore {
 }
 
-.body_chip_explore {
-	padding: 0.5vw;
+.inserer_wrapper {
+	position: relative;
+}
+.postion_initial {
+	position: initial;
+}
+
+.inserer_wrapper::before {
+	content: '';
+	position: absolute;
+	z-index: 1;
+	bottom: -90%;
+	pointer-events: none;
+	background: url('../../../../public/shorizontalFade.png') center no-repeat;
+	width: 100%;
+	height: 100%;
+}
+
+.inserer_wrapper > div {
+	display: flex;
+	width: fit-content;
 	background-color: white;
+	border-radius: 1rem;
+	margin: 1vw;
+}
+
+.body_chip_explore {
+	padding: 0.3vw;
 	display: inline-block;
 }
 
@@ -96,21 +133,27 @@
 	display: flex;
 	flex-direction: column;
 	align-items: flex-end;
+	margin: 1.3vw 0px;
 }
 
 .card_icons_explore {
+	grid-area: icon_card;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
 
 .body_chargement_explore {
-	display: flex;
+	display: grid;
+	grid-template-areas: 'date_card icon_card body_card';
+	grid-template-columns: 7vw auto 21vw;
 	align-items: center;
+	width: 30.8vw;
 }
 
 .body_card_explore {
-	width: 21vw;
+	grid-area: body_card;
+	/* width: 21vw; */
 	padding: 0.5vw;
 	background-color: white;
 	margin: 0.7vw;
@@ -118,6 +161,7 @@
 	height: 7.4vh;
 	position: relative;
 }
+
 .body_card_explore > div {
 	/* padding: 0.4vw; */
 	display: flex;

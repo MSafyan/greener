@@ -1,6 +1,5 @@
 import React from 'react';
 import moment from 'moment';
-import icon from '../../../assets/images/plane.png';
 import dots from '../../../assets/images/dots_explore.png';
 import NotificationRing from './popups/NoficationRing';
 import Inserer from './popups/inserer';
@@ -16,9 +15,15 @@ import document from '../../../assets/images/document.png';
 import msg from '../../../assets/images/msg.png';
 import offer from '../../../assets/images/offer.png';
 import clock from '../../../assets/images/clock.png';
+import { motion } from 'framer-motion';
+import {
+	cardMotion,
+	cardWrapperMotion,
+	msgFormMotion,
+} from '../../../helper/framermotion/dialog/inserer';
 
 const imgNameArr = {
-	trajet: clock,
+	// trajet: clock,
 	trajet: trajet,
 	activity: activity,
 	incidents: incidents,
@@ -26,6 +31,30 @@ const imgNameArr = {
 	msg_text: msg,
 	msg_audio: msg,
 	offer: offer,
+};
+
+const OfferCard = ({ _, i }) => {
+	return (
+		<div key={i} className='card_body'>
+			<div>
+				<p className='fs-16 lc'>
+					{_.message}
+					<span className='dc font-weight-bold'>{' ' + _.price} $</span>
+				</p>
+				<div className='d-flex align-items-end'>
+					<StarRatings
+						rating={_.rating}
+						starRatedColor='#F59B21'
+						numberOfStars={5}
+						starDimension='18px'
+						starSpacing='1px'
+						name='rating'
+					/>
+					<p className='fs-16 lc pt-1'>{'   ' + _.ratesCount}</p>
+				</div>
+			</div>
+		</div>
+	);
 };
 
 const Card = ({ _, i }) => {
@@ -71,27 +100,28 @@ const Card = ({ _, i }) => {
 	);
 };
 
-const cardWrapper = (_, i) => {
-	const iconRen = () => {
-		// var icon = icon;
-		// var index = Object.keys(imgNameArr).findIndex((val) => {
-		// 	debugger;
-		// 	console.log(_.componentType, val, _.componentType === val);
-		// 	return val === _.componentType;
-		// });
-		debugger;
-		var a = imgNameArr[_.componentType];
-		debugger;
-
-		return a;
-	};
+const CardWrapper = ({ _, i, selectedComponentType }) => {
 	return (
-		<div key={i} className='body_chargement_explore'>
-			<p className={i === 3 ? `fs-16` : 'fs-13 lc'}>
+		<motion.div
+			key={i}
+			variants={cardMotion}
+			initial='initial'
+			animate={
+				selectedComponentType === _.componentType ||
+				selectedComponentType === 'tous'
+					? 'initial'
+					: 'notSelected'
+			}
+			className='body_chargement_explore'
+		>
+			<p
+				className={`text-right ${false ? 'fs-16' : 'fs-13 lc'}`}
+				style={{ gridArea: 'date_card' }}
+			>
 				{moment(_.dateTime).format('D/MM/YYYY HH:mm')}
 			</p>
 			<div className='card_icons_explore'>
-				<div className='icon-wrapper-20 py-1'>
+				<div className='icon-wrapper-20 mx-1'>
 					<img src={imgNameArr[_.componentType]} alt='' />
 				</div>
 				<div style={{ height: '2.2rem' }}>
@@ -101,52 +131,40 @@ const cardWrapper = (_, i) => {
 			<div className='body_card_explore'>
 				<Card _={_} i={i} />
 			</div>
-		</div>
+		</motion.div>
 	);
 };
-
-const OfferCard = ({ _, i }) => {
-	return (
-		<div key={i} className='card_body'>
-			<div>
-				<p className='fs-16 lc'>
-					{_.message}
-					<span className='dc font-weight-bold'>{' ' + _.price} $</span>
-				</p>
-				<div className='d-flex align-items-end'>
-					<StarRatings
-						rating={_.rating}
-						starRatedColor='#F59B21'
-						numberOfStars={5}
-						starDimension='18px'
-						starSpacing='1px'
-						name='rating'
-					/>
-					<p className='fs-16 lc pt-1'>{'   ' + _.ratesCount}</p>
-				</div>
-			</div>
-		</div>
-	);
-};
-const Body = ({ orderEvents, showInserersPop }) => {
+const Body = ({ orderEvents, showInserersPop, selectedComponentType }) => {
 	return (
 		<div className='body_explore bg-card'>
-			{/* <div> */}
 			<Inserer />
 			<div className='body_chargements_explore'>
-				{showInserersPop !== null ? (
+				<motion.div
+					variants={msgFormMotion}
+					animate={showInserersPop === null ? 'initial' : 'insererExpanded'}
+				>
 					<MsgForm showInserersPop={showInserersPop} />
-				) : (
-					orderEvents?.map((_, i) => cardWrapper(_, i))
-				)}
+				</motion.div>
+				<motion.div
+					variants={cardWrapperMotion}
+					animate={showInserersPop !== null ? 'insererExpanded' : 'initial'}
+				>
+					{orderEvents?.map((_, i) => (
+						<CardWrapper
+							_={_}
+							i={i}
+							selectedComponentType={selectedComponentType}
+						/>
+					))}
+				</motion.div>
 			</div>
-			{/* </div> */}
 		</div>
 	);
 };
 
 const mapStateToProps = (state) => ({
 	showInserersPop: state.explore.showInserersPop,
+	selectedComponentType: state.explore.selectedComponentType,
 });
 
 export default connect(mapStateToProps, null)(Body);

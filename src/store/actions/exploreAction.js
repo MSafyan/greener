@@ -5,6 +5,7 @@ import {
 	ORDER_DETAILS_SUCCESS,
 	ORDER_DETAILS_FAIL,
 	SHOW_INSERERS_POP,
+	SELECTED_COMPONENT_TYPE,
 } from '../types';
 import { APIClient } from '../../api/exploreApiCore';
 import {
@@ -42,4 +43,8 @@ export const showInserersPopAction = (data) => (dispatch, getState) => {
 		data = null;
 	}
 	dispatch({ type: SHOW_INSERERS_POP, payload: data });
+};
+
+export const selectedComponentTypeAction = (data) => (dispatch) => {
+	dispatch({ type: SELECTED_COMPONENT_TYPE, payload: data });
 };
