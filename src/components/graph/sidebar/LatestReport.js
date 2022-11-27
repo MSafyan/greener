@@ -1,37 +1,21 @@
 import React from 'react';
-import moment from 'moment';
-import dots from '../../../assets/images/dots_explore.png';
-import NotificationRing from './popups/NoficationRing';
-import Inserer from './popups/inserer';
 import { connect } from 'react-redux';
-import MsgForm from './popups/MsgForm';
 import StarRatings from 'react-star-ratings';
-import audioDots from '../../../assets/images/audioDots.png';
+import location from '../../../assets/images/locationBlue.png';
+import NotificationRing from '../../explore/dialog/popups/NoficationRing';
 import audioPause from '../../../assets/images/audioPause.png';
+import audioDots from '../../../assets/images/audioDots.png';
 import trajet from '../../../assets/images/trajet.png';
 import activity from '../../../assets/images/activity.png';
 import incidents from '../../../assets/images/incidents.png';
 import document from '../../../assets/images/document.png';
 import msg from '../../../assets/images/msg.png';
 import offer from '../../../assets/images/offer.png';
-// import clock from '../../../assets/images/clock.png';
+import dots from '../../../assets/images/dots_explore.png';
+import report from '../../../assets/images/report.png';
 import { motion } from 'framer-motion';
-import {
-	cardMotion,
-	cardWrapperMotion,
-	msgFormMotion,
-} from '../../../helper/framermotion/dialog/inserer';
-
-const imgNameArr = {
-	// trajet: clock,
-	trajet: trajet,
-	activity: activity,
-	incidents: incidents,
-	document: document,
-	msg_text: msg,
-	msg_audio: msg,
-	offer: offer,
-};
+import { cardMotion } from '../../../helper/framermotion/dialog/inserer';
+import moment from 'moment';
 
 const OfferCard = ({ _, i }) => {
 	return (
@@ -100,19 +84,23 @@ const Card = ({ _, i }) => {
 	);
 };
 
+const imgNameArr = {
+	// trajet: clock,
+	trajet: trajet,
+	activity: activity,
+	incidents: incidents,
+	document: document,
+	msg_text: msg,
+	msg_audio: msg,
+	offer: offer,
+};
+
 export const CardWrapper = ({ _, i, selectedComponentType, counter }) => {
-	const show = selectedComponentType === 'tous' || counter[_.componentType] > 1;
 	return (
 		<motion.div
 			key={i}
 			variants={cardMotion}
 			initial='initial'
-			animate={
-				selectedComponentType === _.componentType ||
-				selectedComponentType === 'tous'
-					? 'initial'
-					: 'notSelected'
-			}
 			className='body_chargement_explore'
 		>
 			<p
@@ -121,15 +109,14 @@ export const CardWrapper = ({ _, i, selectedComponentType, counter }) => {
 			>
 				{moment(_.dateTime).format('D/MM/YYYY HH:mm')}
 			</p>
-			<div className={`card_icons_explore ${show && 'transform3vh'}`}>
+			<div className={`card_icons_explore transform3vh`}>
 				<div className='icon-wrapper-20' style={{ gridArea: 'icons_icon' }}>
 					<img src={imgNameArr[_.componentType]} alt='' width='100%' />
 				</div>
-				{show && (
-					<div className='dotted_border'>
-						<img src={dots} alt='' />
-					</div>
-				)}
+
+				<div className='dotted_border'>
+					<img src={dots} alt='' />
+				</div>
 			</div>
 			<div className='body_card_explore'>
 				<Card _={_} i={i} />
@@ -137,44 +124,41 @@ export const CardWrapper = ({ _, i, selectedComponentType, counter }) => {
 		</motion.div>
 	);
 };
-const Body = ({
-	orderEvents,
-	showInserersPop,
-	selectedComponentType,
-	counter,
-}) => {
+
+const LatestReport = ({ orderEvents, selectedComponentType, counter }) => {
 	return (
-		<div className='body_explore bg-card'>
-			<Inserer />
-			<div className='body_chargements_explore'>
-				<motion.div
-					variants={msgFormMotion}
-					animate={showInserersPop === null ? 'initial' : 'insererExpanded'}
-				>
-					<MsgForm showInserersPop={showInserersPop} />
-				</motion.div>
-				<motion.div
-					variants={cardWrapperMotion}
-					animate={showInserersPop !== null ? 'insererExpanded' : 'initial'}
-				>
-					{orderEvents?.map((_, i) => (
-						<CardWrapper
-							_={_}
-							counter={counter}
-							i={i}
-							selectedComponentType={selectedComponentType}
-						/>
-					))}
-				</motion.div>
+		<div>
+			<div className='reportHeading'>
+				<div className='icon-wrapper-20'>
+					<img src={location} alt='' height='100%' />
+				</div>
+				<p>Latest Report</p>
+			</div>
+			<div
+				className='reportCardWrapper'
+				style={{
+					height: '80%',
+					overflow: 'auto',
+				}}
+			>
+				{orderEvents?.map((_, i) => (
+					<CardWrapper _={_} i={i} />
+				))}
+			</div>
+			<div className='bg-main reportBtn mt-3'>
+				<div className='icon-wrapper-20'>
+					<img src={report} alt='' height='100%' />
+				</div>
+				<p>Generate Report</p>
 			</div>
 		</div>
 	);
 };
 
 const mapStateToProps = (state) => ({
-	showInserersPop: state.explore.showInserersPop,
-	selectedComponentType: state.explore.selectedComponentType,
+	orderEvents: state.explore.orderEvents,
 	counter: state.explore.counter,
+	selectedComponentType: state.explore.selectedComponentType,
 });
 
-export default connect(mapStateToProps, null)(Body);
+export default connect(mapStateToProps)(LatestReport);

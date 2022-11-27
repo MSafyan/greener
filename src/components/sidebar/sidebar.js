@@ -95,7 +95,9 @@ function Sidebar() {
 								content='Gerez la qualite'
 							/>
 						</Link>
-						<Li src={'fa-chart-pie'} display={hover} content='Statistiques' />
+						<Link to='/graph'>
+							<Li src={'fa-chart-pie'} display={hover} content='Statistiques' />
+						</Link>
 						<Li src={'fa-gear'} display={hover} content='Parametres' />
 					</ul>
 				</div>

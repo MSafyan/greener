@@ -1,0 +1,38 @@
+.sidebarWrapper {
+	grid-area: sidebar;
+	display: grid;
+	grid-template-rows: 10% 40% 50%;
+	grid-template-areas: 'time' 'tracking' 'latestReport';
+}
+
+.trackingWrapper {
+	grid-area: tracking;
+}
+
+.reportHeading {
+	display: flex;
+}
+
+.reportHeading > p {
+	margin-left: 0.5vw;
+}
+
+.reportCardWrapper {
+	height: 80%;
+	overflow: auto;
+	background-color: var(--bg-card);
+}
+
+.reportBtn {
+	border-radius: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0.4rem;
+}
+
+.reportBtn > p {
+	margin-left: 0.6vw;
+	color: white;
+	margin: 'auto';
+}

@@ -7,7 +7,6 @@ const sideDrawerExplore = ({ chargement }) => {
 		<div className='sidebar_explore'>
 			<div className='bg-card'>
 				<div className='head_sidebar_explore'>
-					{/* <div> */}
 					<p className='fs-13 text-center'>Prix négocié</p>
 					<div className='d-flex'>
 						<p className='fs-30'>{chargement.price} $</p>
@@ -18,7 +17,6 @@ const sideDrawerExplore = ({ chargement }) => {
 					<div className='img_sidebar_explore '>
 						<img src={money} height='100%' width='100%' alt='money' />
 					</div>
-					{/* </div> */}
 				</div>
 				<div className='body_sidebar_explore'>
 					{Object.keys(chargement).map((_, i) => {

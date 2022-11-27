@@ -11,6 +11,7 @@ import { persistor, store } from './store';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import Explore from './pages/Explore';
+import Graph from './pages/Graph';
 
 function App() {
 	useEffect(() => {
@@ -30,6 +31,7 @@ function App() {
 						<Route exact path={'/'} component={DashboardPanel} />
 						<Route exact path={'/expedition'} component={Expedition} />
 						<Route exact path={'/explore'} component={Explore} />
+						<Route exact path={'/graph'} component={Graph} />
 					</Router>
 				</Provider>
 			</div>
