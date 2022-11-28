@@ -101,7 +101,7 @@ export const CardWrapper = ({ _, i, selectedComponentType, counter }) => {
 			key={i}
 			variants={cardMotion}
 			initial='initial'
-			className='body_chargement_explore'
+			className='body_chargement_explore chargement_rewrite'
 		>
 			<p
 				className={`text-right ${false ? 'fs-16' : 'fs-13 lc'}`}

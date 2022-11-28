@@ -172,7 +172,6 @@
 
 .body_card_explore {
 	grid-area: body_card;
-	/* width: 21vw; */
 	padding: 1vw;
 	background-color: white;
 	margin: 0.7vw;
