@@ -7,14 +7,21 @@
 	border-bottom: 1px solid var(--primary_da);
 }
 
+
+/* .sensorWrapper :hover {
+	background-color: aliceblue;
+} */
+
 .sensorHeading {
 	font-size: 14px;
 	font-weight: 300;
+	text-align: center;
 }
 
 .sensorValue {
 	font-size: 18px;
 	font-weight: 400;
+	text-align: center;
 }
 
 .sensors {
