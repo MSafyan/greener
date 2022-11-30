@@ -46,7 +46,7 @@
 }
 
 .reportHeading > p {
-  margin-left: 0.5vw;
+  margin-left: 0.9vw;
 }
 
 .reportCardWrapper {
@@ -54,6 +54,7 @@
   overflow: auto;
   background-color: var(--bg-card);
 }
+
 
 .chargement_rewrite {
   width: 19vw;

@@ -1,16 +1,12 @@
 .sensorWrapper {
   grid-area: sensor;
   width: 100%;
-
 }
 
 .sensorCard {
   border-bottom: 1px solid var(--primary_da);
+  padding: 0.4vw 0.7vw 0.4vw 0.7vw;
 }
-
-/* .sensorWrapper :hover {
-	background-color: aliceblue;
-} */
 
 .sensorHeading {
   font-size: 14px;
@@ -34,6 +30,17 @@
   background-color: var(--bg-card);
   width: 100%;
   margin-left: 10px;
+  padding: 0.4vw 0.7vw 0.4vw 0.7vw;
+  border-radius: 0.7vw;
+}
+
+.reportHeadingSensor {
+  display: flex;
+  margin-top: 2vw;
+}
+
+.reportHeadingSensor > p {
+  margin-left: 0.9vw;
 }
 
 .valueBar {
