@@ -1,74 +1,74 @@
 .sidebarWrapper {
-	grid-area: sidebar;
-	display: grid;
-	grid-template-rows: 10% 40% 50%;
-	grid-template-areas: 'time' 'tracking' 'latestReport';
-	padding-right: 3vw;
+  grid-area: sidebar;
+  display: grid;
+  grid-template-rows: 10% 40% 50%;
+  grid-template-areas: "time" "tracking" "latestReport";
+  padding-right: 3vw;
 }
 
 .trackingWrapper {
-	grid-area: tracking;
+  grid-area: tracking;
 }
 
 .trackingRow {
-	display: flex;
-	justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .tracking14 {
-	font-size: 14;
-	font-weight: 500;
+  font-size: 14;
+  font-weight: 500;
 }
 .tracking13 {
-	font-size: 13;
-	font-weight: 300;
+  font-size: 10px;
+  font-weight: 300;
 }
 .tracking12 {
-	font-size: 13px;
-	font-weight: 300;
+  font-size: 13px;
+  font-weight: 300;
 }
 .tracking11 {
-	font-size: 11px;
-	font-weight: 300;
+  font-size: 11px;
+  font-weight: 300;
 }
 .tracking10 {
-	font-size: 10px;
-	font-weight: 300;
+  font-size: 10px;
+  font-weight: 300;
 }
 
 .trackingRow_head {
-	display: flex;
-	align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .reportHeading {
-	display: flex;
+  display: flex;
 }
 
 .reportHeading > p {
-	margin-left: 0.5vw;
+  margin-left: 0.5vw;
 }
 
 .reportCardWrapper {
-	height: 80%;
-	overflow: auto;
-	background-color: var(--bg-card);
+  height: 80%;
+  overflow: auto;
+  background-color: var(--bg-card);
 }
 
 .chargement_rewrite {
-	width: 20vw;
+  width: 19vw;
 }
 
 .reportBtn {
-	border-radius: 10px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	padding: 0.4rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem;
 }
 
 .reportBtn > p {
-	margin-left: 0.6vw;
-	color: white;
-	margin: 'auto';
+  margin-left: 0.6vw;
+  color: white;
+  margin: "auto";
 }
