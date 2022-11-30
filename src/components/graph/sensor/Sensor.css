@@ -49,3 +49,15 @@
 .valueBar > div > p {
 	font-size: 11px;
 }
+
+
+.reportHeadingSensor {
+	display: flex;
+	margin-left: 0.5vw;
+	margin-bottom: 0.5vw;
+	margin-top: 2vw;
+  }
+  
+  .reportHeadingSensor > p {
+	margin-left: 0.9vw;
+  }
