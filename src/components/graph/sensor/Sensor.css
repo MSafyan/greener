@@ -1,43 +1,63 @@
 .sensorWrapper {
-	grid-area: sensor;
-	width: 100%;
+  grid-area: sensor;
+  width: 100%;
 }
 
 .sensorCard {
-	border-bottom: 1px solid var(--primary_da);
+  border-bottom: 1px solid var(--primary_da);
 }
 
+/* .sensorWrapper :hover {
+	background-color: aliceblue;
+} */
+
 .sensorHeading {
-	font-size: 14px;
-	font-weight: 300;
+  font-size: 14px;
+  font-weight: 300;
+  text-align: center;
 }
 
 .sensorValue {
-	font-size: 18px;
-	font-weight: 400;
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
 }
 
 .sensors {
-	display: flex;
-	overflow: auto;
-	width: 100%;
+  display: flex;
+  overflow: auto;
+  width: 100%;
 }
 
 .sensor {
-	background-color: var(--bg-card);
-	width: 20%;
+  background-color: var(--bg-card);
+  width: 100%;
+  margin-left: 10px;
+  border-radius: 0.7vw;
+  padding: 0.4vw 0.5vw 0.4vw 0.5vw;
 }
 
 .valueBar {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .valueBar > div {
-	display: flex;
+  display: flex;
 }
 
 .valueBar > div > p {
-	font-size: 11px;
+  font-size: 11px;
+}
+
+.reportHeadingSensor {
+  display: flex;
+  margin-left: 0.5vw;
+  margin-bottom: 0.5vw;
+  margin-top: 2vw;
+}
+
+.reportHeadingSensor > p {
+  margin-left: 0.9vw;
 }

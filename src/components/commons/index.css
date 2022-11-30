@@ -1,142 +1,143 @@
 :root {
-	--bg-card: #f8f9f9;
-	--primary_da: #91c251;
-	--secondary_da: #283c7e;
-	--tertiary: #149ad7;
-	--red: red;
-	--dc: #212121;
-	--lc: #666666;
-	--lc2: #bcbcbc;
+  --bg-card: #f8f9f9;
+  --primary_da: #91c251;
+  --secondary_da: #283c7e;
+  --tertiary: #149ad7;
+  --red: red;
+  --dc: #212121;
+  --lc: #666666;
+  --lc2: #bcbcbc;
 
-	--firstColumn: 5;
-	--secondColumn: 10;
-	--thirdColumn: 1.6;
-	--twoColumns: 11.6;
+  --firstColumn: 5;
+  --secondColumn: 10;
+  --thirdColumn: 1.6;
+  --twoColumns: 11.6;
 }
 
 /* colors */
 .bg-card {
-	background-color: var(--bg-card);
-	scrollbar-width: thin;
-	scrollbar-color: var(--lc);
+  background-color: var(--bg-card);
+  scrollbar-width: thin;
+  scrollbar-color: var(--lc);
 }
 
 .status-card {
-	padding: 0.4vw 0.7vw 0.4vw 0.7vw;
-	border-radius: 0.7vw;
+  padding: 0.4vw 0.7vw 0.4vw 0.7vw;
+  border-radius: 0.7vw;
 }
 
 .cursor-pointer {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 .smooth_scroll {
-	scroll-behavior: smooth;
-	overflow: auto;
-	-ms-overflow-style: none; /* Internet Explorer 10+ */
-	scrollbar-width: none; /* Firefox */
+  scroll-behavior: smooth;
+  overflow: auto;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
 }
 
 .smooth_scroll::-webkit-scrollbar {
-	display: none; /* Safari and Chrome */
+  display: none; /* Safari and Chrome */
 }
 
 .bg-main {
-	background-color: var(--primary_da);
+  background-color: var(--primary_da);
 }
 
 .lc {
-	color: var(--lc);
+  color: var(--lc);
 }
 
 .mc {
-	color: var(--primary_da);
+  color: var(--primary_da);
 }
 
 .sc {
-	color: var(--secondary_da);
+  color: var(--secondary_da);
 }
 
 .tc {
-	color: var(--tertiary);
+  color: var(--tertiary);
 }
 .lc {
-	color: var(--lc);
+  color: var(--lc);
 }
 
 .rc {
-	color: var(--red);
+  color: var(--red);
 }
 .dc {
-	color: var(--dc);
+  color: var(--dc);
 }
 
 /* fontsizes */
 .fs-30 {
-	font-size: 1.6vw;
+  font-size: 1.6vw;
 }
 .fs-20 {
-	font-size: 1vw;
+  font-size: 1vw;
 }
 
 .fs-16 {
-	font-size: 0.84vw;
+  font-size: 0.84vw;
 }
 .fs-13 {
-	font-size: 0.68vw;
+  font-size: 0.68vw;
 }
 .fs-8 {
-	font-size: 0.5vw;
+  font-size: 0.5vw;
 }
 
 .font_500 {
-	font-weight: 500;
+  font-weight: 500;
 }
 
 /* icons */
 .s-icon {
-	color: #283c7e;
+  color: #283c7e;
 }
 
 .icon-wrapper-25 {
-	cursor: pointer;
-	width: 1.5vw;
+  cursor: pointer;
+  width: 1.5vw;
 }
 .icon-wrapper-20 {
-	cursor: pointer;
-	width: 1.2vw;
+  cursor: pointer;
+  width: 1.2vw;
 }
 .icon-wrapper-15 {
-	cursor: pointer;
-	width: 0.9vw;
-	height: 0.9vw;
+  cursor: pointer;
+  width: 0.9vw;
+  height: 0.9vw;
+  margin-top: -15px;
 }
 
 .icon-wrapper-12 {
-	cursor: pointer;
-	width: 0.7vw;
-	height: 0.7vw;
+  cursor: pointer;
+  width: 0.7vw;
+  height: 0.7vw;
 }
 
 .text-right {
-	text-align: right;
+  text-align: right;
 }
 
 .ml-1 {
-	margin-left: 0.2vw;
+  margin-left: 0.2vw;
 }
 
 * ::-webkit-scrollbar {
-	width: 3px;
-	height: 3px;
-	border-radius: 100%;
+  width: 3px;
+  height: 3px;
+  border-radius: 100%;
 }
 
 * ::-webkit-scrollbar-track {
-	background: var(--lc2);
-	margin-right: 10px;
+  background: var(--lc2);
+  margin-right: 10px;
 }
 
 * ::-webkit-scrollbar-thumb {
-	background: var(--lc);
+  background: var(--lc);
 }

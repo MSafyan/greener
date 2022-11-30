@@ -165,7 +165,7 @@
 .body_chargement_explore {
 	display: grid;
 	grid-template-areas: 'date_card icon_card body_card';
-	grid-template-columns: 7vw auto 21vw;
+	grid-template-columns: 4vw auto 17vw;
 	align-items: center;
 	width: 30.8vw;
 }
