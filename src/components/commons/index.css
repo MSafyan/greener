@@ -110,6 +110,7 @@
   cursor: pointer;
   width: 0.9vw;
   height: 0.9vw;
+  margin-top: -15px;
 }
 
 .icon-wrapper-12 {
