@@ -1,8 +1,8 @@
 .sidebarWrapper {
   grid-area: sidebar;
   display: grid;
-  grid-template-rows: 10% 40% 50%;
-  grid-template-areas: "time" "tracking" "latestReport";
+  grid-template-rows: 10% 40% 40% 10%;
+  grid-template-areas: "time" "tracking" "latestReport" "button";
   padding-right: 3vw;
 }
 
@@ -52,9 +52,12 @@
 .reportCardWrapper {
   height: 80%;
   overflow: auto;
-  background-color: var(--bg-card);
+  background-color: #f5f5f5;
+  margin-left: 0.8vw;
+  padding-left: 0.3vw;
+  border-radius: 7px;
+  width: 92%;
 }
-
 
 .chargement_rewrite {
   width: 19vw;

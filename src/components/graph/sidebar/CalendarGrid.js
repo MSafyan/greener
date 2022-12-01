@@ -18,10 +18,10 @@ function CalendarGrid() {
     <>
       <Container className="grid_container">
         <Row>
-          <Col md={1} sm={2} xs={2}>
+          <Col md={2} sm={2} xs={2}>
             <img src={CalendarIcon} alt="" height="50%" />
           </Col>
-          <Col md={11} sm={10} xs={10}>
+          <Col md={8} sm={8} xs={8}>
             <DatePicker
               selected={date}
               onChange={onChange}

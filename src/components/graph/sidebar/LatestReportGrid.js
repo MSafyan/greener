@@ -5,7 +5,7 @@ import Col from "react-bootstrap/Col";
 import LatestReport from "../../../assets/images/clipboard-approve.png";
 import "./Grid.css";
 
-function CalendarGrid() {
+function LatestReportGrid() {
   return (
     <>
       <Container className="latest-report-container">
@@ -22,4 +22,4 @@ function CalendarGrid() {
   );
 }
 
-export default CalendarGrid;
+export default LatestReportGrid;
