@@ -9,9 +9,8 @@
 .grid-Container {
   margin: 0;
   padding: 0;
-  height: 90vh;
+  height: 100vh;
 }
-
 
 .header {
   grid-area: header;
