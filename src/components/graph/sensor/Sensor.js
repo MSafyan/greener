@@ -1,5 +1,5 @@
 import React from "react";
-import chartsensor from "../../../assets/images/chartsensor.png";
+import chartsensor from "../../../assets/images/bar-chart.png";
 import "./Sensor.css";
 import { ActivityData } from "../../../shippmentActivity";
 import {
@@ -19,9 +19,11 @@ const Sensor = () => {
     <div className="sensorWrapper">
       <div className="reportHeadingSensor">
         <div className="icon-wrapper-20">
-          <img src={chartsensor} alt="" height="100%" />
+          <img src={chartsensor} alt="" height="50%" />
         </div>
-        <p>Sensors</p>
+        <div>
+          <p>Sensors</p>
+        </div>
       </div>
       <div className="sensors">
         {ActivityData.sensors.map((_, i) => {
@@ -49,7 +51,9 @@ const SensorCard = ({ _ }) => {
           <p>{Number(_.avg).toFixed(2)}</p>
         </div>
       </div>
-      <Chart chartData={_.data} />
+      <div style={{ backgroundColor: "#E6E6E6" }}>
+        <Chart chartData={_.data} />
+      </div>
     </div>
   );
 };
