@@ -32,9 +32,9 @@ const sideVariants = {
 
 const itemVariants = {
   closed: {
-    opacity: 0
+    opacity: 0,
   },
-  open: { opacity: 1 }
+  open: { opacity: 1 },
 };
 
 const Sensor = () => {
@@ -103,6 +103,9 @@ const SensorCard = ({ _ }) => {
       </div>
       <div style={{ backgroundColor: "#E6E6E6" }}>
         <Chart chartData={_.data} />
+      </div>
+      <div class="overlay">
+        <p class="textValue">Open Graph</p>
       </div>
     </div>
   );

@@ -31,10 +31,30 @@
 
 .sensor {
   background-color: var(--bg-card);
+  position: relative;
   width: 100%;
   margin-left: 6px;
   border-radius: 0.7vw;
   padding: 0.4vw 0.5vw 0.4vw 0.5vw;
+}
+
+.sensor:hover .overlay {
+  opacity: 1;
+  height: 98%;
+  border-radius: 0.7vw;
+}
+
+.overlay {
+  position: absolute;
+  transition: 0.7s ease-in;
+  opacity: 0;
+  width: 95%;
+  height: 0;
+  top: 0;
+  background-color: #a9a9a900;
+  -webkit-backdrop-filter: blur(30px) brightness(0.97);
+  backdrop-filter: blur(30px) brightness(0.97);
+  z-index: 6;
 }
 
 .valueBar {
@@ -79,4 +99,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.textValue {
+  font-size: 15px;
+  font-weight: 400;
+  text-align: center;
+  padding: 20%;
+  padding-top: 40%;
 }
