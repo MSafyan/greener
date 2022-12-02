@@ -9,7 +9,7 @@ import TrackingCard from "../components/graph/sidebar/TrackingCard";
 import LatestReportGrid from "../components/graph/sidebar/LatestReportGrid";
 import LatestReport from "../components/graph/sidebar/LatestReport";
 import Sidebar from "../components/graph/sidebar/Sidebar";
-import Sensor from "../components/graph/sensor/Sensor";
+import Sensor from "../components/graph/sensor/SensorTest";
 import Map from "../components/graph/map/Map";
 import Layout from "../components/layout/Index";
 
