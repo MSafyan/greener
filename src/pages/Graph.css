@@ -1,11 +1,17 @@
 .graphWrapper {
 	display: grid;
-	grid-template-columns: 20vw 70vw;
+	grid-template-columns: 25vw 70vw;
 	grid-template-rows: 5.4fr 3.6fr;
 	grid-template-areas: 'sidebar map' 'sidebar sensor';
-	height: 90vh;
+	height: 100vh;
+}
+
+.grid-Container {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
 }
 
 .header {
-	grid-area: header;
+  grid-area: header;
 }

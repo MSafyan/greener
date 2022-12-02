@@ -1,17 +1,19 @@
-import React from 'react';
-import Time from './Time';
-import Tracking from './Tracking';
-import LatestReport from './LatestReport';
-import './Sidebar.css';
+import React from "react";
+import CalendarGrid from "./CalendarGrid";
+import TrackingCard from "./TrackingCard";
+import LatestReport from "./LatestReport";
+import Button from "./Button";
+import "./Sidebar.css";
 
 const Sidebar = () => {
-	return (
-		<div className='sidebarWrapper'>
-			<Time />
-			<Tracking />
-			<LatestReport />
-		</div>
-	);
+  return (
+    <div className="sidebarWrapper">
+      <CalendarGrid />
+      <TrackingCard />
+      <LatestReport />
+      <Button />
+    </div>
+  );
 };
 
 export default Sidebar;
