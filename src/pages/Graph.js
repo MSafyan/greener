@@ -20,7 +20,7 @@ const Graph = () => {
     <>
       <div className="graphWrapper">
         <Sidebar />
-        <Map isOpen={isOpen} />
+        <Map/>
         <Sensor isOpen={isOpen} setIsOpen={setIsOpen} />
       </div>
     </>

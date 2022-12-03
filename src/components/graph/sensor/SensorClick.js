@@ -8,10 +8,22 @@ const phaseMotion = {
   },
   sensorCollasped: {
     // phaseClosed ka scene hai yaha
-    height: "16vh",
-    y: 200,
+    height: "46vh",
+    y: 5,
     transition,
   },
 };
 
-export { phaseMotion };
+const mapMotion = {
+  initial: {
+    height: "60vh",
+    transition,
+  },
+  mapExpand: {
+    // phaseClosed ka scene hai yaha
+    height: "80vh",
+    transition,
+  },
+};
+
+export { phaseMotion, mapMotion };

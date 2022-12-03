@@ -1,10 +1,15 @@
 import React from "react";
 import { GoogleMap, useJsApiLoader } from "@react-google-maps/api";
 import "./Map.css";
+import { motion } from "framer-motion";
+import { mapMotion } from "../sensor/SensorClick";
+import { sensorAction } from "../../../store/actions/sensorAction";
+import { connect } from "react-redux";
+import { Container } from "react-bootstrap";
 
 const containerStyle = {
-  width: "400px",
-  height: "400px",
+  width: "100%",
+  height: "100%",
 };
 
 const center = {
@@ -12,7 +17,7 @@ const center = {
   lng: -38.523,
 };
 
-const Map = ({ isOpen }) => {
+const Map = ({ sensorCollaspe, sensorAction }) => {
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
     googleMapsApiKey: "AIzaSyDpCJsLF8hJEpl6LQFimeHr_Syl6LedFFw",
@@ -32,22 +37,32 @@ const Map = ({ isOpen }) => {
     setMap(null);
   }, []);
 
-  console.log("inside map", isOpen);
-
   return isLoaded ? (
-    <GoogleMap
-      center={center}
-      zoom={10}
-      onLoad={onLoad}
-      onUnmount={onUnmount}
-      style={{ height: isOpen ? 90 : 50 }}
+    <motion.div
+      variants={mapMotion}
+      animate={sensorCollaspe ? "mapExpand" : "initial"}
+      initial={"initial"}
     >
-      {/* Child components, such as markers, info windows, etc. */}
-      <></>
-    </GoogleMap>
+      <GoogleMap
+        center={center}
+        zoom={10}
+        onLoad={onLoad}
+        onUnmount={onUnmount}
+        mapContainerStyle={containerStyle}
+      >
+        {/* Child components, such as markers, info windows, etc. */}
+        <></>
+      </GoogleMap>
+    </motion.div>
   ) : (
     <></>
   );
 };
 
-export default Map;
+const mapStateToProps = (state) => ({
+  sensorCollaspe: state.sensor.sensorCollaspe,
+});
+
+export default connect(mapStateToProps, {
+  sensorAction,
+})(Map);

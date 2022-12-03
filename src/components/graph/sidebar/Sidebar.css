@@ -4,6 +4,7 @@
   grid-template-rows: 10% 40% 40% 10%;
   grid-template-areas: "time" "tracking" "latestReport" "button";
   padding-right: 3vw;
+  height: 710px;
 }
 
 .trackingWrapper {
