@@ -14,37 +14,17 @@ import {
 } from "chart.js";
 import { Line } from "react-chartjs-2";
 import { motion, Variants } from "framer-motion";
+import { phaseMotion } from "./SensorClick";
+import { sensorAction } from "../../../store/actions/sensorAction";
+import { connect } from "react-redux";
 
-const sideVariants = {
-  closed: {
-    transition: {
-      staggerChildren: 0.2,
-      staggerDirection: -1,
-    },
-  },
-  open: {
-    transition: {
-      staggerChildren: 0.2,
-      staggerDirection: 1,
-    },
-  },
-};
-
-const itemVariants = {
-  closed: {
-    opacity: 0,
-  },
-  open: { opacity: 1 },
-};
-
-const Sensor = ({ isOpen, setIsOpen }) => {
-  console.log("inside sensor", isOpen);
+const Sensor = ({ sensorCollaspe, sensorAction }) => {
   return (
     <motion.div
       className="sensorWrapper"
-      initial={false}
-      animate={isOpen ? "open" : "closed"}
-      variants={sideVariants}
+      variants={phaseMotion}
+      animate={sensorCollaspe ? "sensorCollasped" : "initial"}
+      initial={"initial"}
     >
       <div className="reportHeadingSensor">
         <div className="icon-wrapper-20">
@@ -54,31 +34,27 @@ const Sensor = ({ isOpen, setIsOpen }) => {
           <p>Sensors</p>
         </div>
         <div>
-          <motion.button
+          <button
             whileTap={{ scale: 0.97 }}
-            onClick={() => setIsOpen(!isOpen)}
             className="button"
+            onClick={() => {
+              console.log("On CLick");
+              sensorAction();
+            }}
           >
-            <motion.div
-              variants={{
-                open: { rotate: 180 },
-                closed: { rotate: 0 },
-              }}
-              transition={{ duration: 0.2 }}
-              style={{ originY: 0.55 }}
-            >
+            <div>
               <svg width="15" height="15" viewBox="0 0 20 20">
                 <path d="M0 7 L 20 7 L 10 16" />
               </svg>
-            </motion.div>
-          </motion.button>
+            </div>
+          </button>
         </div>
       </div>
-      <motion.div className="sensors" variants={itemVariants}>
+      <div className="sensors">
         {ActivityData.sensors.map((_, i) => {
           return <SensorCard _={_} />;
         })}
-      </motion.div>
+      </div>
     </motion.div>
   );
 };
@@ -153,4 +129,10 @@ export function Chart({ chartData }) {
   return <Line options={options} data={data} />;
 }
 
-export default Sensor;
+const mapStateToProps = (state) => ({
+  sensorCollaspe: state.sensor.sensorCollaspe,
+});
+
+export default connect(mapStateToProps, {
+  sensorAction,
+})(Sensor);

@@ -1,16 +1,16 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { phaseAction } from "../../../../store/actions/dashboardAction";
+import { phaseAction } from "../../../store/actions/dashboardAction";
 import { connect } from "react-redux";
-import wave from "../../../../assets/images/wave.png";
+import wave from "../../../assets/images/wave.png";
 import {
   phaseMotion,
   itemsMotion,
   phaseRing1Motion,
   phaseItemMotion,
-} from "../../../../helper/framermotion/phaseClick";
-import { phaseColorBar } from "../../../../data/colors";
-import { Animate } from "../../../../helper/functions";
+} from "../../../helper/framermotion/phaseClick";
+import { phaseColorBar } from "../../../data/colors";
+import { Animate } from "../../../helper/functions";
 
 const Phase = ({ phaseAction, phaseOpen, phase, ringsForward }) => {
   return (
@@ -22,13 +22,13 @@ const Phase = ({ phaseAction, phaseOpen, phase, ringsForward }) => {
         phaseAction();
       }}
     >
-      <motion.div
+      {/* <motion.div
         variants={phaseRing1Motion}
         animate={phaseOpen || ringsForward ? "phaseOpened" : "initial"}
         className="phase_ring"
       >
         <img src={wave} alt="" width="100%" height="100%" />
-      </motion.div>
+      </motion.div> */}
 
       <div className="phase_inner_div">
         <div className="fs-20 lc">

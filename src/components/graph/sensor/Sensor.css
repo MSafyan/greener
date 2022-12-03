@@ -1,6 +1,9 @@
 .sensorWrapper {
   grid-area: sensor;
   width: 100%;
+  background-color: aliceblue;
+  position: relative;
+  overflow: hidden;
 }
 
 .sensorCard {
