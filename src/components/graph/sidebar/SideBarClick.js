@@ -40,13 +40,13 @@ const mapSlideOutMotion = {
   //   transition,
   // },
   sObO: {
-    width: "100vw",
+    width: "70vw",
     x: 0,
     height: "65vh",
     transition,
   },
   sObC: {
-    width: "100vw",
+    width: "70vw",
     x: 0,
     height: "80vh",
     transition,
