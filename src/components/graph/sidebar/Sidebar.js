@@ -8,8 +8,11 @@ import { motion } from "framer-motion";
 import { slideinMotion } from "./SideBarClick";
 import { slideinAction } from "../../../store/actions/slideinAction";
 import { connect } from "react-redux";
-import { buttonAnimate } from "../../../helper/functions";
-import { buttonDivSlideOutMotion } from "../sidebar/SideBarClick";
+import { buttonAnimate, buttonRotateAnimate } from "../../../helper/functions";
+import {
+  buttonDivSlideOutMotion,
+  buttonRotateMotion,
+} from "../sidebar/SideBarClick";
 
 const Sidebar = ({ slideIn, slideinAction }) => {
   return (
@@ -43,7 +46,11 @@ const Sidebar = ({ slideIn, slideinAction }) => {
             }}
             style={{ opacity: 1, display: "block" }}
           >
-            <motion.div>
+            <motion.div
+              variants={buttonRotateMotion}
+              animate={buttonRotateAnimate}
+              style={{ originY: 0.55 }}
+            >
               <svg width="15" height="15" viewBox="0 0 20 20">
                 <path d="M0 7 L 20 7 L 10 16" />
               </svg>

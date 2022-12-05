@@ -96,35 +96,22 @@ export const sensorAnimate = () => {
 };
 
 export const buttonAnimate = () => {
-  // const { slideIn } = store.getState().slidein;
-  // const { sensorCollaspe } = store.getState().sensor;
-  // if (slideIn) {
-  //   return "initial";
-  // }
-  // if (!slideIn) {
-  //   return "mapExpand";
-  // }
-  // if (sensorCollaspe) {
-  //   return "initial";
-  // }
-  // if (!sensorCollaspe) {
-  //   return "sensorCollasped";
-  // }
   const { slideIn } = store.getState().slidein;
-
-  if (slideIn) {
-    return "buttonInitial";
-  }
 
   if (!slideIn) {
     return "buttonDivSlideOut";
   }
-  // if (!sensorCollaspe) {
-  //   console.log("map expand");
-  //   return "sCbO";
-  // }
-  // if (sensorCollaspe) {
-  //   console.log("map Collaspe");
-  //   return "sCbC";
-  // }
 };
+
+export const buttonRotateAnimate = () => {
+  const { slideIn } = store.getState().slidein;
+
+  if (slideIn) {
+    return "open";
+  }
+  if (!slideIn) {
+    return "close";
+  }
+
+};
+
