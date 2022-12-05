@@ -59,7 +59,7 @@ const mapSlideOutMotion = {
   },
   sCbC: {
     width: "100vw",
-    x: -300,
+    x: -380,
     height: "80vh",
     transition,
   },
