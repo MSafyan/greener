@@ -1,9 +1,11 @@
 .graphWrapper {
-	display: grid;
-	grid-template-columns: 25vw 70vw;
-	grid-template-rows: 5.4fr 3.6fr;
-	grid-template-areas: 'sidebar map' 'sidebar sensor';
-	height: 100vh;
+  display: grid;
+  grid-template-columns: 25vw 70vw;
+  grid-template-rows: 65vh 30vh;
+  grid-template-areas: "sidebar map" "sidebar sensor";
+  height: 100vh;
+  overflow: hidden;
+  /* Sensor Overflow */
 }
 
 .grid-Container {
