@@ -1,6 +1,6 @@
-import { SENSOR_COLLASPE } from "../types";
+import { SENSOR_COLLASPE, SLIDE_IN } from "../types";
 
 export const sensorAction = () => async (dispatch) => {
-	console.log("State Action")
+  console.log("State sensor Action");
   dispatch({ type: SENSOR_COLLASPE });
 };

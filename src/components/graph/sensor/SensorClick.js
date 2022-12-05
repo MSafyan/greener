@@ -2,21 +2,21 @@ import { transition } from "../../../helper/framermotion/common";
 
 const phaseMotion = {
   initial: {
-    height: "37vh",
+    height: "30vh",
     y: 0,
     transition,
   },
   sensorCollasped: {
     // phaseClosed ka scene hai yaha
-    height: "46vh",
-    y: 5,
+    height: "14vh",
+    y: 195,
     transition,
   },
 };
 
 const mapMotion = {
   initial: {
-    height: "60vh",
+    height: "65vh",
     transition,
   },
   mapExpand: {

@@ -3,9 +3,11 @@ import { GoogleMap, useJsApiLoader } from "@react-google-maps/api";
 import "./Map.css";
 import { motion } from "framer-motion";
 import { mapMotion } from "../sensor/SensorClick";
+import { mapSlideOutMotion } from "../sidebar/SideBarClick";
 import { sensorAction } from "../../../store/actions/sensorAction";
 import { connect } from "react-redux";
 import { Container } from "react-bootstrap";
+import { mapAnimate } from "../../../helper/functions";
 
 const containerStyle = {
   width: "100%",
@@ -17,7 +19,7 @@ const center = {
   lng: -38.523,
 };
 
-const Map = ({ sensorCollaspe, sensorAction }) => {
+const Map = ({ slideIn, sensorCollaspe }) => {
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
     googleMapsApiKey: "AIzaSyDpCJsLF8hJEpl6LQFimeHr_Syl6LedFFw",
@@ -37,11 +39,13 @@ const Map = ({ sensorCollaspe, sensorAction }) => {
     setMap(null);
   }, []);
 
+  console.log("Maps", slideIn);
   return isLoaded ? (
     <motion.div
-      variants={mapMotion}
-      animate={sensorCollaspe ? "mapExpand" : "initial"}
-      initial={"initial"}
+      variants={mapSlideOutMotion}
+      animate={mapAnimate}
+      className="mapWrapper"
+      style={{ color: "red" }}
     >
       <GoogleMap
         center={center}
@@ -60,6 +64,7 @@ const Map = ({ sensorCollaspe, sensorAction }) => {
 };
 
 const mapStateToProps = (state) => ({
+  slideIn: state.slidein.slideIn,
   sensorCollaspe: state.sensor.sensorCollaspe,
 });
 

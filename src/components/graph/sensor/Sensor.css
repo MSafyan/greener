@@ -1,9 +1,9 @@
 .sensorWrapper {
   grid-area: sensor;
   width: 100%;
-
   position: relative;
   overflow: hidden;
+  max-height: max-content;
 }
 
 .sensorCard {
@@ -29,13 +29,13 @@
 .sensors {
   display: flex;
   overflow: auto;
-  width: 100%;
+  width: 70vw;
 }
 
 .sensor {
   background-color: var(--bg-card);
   position: relative;
-  width: 100%;
+  width: 20vw;
   margin-left: 6px;
   border-radius: 0.7vw;
   padding: 0.4vw 0.5vw 0.4vw 0.5vw;

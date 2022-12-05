@@ -15,16 +15,17 @@ import {
 import { Line } from "react-chartjs-2";
 import { motion, Variants } from "framer-motion";
 import { phaseMotion } from "./SensorClick";
+import { slideinMotion } from "../sidebar/SideBarClick";
 import { sensorAction } from "../../../store/actions/sensorAction";
 import { connect } from "react-redux";
+import { sensorAnimate } from "../../../helper/functions";
 
 const Sensor = ({ sensorCollaspe, sensorAction }) => {
   return (
     <motion.div
       className="sensorWrapper"
       variants={phaseMotion}
-      animate={sensorCollaspe ? "sensorCollasped" : "initial"}
-      initial={"initial"}
+      animate={sensorAnimate}
     >
       <div className="reportHeadingSensor">
         <div className="icon-wrapper-20">
