@@ -5,16 +5,17 @@ const slideinMotion = {
     width: "25vw",
     x: 0,
     dispay: "grid",
+    transition: {
+      duration: 0.9,
+      type: "tween",
+      ease: "easeOut",
+    },
   },
   hidden: {
     // opacity: 0,
     width: "0vw",
     display: "none",
-    transition: {
-      duration: 0.1,
-      type: "tween",
-      ease: "easeOut",
-    },
+    transition,
   },
 };
 const mapSlideOutMotion = {
@@ -52,7 +53,7 @@ const mapSlideOutMotion = {
   },
   sCbO: {
     width: "100vw",
-    x: -300,
+    x: -380,
     height: "65vh",
     transition,
   },
