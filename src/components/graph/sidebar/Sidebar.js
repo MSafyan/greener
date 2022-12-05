@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 import { slideinMotion } from "./SideBarClick";
 import { slideinAction } from "../../../store/actions/slideinAction";
 import { connect } from "react-redux";
-import { buttonAnimate, buttonRotateAnimate } from "../../../helper/functions";
+import { buttonAnimate, buttonSlideInRotateAnimate } from "../../../helper/functions";
 import {
   buttonDivSlideOutMotion,
   buttonRotateMotion,
@@ -48,7 +48,7 @@ const Sidebar = ({ slideIn, slideinAction }) => {
           >
             <motion.div
               variants={buttonRotateMotion}
-              animate={buttonRotateAnimate}
+              animate={buttonSlideInRotateAnimate}
               style={{ originY: 0.55 }}
             >
               <svg width="15" height="15" viewBox="0 0 20 20">

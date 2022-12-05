@@ -103,7 +103,7 @@ export const buttonAnimate = () => {
   }
 };
 
-export const buttonRotateAnimate = () => {
+export const buttonSlideInRotateAnimate = () => {
   const { slideIn } = store.getState().slidein;
 
   if (slideIn) {
@@ -112,6 +112,15 @@ export const buttonRotateAnimate = () => {
   if (!slideIn) {
     return "close";
   }
-
 };
 
+export const buttonSlideDownRotateAnimate = () => {
+  const { sensorCollaspe } = store.getState().sensor;
+
+  if (sensorCollaspe) {
+    return "up";
+  }
+  // if (!sensorCollaspe) {
+  //   return "down";
+  // }
+};

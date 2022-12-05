@@ -80,26 +80,6 @@ const sensorSlideDownMotion = {
 };
 
 const buttonDivSlideOutMotion = {
-  // mapSlideIn: {
-  //   width: "100vw",
-  //   x: -300,
-  //   transition,
-  // },
-  // mapSlideOut: {
-  //   // phaseClosed ka scene hai yaha
-  //   width: "100vw",
-  //   x: 0,
-  //   transition,
-  // },
-  // initial: {
-  //   height: "65vh",
-  //   transition,
-  // },
-  // mapExpand: {
-  //   // phaseClosed ka scene hai yaha
-  //   height: "80vh",
-  //   transition,
-  // },
   buttonDivSlideOut: {
     x: -380,
     transition: {
@@ -109,26 +89,6 @@ const buttonDivSlideOutMotion = {
 };
 
 const buttonRotateMotion = {
-  // mapSlideIn: {
-  //   width: "100vw",
-  //   x: -300,
-  //   transition,
-  // },
-  // mapSlideOut: {
-  //   // phaseClosed ka scene hai yaha
-  //   width: "100vw",
-  //   x: 0,
-  //   transition,
-  // },
-  // initial: {
-  //   height: "65vh",
-  //   transition,
-  // },
-  // mapExpand: {
-  //   // phaseClosed ka scene hai yaha
-  //   height: "80vh",
-  //   transition,
-  // },
   open: {
     rotate: 90,
     transition: {
@@ -144,10 +104,27 @@ const buttonRotateMotion = {
   },
 };
 
+const buttonSlideDownRotateMotion = {
+  up: {
+    rotate: 180,
+    transition: {
+      duration: 0.2,
+    },
+  },
+
+  // down: {
+  //   rotate: 180,
+  //   transition: {
+  //     duration: 0.2,
+  //   },
+  // },
+};
+
 export {
   slideinMotion,
   mapSlideOutMotion,
   sensorSlideDownMotion,
   buttonDivSlideOutMotion,
   buttonRotateMotion,
+  buttonSlideDownRotateMotion,
 };

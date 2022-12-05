@@ -18,8 +18,14 @@ import { phaseMotion } from "./SensorClick";
 import { slideinMotion } from "../sidebar/SideBarClick";
 import { sensorAction } from "../../../store/actions/sensorAction";
 import { connect } from "react-redux";
-import { sensorAnimate } from "../../../helper/functions";
-import { sensorSlideDownMotion } from "../sidebar/SideBarClick";
+import {
+  sensorAnimate,
+  buttonSlideDownRotateAnimate,
+} from "../../../helper/functions";
+import {
+  sensorSlideDownMotion,
+  buttonSlideDownRotateMotion,
+} from "../sidebar/SideBarClick";
 
 const Sensor = ({ sensorCollaspe, sensorAction }) => {
   return (
@@ -44,11 +50,15 @@ const Sensor = ({ sensorCollaspe, sensorAction }) => {
               sensorAction();
             }}
           >
-            <div>
+            <motion.div
+              variants={buttonSlideDownRotateMotion}
+              animate={buttonSlideDownRotateAnimate}
+              style={{ originY: 0.55 }}
+            >
               <svg width="15" height="15" viewBox="0 0 20 20">
                 <path d="M0 7 L 20 7 L 10 16" />
               </svg>
-            </div>
+            </motion.div>
           </button>
         </div>
       </div>
