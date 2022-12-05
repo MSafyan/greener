@@ -5,16 +5,17 @@ const slideinMotion = {
     width: "25vw",
     x: 0,
     dispay: "grid",
+    transition: {
+      duration: 0.9,
+      type: "tween",
+      ease: "easeOut",
+    },
   },
   hidden: {
     // opacity: 0,
     width: "0vw",
     display: "none",
-    transition: {
-      duration: 0.1,
-      type: "tween",
-      ease: "easeOut",
-    },
+    transition,
   },
 };
 const mapSlideOutMotion = {
@@ -39,29 +40,91 @@ const mapSlideOutMotion = {
   //   transition,
   // },
   sObO: {
-    width: "100vw",
+    width: "70vw",
     x: 0,
     height: "65vh",
     transition,
   },
   sObC: {
-    width: "100vw",
+    width: "70vw",
     x: 0,
     height: "80vh",
     transition,
   },
   sCbO: {
     width: "100vw",
-    x: -300,
+    x: -380,
     height: "65vh",
     transition,
   },
   sCbC: {
     width: "100vw",
-    x: -300,
+    x: -380,
     height: "80vh",
     transition,
   },
 };
 
-export { slideinMotion, mapSlideOutMotion };
+const sensorSlideDownMotion = {
+  sOmC: {
+    height: "30vh",
+    y: 0,
+    transition,
+  },
+  sOmO: {
+    // phaseClosed ka scene hai yaha
+    height: "14vh",
+    y: 195,
+    transition,
+  },
+};
+
+const buttonDivSlideOutMotion = {
+  buttonDivSlideOut: {
+    x: -380,
+    transition: {
+      duration: 0.1,
+    },
+  },
+};
+
+const buttonRotateMotion = {
+  open: {
+    rotate: 90,
+    transition: {
+      duration: 0.2,
+    },
+  },
+
+  close: {
+    rotate: -90,
+    transition: {
+      duration: 0.2,
+    },
+  },
+};
+
+const buttonSlideDownRotateMotion = {
+  up: {
+    rotate: 180,
+    transition: {
+      duration: 0.2,
+    },
+  },
+
+  // down: {
+  //   rotate: 180,
+  //   transition: {
+  //     duration: 0.2,
+  //   },
+  // },
+};
+
+export {
+  slideinMotion,
+  mapSlideOutMotion,
+  sensorSlideDownMotion,
+  buttonDivSlideOutMotion,
+  buttonRotateMotion,
+  buttonSlideDownRotateMotion,
+};

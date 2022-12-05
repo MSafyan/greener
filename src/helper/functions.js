@@ -57,18 +57,70 @@ export const mapAnimate = () => {
 };
 
 export const sensorAnimate = () => {
+  // const { slideIn } = store.getState().slidein;
+  // const { sensorCollaspe } = store.getState().sensor;
+  // if (slideIn) {
+  //   return "initial";
+  // }
+  // if (!slideIn) {
+  //   return "mapExpand";
+  // }
+  // if (sensorCollaspe) {
+  //   return "initial";
+  // }
+  // if (!sensorCollaspe) {
+  //   return "sensorCollasped";
+  // }
   const { slideIn } = store.getState().slidein;
   const { sensorCollaspe } = store.getState().sensor;
+
   if (slideIn) {
-    return "initial";
+    console.log("Sensor Slide in");
+    if (!sensorCollaspe) {
+      console.log("Sensor Initial");
+      return "sOmC";
+    }
+    if (sensorCollaspe) {
+      console.log("Sensor Collaspe");
+      return "sOmO";
+    }
+  }
+  // if (!sensorCollaspe) {
+  //   console.log("map expand");
+  //   return "sCbO";
+  // }
+  // if (sensorCollaspe) {
+  //   console.log("map Collaspe");
+  //   return "sCbC";
+  // }
+};
+
+export const buttonAnimate = () => {
+  const { slideIn } = store.getState().slidein;
+
+  if (!slideIn) {
+    return "buttonDivSlideOut";
+  }
+};
+
+export const buttonSlideInRotateAnimate = () => {
+  const { slideIn } = store.getState().slidein;
+
+  if (slideIn) {
+    return "open";
   }
   if (!slideIn) {
-    return "mapExpand";
+    return "close";
   }
+};
+
+export const buttonSlideDownRotateAnimate = () => {
+  const { sensorCollaspe } = store.getState().sensor;
+
   if (sensorCollaspe) {
-    return "initial";
+    return "up";
   }
-  if (!sensorCollaspe) {
-    return "sensorCollasped";
-  }
+  // if (!sensorCollaspe) {
+  //   return "down";
+  // }
 };

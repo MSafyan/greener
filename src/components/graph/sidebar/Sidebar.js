@@ -8,6 +8,11 @@ import { motion } from "framer-motion";
 import { slideinMotion } from "./SideBarClick";
 import { slideinAction } from "../../../store/actions/slideinAction";
 import { connect } from "react-redux";
+import { buttonAnimate, buttonSlideInRotateAnimate } from "../../../helper/functions";
+import {
+  buttonDivSlideOutMotion,
+  buttonRotateMotion,
+} from "../sidebar/SideBarClick";
 
 const Sidebar = ({ slideIn, slideinAction }) => {
   return (
@@ -24,14 +29,15 @@ const Sidebar = ({ slideIn, slideinAction }) => {
           <LatestReport />
           <Button />
         </motion.div>
-        <div
+        <motion.div
           style={{
             position: "absolute",
             bottom: 150,
             right: -50,
-            backgroundColor: "pink",
             zIndex: "1000",
           }}
+          variants={buttonDivSlideOutMotion}
+          animate={buttonAnimate}
         >
           <motion.button
             className="button"
@@ -41,11 +47,8 @@ const Sidebar = ({ slideIn, slideinAction }) => {
             style={{ opacity: 1, display: "block" }}
           >
             <motion.div
-              variants={{
-                open: { rotate: 180 },
-                closed: { rotate: 0 },
-              }}
-              transition={{ duration: 0.2 }}
+              variants={buttonRotateMotion}
+              animate={buttonSlideInRotateAnimate}
               style={{ originY: 0.55 }}
             >
               <svg width="15" height="15" viewBox="0 0 20 20">
@@ -53,7 +56,7 @@ const Sidebar = ({ slideIn, slideinAction }) => {
               </svg>
             </motion.div>
           </motion.button>
-        </div>
+        </motion.div>
       </div>
     </>
   );
