@@ -19,12 +19,13 @@ import { slideinMotion } from "../sidebar/SideBarClick";
 import { sensorAction } from "../../../store/actions/sensorAction";
 import { connect } from "react-redux";
 import { sensorAnimate } from "../../../helper/functions";
+import { sensorSlideDownMotion } from "../sidebar/SideBarClick";
 
 const Sensor = ({ sensorCollaspe, sensorAction }) => {
   return (
     <motion.div
       className="sensorWrapper"
-      variants={phaseMotion}
+      variants={sensorSlideDownMotion}
       animate={sensorAnimate}
     >
       <div className="reportHeadingSensor">

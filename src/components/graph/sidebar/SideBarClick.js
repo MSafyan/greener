@@ -65,4 +65,18 @@ const mapSlideOutMotion = {
   },
 };
 
-export { slideinMotion, mapSlideOutMotion };
+const sensorSlideDownMotion = {
+  sOmC: {
+    height: "30vh",
+    y: 0,
+    transition,
+  },
+  sOmO: {
+    // phaseClosed ka scene hai yaha
+    height: "14vh",
+    y: 195,
+    transition,
+  },
+};
+
+export { slideinMotion, mapSlideOutMotion, sensorSlideDownMotion };
