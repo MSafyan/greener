@@ -16,10 +16,18 @@ import { slideinAction } from "../store/actions/slideinAction";
 
 const Graph = ({ slideIn, sensorCollaspe }) => {
   console.log("Inside graph", slideIn, sensorCollaspe);
+
+  if (!slideIn && !sensorCollaspe) {
+    return (
+      <div className={`graphWrapper-child`}>
+        <Sidebar />
+        <Map />
+        <Sensor />
+      </div>
+    );
+  }
   return (
-    <div
-      className={`graphWrapper${!slideIn && !sensorCollaspe ? "-child" : ""}`}
-    >
+    <div className={`graphWrapper`}>
       <Sidebar />
       <Map />
       <Sensor />

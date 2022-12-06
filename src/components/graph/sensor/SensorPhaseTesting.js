@@ -69,6 +69,7 @@ const Sensor = ({ slideIn, sensorCollaspe, sensorAction }) => {
         style={{
           flexDirection: !slideIn && !sensorCollaspe ? "column" : "row",
         }}
+        className="sensors"
       >
         {ActivityData.sensors.map((_, i) => {
           return <SensorCard _={_} />;
