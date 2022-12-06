@@ -33,6 +33,7 @@ const Sensor = ({ slideIn, sensorCollaspe, sensorAction }) => {
       className="sensorWrapper"
       style={{
         overflowY: !slideIn && !sensorCollaspe ? "scroll" : "hidden",
+        height: !slideIn && !sensorCollaspe ? 990 : 300,
       }}
       variants={sensorSlideDownMotion}
       animate={sensorAnimate}
@@ -67,7 +68,7 @@ const Sensor = ({ slideIn, sensorCollaspe, sensorAction }) => {
       </div>
       <div
         style={{
-          flexDirection: !slideIn && !sensorCollaspe ? "column" : "row",
+          flexDirection: !slideIn && !sensorCollaspe ? "column" : "row"
         }}
         className="sensors"
       >

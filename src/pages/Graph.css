@@ -14,7 +14,7 @@
   grid-template-rows: 100vh;
   grid-template-areas: "map sensor";
   height: 100vh;
-  overflow: scroll;
+  overflow: hidden;
   /* Sensor Overflow */
 }
 
