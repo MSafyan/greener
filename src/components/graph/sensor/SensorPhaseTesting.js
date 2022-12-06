@@ -27,10 +27,13 @@ import {
   buttonSlideDownRotateMotion,
 } from "../sidebar/SideBarClick";
 
-const Sensor = ({ sensorCollaspe, sensorAction }) => {
+const Sensor = ({ slideIn, sensorCollaspe, sensorAction }) => {
   return (
     <motion.div
       className="sensorWrapper"
+      style={{
+        overflowY: !slideIn && !sensorCollaspe ? "scroll" : "hidden",
+      }}
       variants={sensorSlideDownMotion}
       animate={sensorAnimate}
     >
@@ -62,7 +65,11 @@ const Sensor = ({ sensorCollaspe, sensorAction }) => {
           </button>
         </div>
       </div>
-      <div className="sensors">
+      <div
+        style={{
+          flexDirection: !slideIn && !sensorCollaspe ? "column" : "row",
+        }}
+      >
         {ActivityData.sensors.map((_, i) => {
           return <SensorCard _={_} />;
         })}
@@ -143,6 +150,7 @@ export function Chart({ chartData }) {
 
 const mapStateToProps = (state) => ({
   sensorCollaspe: state.sensor.sensorCollaspe,
+  slideIn: state.slidein.slideIn,
 });
 
 export default connect(mapStateToProps, {

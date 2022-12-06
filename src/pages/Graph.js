@@ -11,22 +11,25 @@ import Sidebar from "../components/graph/sidebar/Sidebar";
 import Sensor from "../components/graph/sensor/SensorPhaseTesting";
 import Map from "../components/graph/map/Map";
 import Layout from "../components/layout/Index";
+import { connect } from "react-redux";
+import { slideinAction } from "../store/actions/slideinAction";
 
-const Graph = () => {
-  const [isOpen, setIsOpen] = useState(true);
+const Graph = ({ slideIn, sensorCollaspe }) => {
+  console.log("Inside graph", slideIn, sensorCollaspe);
   return (
-    <>
-      <div className="graphWrapper">
-        <Sidebar />
-        <Map />
-        <Sensor />
-      </div>
-    </>
+    <div
+      className={`graphWrapper${!slideIn && !sensorCollaspe ? "-child" : ""}`}
+    >
+      <Sidebar />
+      <Map />
+      <Sensor />
+    </div>
   );
 };
 
-const Header = () => {
-  return <div className="header">header</div>;
-};
+const mapStateToProps = (state) => ({
+  slideIn: state.slidein.slideIn,
+  sensorCollaspe: state.sensor.sensorCollaspe,
+});
 
-export default Graph;
+export default connect(mapStateToProps)(Graph);
