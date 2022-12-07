@@ -8,13 +8,17 @@ import { motion } from "framer-motion";
 import { slideinMotion } from "./SideBarClick";
 import { slideinAction } from "../../../store/actions/slideinAction";
 import { connect } from "react-redux";
-import { buttonAnimate, buttonSlideInRotateAnimate } from "../../../helper/functions";
+import {
+  buttonAnimate,
+  buttonSlideInRotateAnimate,
+} from "../../../helper/functions";
 import {
   buttonDivSlideOutMotion,
   buttonRotateMotion,
 } from "../sidebar/SideBarClick";
+import { pink } from "@mui/material/colors";
 
-const Sidebar = ({ slideIn, slideinAction }) => {
+const Sidebar = ({ slideIn, slideinAction, sensorCollaspe }) => {
   return (
     <>
       <div style={{ position: "relative" }}>
@@ -31,9 +35,12 @@ const Sidebar = ({ slideIn, slideinAction }) => {
         </motion.div>
         <motion.div
           style={{
+            bottom: !slideIn && !sensorCollaspe ? 500 : 150,
+            right: !slideIn && !sensorCollaspe ? "" : -50,
+            left: !slideIn && !sensorCollaspe ? 400 : "",
             position: "absolute",
-            bottom: 150,
-            right: -50,
+            // bottom: 150,
+            // right: -50,
             zIndex: "1000",
           }}
           variants={buttonDivSlideOutMotion}
@@ -64,6 +71,7 @@ const Sidebar = ({ slideIn, slideinAction }) => {
 
 const mapStateToProps = (state) => ({
   slideIn: state.slidein.slideIn,
+  sensorCollaspe: state.sensor.sensorCollaspe,
 });
 
 export default connect(mapStateToProps, {

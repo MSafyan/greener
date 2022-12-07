@@ -54,7 +54,7 @@ const mapSlideOutMotion = {
   sCbO: {
     width: "100vw",
     x: -380,
-    height: "65vh",
+    height: "100vh",
     transition,
   },
   sCbC: {
@@ -76,6 +76,11 @@ const sensorSlideDownMotion = {
     height: "14vh",
     y: 195,
     transition,
+  },
+  sCmO: {
+    height: "14vh",
+    y: 195,
+    x: -180,
   },
 };
 

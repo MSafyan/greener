@@ -85,14 +85,17 @@ export const sensorAnimate = () => {
       return "sOmO";
     }
   }
+
   // if (!sensorCollaspe) {
   //   console.log("map expand");
   //   return "sCbO";
   // }
-  // if (sensorCollaspe) {
-  //   console.log("map Collaspe");
-  //   return "sCbC";
-  // }
+  if (sensorCollaspe) {
+    if (!slideIn) {
+      console.log("Sensor Remains Collaspe");
+      return "sCmO";
+    }
+  }
 };
 
 export const buttonAnimate = () => {
