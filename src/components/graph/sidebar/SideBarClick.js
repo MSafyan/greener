@@ -77,7 +77,11 @@ const sensorSlideDownMotion = {
     y: 195,
     transition,
   },
-  sCmO: { height: "14vh", y: 195, transition },
+  sCmO: {
+    height: "14vh",
+    y: 195,
+    x: -180,
+  },
 };
 
 const buttonDivSlideOutMotion = {
