@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Graph.css";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -14,11 +14,18 @@ import Map from "../components/graph/map/Map";
 import Layout from "../components/layout/Index";
 import { connect } from "react-redux";
 import { slideinAction } from "../store/actions/slideinAction";
+import { useDispatch } from "react-redux";
+import { SELECTED_GRAPH } from "../store/types";
 
 const Graph = ({ slideIn, sensorCollaspe, selectedGraph }) => {
   console.log("Inside graph", selectedGraph);
-
   const [graph, setGraph] = useState(-1);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch({ type: SELECTED_GRAPH, payload: false });
+  }, [dispatch]);
+
   if (!slideIn && !sensorCollaspe) {
     return (
       <div className={`graphWrapper-child`}>

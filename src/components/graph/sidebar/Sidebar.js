@@ -1,7 +1,7 @@
 import React from "react";
 import CalendarGrid from "./CalendarGrid";
 import TrackingCard from "./TrackingCard";
-import LatestReport from "./LatestReport";
+import LatestReport from "./NewReport";
 import Button from "./Button";
 import "./Sidebar.css";
 import { motion } from "framer-motion";
