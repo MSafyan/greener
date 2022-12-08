@@ -17,7 +17,7 @@ import { motion, Variants } from "framer-motion";
 import { phaseMotion } from "./SensorClick";
 import { slideinMotion } from "../sidebar/SideBarClick";
 import { sensorAction } from "../../../store/actions/sensorAction";
-import { connect } from "react-redux";
+import { connect, useDispatch } from "react-redux";
 import {
   sensorAnimate,
   buttonSlideDownRotateAnimate,
@@ -26,6 +26,7 @@ import {
   sensorSlideDownMotion,
   buttonSlideDownRotateMotion,
 } from "../sidebar/SideBarClick";
+import { SELECTED_GRAPH } from "../../../store/types";
 
 const Sensor = ({ slideIn, sensorCollaspe, sensorAction }) => {
   return (
@@ -80,9 +81,9 @@ const Sensor = ({ slideIn, sensorCollaspe, sensorAction }) => {
   );
 };
 
-const SensorCard = ({ _ }) => {
+const SensorCard = ({ _, selectedGraphAction }) => {
   const [hover, setHover] = useState(false);
-
+  const dispatch = useDispatch();
   return (
     <div
       className="sensor"
@@ -114,7 +115,13 @@ const SensorCard = ({ _ }) => {
         <Chart chartData={_.data} />
       </div>
       <div class="overlay">
-        <p class="textValue">Open Graph</p>
+        <button
+          onClick={() => {
+            dispatch({ type: SELECTED_GRAPH, payload: _ });
+          }}
+        >
+          Open Graph
+        </button>
       </div>
     </div>
   );
