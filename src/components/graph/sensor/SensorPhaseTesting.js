@@ -68,7 +68,7 @@ const Sensor = ({ slideIn, sensorCollaspe, sensorAction }) => {
       </div>
       <div
         style={{
-          flexDirection: !slideIn && !sensorCollaspe ? "column" : "row"
+          flexDirection: !slideIn && !sensorCollaspe ? "column" : "row",
         }}
         className="sensors"
       >
@@ -81,9 +81,22 @@ const Sensor = ({ slideIn, sensorCollaspe, sensorAction }) => {
 };
 
 const SensorCard = ({ _ }) => {
+  const [hover, setHover] = useState(false);
+
   return (
-    <div className="sensor">
-      <div className="sensorCard">
+    <div
+      className="sensor"
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+    >
+      <div
+        className="sensorCard"
+        style={{
+          backgroundColor: hover ? "#91C251" : "",
+          borderStartEndRadius: hover ? 7 : "",
+          borderStartStartRadius: hover ? 7 : "",
+        }}
+      >
         <p className="sensorHeading">{_.name}</p>
         <p className="sensorValue">11.06 C</p>
       </div>
@@ -97,7 +110,7 @@ const SensorCard = ({ _ }) => {
           <p>{Number(_.avg).toFixed(2)}</p>
         </div>
       </div>
-      <div style={{ backgroundColor: "#E6E6E6" }}>
+      <div>
         <Chart chartData={_.data} />
       </div>
       <div class="overlay">

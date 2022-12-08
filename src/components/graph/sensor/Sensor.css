@@ -39,17 +39,18 @@
   width: 20vw;
   margin-left: 6px;
   border-radius: 0.7vw;
-  padding: 0.4vw 0.5vw 0.4vw 0.5vw;
+  /* padding: 0.4vw 0.5vw 0.4vw 0.5vw; */
 }
 
 .sensor:hover .overlay {
   opacity: 1;
-  height: 98%;
+  height: 65%;
   border-radius: 0.7vw;
 }
 
 .overlay {
   position: absolute;
+  margin-top:5.5vh;
   transition: 0.7s ease-in;
   opacity: 0;
   width: 95%;
