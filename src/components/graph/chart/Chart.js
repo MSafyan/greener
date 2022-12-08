@@ -2,6 +2,8 @@ import { mapSlideOutMotion } from "../sidebar/SideBarClick";
 import { mapAnimate } from "../../../helper/functions";
 import { ActivityData } from "../../../shippmentActivity";
 import cross from "../../../assets/images/close.png";
+import { useDispatch } from "react-redux";
+import { SELECTED_GRAPH } from "../../../store/types";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -50,7 +52,8 @@ const containerStyle = {
 };
 
 export default function Chart({ data: original_data }) {
-  console.log("this is working u bc murgi ban", original_data);
+  console.log("this is working", original_data);
+  const dispatch = useDispatch();
   const chartData = original_data.data;
   const displayData = original_data;
   const labels = chartData.dates.splice(0, 20);
@@ -75,7 +78,13 @@ export default function Chart({ data: original_data }) {
           <p className="displaynameheading">{displayData.name} Sensor</p>
         </div>
         <div>
-          <img src={cross} alt="" />
+          <img
+            src={cross}
+            alt=""
+            onClick={() => {
+              dispatch({ type: SELECTED_GRAPH });
+            }}
+          />
         </div>
       </div>
       <div className="d-flex justify-content-center">
