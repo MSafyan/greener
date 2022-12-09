@@ -1,5 +1,5 @@
-import { mapSlideOutMotion } from "../sidebar/Click";
-import { mapAnimate } from "../../../helper/functions";
+import { chartSlideOutMotion } from "../sidebar/Click";
+import { chartAnimate } from "../../../helper/functions";
 import { ActivityData } from "../../../shippmentActivity";
 import cross from "../../../assets/images/close.png";
 import { useDispatch } from "react-redux";
@@ -30,6 +30,7 @@ ChartJS.register(
 
 export const options = {
   responsive: true,
+  maintainAspectRatio: false,
   legend: {
     display: false,
   },
@@ -69,8 +70,8 @@ export default function Chart({ data: original_data }) {
   };
   return (
     <motion.div
-      variants={mapSlideOutMotion}
-      animate={mapAnimate}
+      variants={chartSlideOutMotion}
+      animate={chartAnimate}
       className="mapWrapper"
     >
       <div className="d-flex">

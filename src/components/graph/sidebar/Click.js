@@ -65,6 +65,34 @@ const mapSlideOutMotion = {
   },
 };
 
+
+const chartSlideOutMotion = {
+  sObO: {
+    width: "70vw",
+    x: 0,
+    height: "50vh",
+    transition,
+  },
+  sObC: {
+    width: "70vw",
+    x: 0,
+    height: "75vh",
+    transition,
+  },
+  sCbO: {
+    width: "75vw",
+    x: 0,
+    height: "80vh",
+    transition,
+  },
+  sCbC: {
+    width: "70vw",
+    x: -180,
+    height: "70vh",
+    transition,
+  },
+};
+
 const sensorSlideDownMotion = {
   sOmC: {
     height: "30vh",
@@ -133,4 +161,5 @@ export {
   buttonDivSlideOutMotion,
   buttonRotateMotion,
   buttonSlideDownRotateMotion,
+  chartSlideOutMotion
 };
