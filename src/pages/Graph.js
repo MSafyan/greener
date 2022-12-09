@@ -15,6 +15,7 @@ import { connect } from "react-redux";
 import { slideinAction } from "../store/actions/slideinAction";
 import { useDispatch } from "react-redux";
 import { SELECTED_GRAPH } from "../store/types";
+import { orderDetailsAction, orderEventsAction } from "../store/actions/exploreAction";
 
 const Graph = ({ slideIn, sensorCollaspe, selectedGraph }) => {
   console.log("Inside graph", selectedGraph);
@@ -22,6 +23,8 @@ const Graph = ({ slideIn, sensorCollaspe, selectedGraph }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    orderEventsAction();
+    orderDetailsAction();
     dispatch({ type: SELECTED_GRAPH, payload: false });
   }, [dispatch]);
 
