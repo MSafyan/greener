@@ -1,4 +1,4 @@
-import { mapSlideOutMotion } from "../sidebar/SideBarClick";
+import { mapSlideOutMotion } from "../sidebar/Click";
 import { mapAnimate } from "../../../helper/functions";
 import { ActivityData } from "../../../shippmentActivity";
 import cross from "../../../assets/images/close.png";

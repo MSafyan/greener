@@ -1,21 +1,18 @@
 import React from "react";
-import CalendarGrid from "./CalendarGrid";
-import TrackingCard from "./TrackingCard";
+import Calendar from "./Calendar";
+import Tracking from "./Tracking";
 import LatestReport from "./LatestReport";
 import Button from "./Button";
 import "./Sidebar.css";
 import { motion } from "framer-motion";
-import { slideinMotion } from "./SideBarClick";
+import { slideinMotion } from "./Click";
 import { slideinAction } from "../../../store/actions/slideinAction";
 import { connect } from "react-redux";
 import {
   buttonAnimate,
   buttonSlideInRotateAnimate,
 } from "../../../helper/functions";
-import {
-  buttonDivSlideOutMotion,
-  buttonRotateMotion,
-} from "../sidebar/SideBarClick";
+import { buttonDivSlideOutMotion, buttonRotateMotion } from "./Click";
 import arrow from "../../../assets/images/chevron-left.png";
 
 const Sidebar = ({ slideIn, slideinAction, sensorCollaspe }) => {
@@ -28,8 +25,8 @@ const Sidebar = ({ slideIn, slideinAction, sensorCollaspe }) => {
           animate={slideIn ? "initial" : "hidden"}
           initial={"initial"}
         >
-          <CalendarGrid />
-          <TrackingCard />
+          <Calendar />
+          <Tracking />
           <LatestReport />
           <Button />
         </motion.div>
