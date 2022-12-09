@@ -3,6 +3,7 @@ import { persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import dashboardReducer from "./dashboardReducer";
 import exploreReducer from "./exploreReducer";
+import selectedgraphReducer from "./selectedgraphReducer";
 import sensorReducer from "./sensorReducer";
 import slideinReducer from "./slideinReducer";
 
@@ -17,6 +18,7 @@ const rootReducer = combineReducers({
   explore: exploreReducer,
   sensor: sensorReducer,
   slidein: slideinReducer,
+  selectedgraph: selectedgraphReducer,
 });
 
 export default persistReducer(persistConfig, rootReducer);

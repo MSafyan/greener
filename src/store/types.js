@@ -10,6 +10,7 @@ export const CHART_EXPAND = "CHART_EXPAND";
 export const RING_FORWARD = "RING_FORWARD";
 export const SENSOR_COLLASPE = "SENSOR_COLLASPE";
 export const SLIDE_IN = "SLIDE_IN";
+export const SELECTED_GRAPH = "SELECTED_GRAPH";
 
 //explore
 export const SET_EXPLORE_LOADING = "SET_EXPLORE_LOADING";

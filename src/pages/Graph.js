@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Graph.css";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -9,19 +9,28 @@ import TrackingCard from "../components/graph/sidebar/TrackingCard";
 import LatestReport from "../components/graph/sidebar/LatestReport";
 import Sidebar from "../components/graph/sidebar/Sidebar";
 import Sensor from "../components/graph/sensor/SensorPhaseTesting";
+import Chart from "../components/graph/chart/Chart";
 import Map from "../components/graph/map/Map";
 import Layout from "../components/layout/Index";
 import { connect } from "react-redux";
 import { slideinAction } from "../store/actions/slideinAction";
+import { useDispatch } from "react-redux";
+import { SELECTED_GRAPH } from "../store/types";
 
-const Graph = ({ slideIn, sensorCollaspe }) => {
-  console.log("Inside graph", slideIn, sensorCollaspe);
+const Graph = ({ slideIn, sensorCollaspe, selectedGraph }) => {
+  console.log("Inside graph", selectedGraph);
+  const [graph, setGraph] = useState(-1);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch({ type: SELECTED_GRAPH, payload: false });
+  }, [dispatch]);
 
   if (!slideIn && !sensorCollaspe) {
     return (
       <div className={`graphWrapper-child`}>
         <Sidebar />
-        <Map />
+        {!selectedGraph ? <Map /> : <Chart data={selectedGraph} />}
         <Sensor />
       </div>
     );
@@ -29,7 +38,7 @@ const Graph = ({ slideIn, sensorCollaspe }) => {
   return (
     <div className={`graphWrapper`}>
       <Sidebar />
-      <Map />
+      {!selectedGraph ? <Map /> : <Chart data={selectedGraph} />}
       <Sensor />
     </div>
   );
@@ -38,6 +47,7 @@ const Graph = ({ slideIn, sensorCollaspe }) => {
 const mapStateToProps = (state) => ({
   slideIn: state.slidein.slideIn,
   sensorCollaspe: state.sensor.sensorCollaspe,
+  selectedGraph: state.selectedgraph.selectedGraph,
 });
 
 export default connect(mapStateToProps)(Graph);

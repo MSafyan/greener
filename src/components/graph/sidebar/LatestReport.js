@@ -102,10 +102,10 @@ const imgNameArr = {
 
 export const CardWrapper = ({ _, i, selectedComponentType, counter }) => {
   return (
-    <motion.div
+    <div
       key={i}
-      variants={cardMotion}
-      initial="initial"
+      // variants={cardMotion}
+      // initial="initial"
       className="body_chargement_explore chargement_rewrite"
     >
       <p
@@ -123,10 +123,10 @@ export const CardWrapper = ({ _, i, selectedComponentType, counter }) => {
           <img src={dots} alt="" />
         </div>
       </div>
-      <div className="body_card_explore">
+      <div className="body_card_explore" style={{ width: "12vw" }}>
         <Card _={_} i={i} />
       </div>
-    </motion.div>
+    </div>
   );
 };
 
@@ -145,7 +145,7 @@ const LatestReport = ({ orderEvents, selectedComponentType, counter }) => {
           </Row>
         </Container>
         <div className="reportCardWrapper">
-          {orderEvents?.map((_, i) => (
+          {orderEvents?.slice(0, 3).map((_, i) => (
             <CardWrapper _={_} i={i} />
           ))}
         </div>
