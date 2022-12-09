@@ -6,6 +6,7 @@
   padding-right: 3vw;
   height: 100vh;
   position: relative;
+  border-right: 0.1vh solid #b7b7b7;
 }
 
 .trackingWrapper {
