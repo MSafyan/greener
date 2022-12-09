@@ -15,6 +15,10 @@ import { connect } from "react-redux";
 import { slideinAction } from "../store/actions/slideinAction";
 import { useDispatch } from "react-redux";
 import { SELECTED_GRAPH } from "../store/types";
+import {
+  orderDetailsAction,
+  orderEventsAction,
+} from '../store/actions/exploreAction';
 
 const Graph = ({ slideIn, sensorCollaspe, selectedGraph, orderEventsAction,
   orderDetailsAction, }) => {
