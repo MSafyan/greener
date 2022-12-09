@@ -26,6 +26,7 @@ function CalendarGrid() {
               selected={date}
               onChange={onChange}
               dateFormat="dd.MM.yyyy  h:mm:ss a"
+              className="calendar"
             />
           </Col>
         </Row>

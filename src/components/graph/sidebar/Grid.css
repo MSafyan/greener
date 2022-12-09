@@ -65,3 +65,8 @@
 .latest-report-container {
   margin-top: 2vw;
 }
+
+.calendar {
+  all: unset;
+  cursor: pointer;
+}
