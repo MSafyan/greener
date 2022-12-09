@@ -16,7 +16,7 @@ import {
   buttonDivSlideOutMotion,
   buttonRotateMotion,
 } from "../sidebar/SideBarClick";
-import { pink } from "@mui/material/colors";
+import arrow from "../../../assets/images/chevron-left.png";
 
 const Sidebar = ({ slideIn, slideinAction, sensorCollaspe }) => {
   return (
@@ -56,11 +56,14 @@ const Sidebar = ({ slideIn, slideinAction, sensorCollaspe }) => {
             <motion.div
               variants={buttonRotateMotion}
               animate={buttonSlideInRotateAnimate}
-              style={{ originY: 0.55 }}
+              style={{
+                originY: 0.55,
+                width: "2vw",
+                height: "6vh",
+              }}
+              className="sideinButton"
             >
-              <svg width="15" height="15" viewBox="0 0 20 20">
-                <path d="M0 7 L 20 7 L 10 16" />
-              </svg>
+              <img src={arrow} alt="" />
             </motion.div>
           </motion.button>
         </motion.div>

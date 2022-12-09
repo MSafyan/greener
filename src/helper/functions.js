@@ -123,7 +123,7 @@ export const buttonSlideDownRotateAnimate = () => {
   if (sensorCollaspe) {
     return "up";
   }
-  // if (!sensorCollaspe) {
-  //   return "down";
-  // }
+  if (!sensorCollaspe) {
+    return "down";
+  }
 };

@@ -9,6 +9,13 @@
   border-right: 0.1vh solid #b7b7b7;
 }
 
+.sideinButton {
+  padding-top: 22%;
+  border: 0.1vh solid #b7b7b7;
+  box-shadow: 2px 7px #b7b7b7
+  
+}
+
 .trackingWrapper {
   grid-area: tracking;
 }

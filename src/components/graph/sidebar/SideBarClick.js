@@ -95,14 +95,14 @@ const buttonDivSlideOutMotion = {
 
 const buttonRotateMotion = {
   open: {
-    rotate: 90,
+    rotate: 360,
     transition: {
       duration: 0.2,
     },
   },
 
   close: {
-    rotate: -90,
+    rotate: -180,
     transition: {
       duration: 0.2,
     },
@@ -111,18 +111,18 @@ const buttonRotateMotion = {
 
 const buttonSlideDownRotateMotion = {
   up: {
-    rotate: 180,
+    rotate: 90,
     transition: {
       duration: 0.2,
     },
   },
 
-  // down: {
-  //   rotate: 180,
-  //   transition: {
-  //     duration: 0.2,
-  //   },
-  // },
+  down: {
+    rotate: -90,
+    transition: {
+      duration: 0.2,
+    },
+  },
 };
 
 export {
