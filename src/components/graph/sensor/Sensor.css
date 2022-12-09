@@ -32,11 +32,11 @@
   width: 70vw;
 }
 
-
 .sensor {
   background-color: var(--bg-card);
   position: relative;
-  width: 20vw;
+  width: 13.6vw;
+  height: 22.9vh;
   margin-left: 6px;
   border-radius: 0.7vw;
   padding: 0vw 0vw 0.4vw 0vw;
@@ -44,16 +44,17 @@
 
 .sensor:hover .overlay {
   opacity: 1;
-  height: 65%;
-  border-radius: 0.7vw;
+  height: 16vh;
+  border-bottom-left-radius: 0.7vw;
+  border-bottom-right-radius: 0.7vw;
 }
 
 .overlay {
   position: absolute;
-  margin-top:5.5vh;
+  margin-top: 7vh;
   transition: 0.7s ease-in;
   opacity: 0;
-  width: 95%;
+  width: 13.6vw;
   height: 0;
   top: 0;
   background-color: #a9a9a900;
@@ -81,7 +82,6 @@
   grid-template-columns: 5% 90% 5%;
   grid-gap: 1px;
   margin-left: 0.5vw;
-  margin-top: 2vw;
 }
 
 .reportHeadingSensor > div > p {
@@ -124,7 +124,7 @@
   font-weight: 100;
 }
 
-.flex{
+.flex {
   flex: 50% 50%;
 }
 
@@ -132,4 +132,63 @@
   font-size: 25px;
   font-weight: 300;
   text-align: center;
+}
+
+.overlybutton {
+  all: unset;
+  cursor: pointer;
+  margin-top: 6vh;
+  margin-left: 9vh;
+}
+
+@media screen and (min-width: 1600px) {
+  .sensor:hover .overlay {
+    opacity: 1;
+    height: 12.8vh;
+    border-bottom-left-radius: 0.7vw;
+    border-bottom-right-radius: 0.7vw;
+  }
+  .overlay {
+    position: absolute;
+    margin-top: 5vh;
+    transition: 0.7s ease-in;
+    opacity: 0;
+    width: 13.6vw;
+    height: 0;
+    top: 0;
+    background-color: #a9a9a900;
+    -webkit-backdrop-filter: blur(30px) brightness(0.97);
+    backdrop-filter: blur(30px) brightness(0.97);
+    z-index: 6;
+  }
+
+  .reportHeadingSensor {
+    display: grid;
+    grid-template-columns: 5% 90% 5%;
+    grid-gap: 1px;
+    margin-left: 0.5vw;
+    margin-top: 2vw;
+  }
+
+  .overlybutton {
+    all: unset;
+    cursor: pointer;
+    margin-top: 6vh;
+    margin-left: 9vh;
+  }
+  .sensor {
+    background-color: var(--bg-card);
+    position: relative;
+    width: 13.6vw;
+    margin-left: 6px;
+    border-radius: 0.7vw;
+    padding: 0vw 0vw 0.4vw 0vw;
+    height: 18vh;
+  }
+  .overlybutton {
+    all: unset;
+    cursor: pointer;
+    margin-top: 5vh;
+    margin-left: 7vh;
+  }
 }

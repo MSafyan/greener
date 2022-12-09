@@ -27,6 +27,7 @@ import {
   buttonSlideDownRotateMotion,
 } from "../sidebar/SideBarClick";
 import { SELECTED_GRAPH } from "../../../store/types";
+import arrow from "../../../assets/images/chevron-left.png";
 
 const Sensor = ({ slideIn, sensorCollaspe, sensorAction }) => {
   return (
@@ -60,9 +61,7 @@ const Sensor = ({ slideIn, sensorCollaspe, sensorAction }) => {
               animate={buttonSlideDownRotateAnimate}
               style={{ originY: 0.55 }}
             >
-              <svg width="15" height="15" viewBox="0 0 20 20">
-                <path d="M0 7 L 20 7 L 10 16" />
-              </svg>
+              <img src={arrow} alt="" />
             </motion.div>
           </button>
         </div>
@@ -70,6 +69,7 @@ const Sensor = ({ slideIn, sensorCollaspe, sensorAction }) => {
       <div
         style={{
           flexDirection: !slideIn && !sensorCollaspe ? "column" : "row",
+          gap: !slideIn && !sensorCollaspe ? "2vh" : "",
         }}
         className="sensors"
       >
@@ -119,6 +119,7 @@ const SensorCard = ({ _, selectedGraphAction }) => {
           onClick={() => {
             dispatch({ type: SELECTED_GRAPH, payload: _ });
           }}
+          className="overlybutton"
         >
           Open Graph
         </button>
