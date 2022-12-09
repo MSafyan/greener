@@ -15,9 +15,9 @@ import { connect } from "react-redux";
 import { slideinAction } from "../store/actions/slideinAction";
 import { useDispatch } from "react-redux";
 import { SELECTED_GRAPH } from "../store/types";
-import { orderDetailsAction, orderEventsAction } from "../store/actions/exploreAction";
 
-const Graph = ({ slideIn, sensorCollaspe, selectedGraph }) => {
+const Graph = ({ slideIn, sensorCollaspe, selectedGraph, orderEventsAction,
+  orderDetailsAction, }) => {
   console.log("Inside graph", selectedGraph);
   const [graph, setGraph] = useState(-1);
   const dispatch = useDispatch();
@@ -52,4 +52,7 @@ const mapStateToProps = (state) => ({
   selectedGraph: state.selectedgraph.selectedGraph,
 });
 
-export default connect(mapStateToProps)(Graph);
+export default connect(mapStateToProps, {
+  orderEventsAction,
+  orderDetailsAction,
+})(Graph);
