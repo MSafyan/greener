@@ -40,7 +40,7 @@ const Sensor = ({ slideIn, sensorCollaspe, sensorAction }) => {
       variants={sensorSlideDownMotion}
       animate={sensorAnimate}
     >
-      <div className="reportHeadingSensor">
+      <div className={!slideIn && !sensorCollaspe ? "reportHeadingSensorChild" : "reportHeadingSensor"}>
         <div className="icon-wrapper-20">
           <img src={chartsensor} alt="" height="50%" />
         </div>
