@@ -56,6 +56,32 @@ export const mapAnimate = () => {
   }
 };
 
+export const chartAnimate = () => {
+  const { slideIn } = store.getState().slidein;
+  const { sensorCollaspe } = store.getState().sensor;
+  console.log("Thisssss", slideIn, sensorCollaspe);
+  //   return "mapSlideIn";
+  if (slideIn) {
+    console.log("mapSlideIn");
+    if (!sensorCollaspe) {
+      console.log("map expand");
+      return "sObO";
+    }
+    if (sensorCollaspe) {
+      console.log("map Collaspe");
+      return "sObC";
+    }
+  }
+  if (!sensorCollaspe) {
+    console.log("map expand");
+    return "sCbO";
+  }
+  if (sensorCollaspe) {
+    console.log("map Collaspe");
+    return "sCbC";
+  }
+};
+
 export const sensorAnimate = () => {
   // const { slideIn } = store.getState().slidein;
   // const { sensorCollaspe } = store.getState().sensor;
