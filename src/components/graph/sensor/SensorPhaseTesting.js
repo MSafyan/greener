@@ -114,7 +114,7 @@ const SensorCard = ({ _, selectedGraphAction }) => {
       <div>
         <Chart chartData={_.data} />
       </div>
-      <div class="overlay">
+      <div className="overlay">
         <button
           onClick={() => {
             dispatch({ type: SELECTED_GRAPH, payload: _ });
