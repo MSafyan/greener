@@ -1,8 +1,7 @@
 import React from "react";
 import "./Map.css";
 import { motion } from "framer-motion";
-import { mapMotion } from "../sensor/SensorClick";
-import { mapSlideOutMotion } from "../sidebar/SideBarClick";
+import { mapSlideOutMotion } from "../sidebar/Click";
 import { sensorAction } from "../../../store/actions/sensorAction";
 import { connect } from "react-redux";
 import { Container } from "react-bootstrap";

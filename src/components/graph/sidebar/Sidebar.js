@@ -1,22 +1,19 @@
 import React from "react";
-import CalendarGrid from "./CalendarGrid";
-import TrackingCard from "./TrackingCard";
+import Calendar from "./Calendar";
+import Tracking from "./Tracking";
 import LatestReport from "./LatestReport";
 import Button from "./Button";
 import "./Sidebar.css";
 import { motion } from "framer-motion";
-import { slideinMotion } from "./SideBarClick";
+import { slideinMotion } from "./Click";
 import { slideinAction } from "../../../store/actions/slideinAction";
 import { connect } from "react-redux";
 import {
   buttonAnimate,
   buttonSlideInRotateAnimate,
 } from "../../../helper/functions";
-import {
-  buttonDivSlideOutMotion,
-  buttonRotateMotion,
-} from "../sidebar/SideBarClick";
-import { pink } from "@mui/material/colors";
+import { buttonDivSlideOutMotion, buttonRotateMotion } from "./Click";
+import arrow from "../../../assets/images/chevron-left.png";
 
 const Sidebar = ({ slideIn, slideinAction, sensorCollaspe }) => {
   return (
@@ -28,8 +25,8 @@ const Sidebar = ({ slideIn, slideinAction, sensorCollaspe }) => {
           animate={slideIn ? "initial" : "hidden"}
           initial={"initial"}
         >
-          <CalendarGrid />
-          <TrackingCard />
+          <Calendar />
+          <Tracking />
           <LatestReport />
           <Button />
         </motion.div>
@@ -56,11 +53,14 @@ const Sidebar = ({ slideIn, slideinAction, sensorCollaspe }) => {
             <motion.div
               variants={buttonRotateMotion}
               animate={buttonSlideInRotateAnimate}
-              style={{ originY: 0.55 }}
+              style={{
+                originY: 0.55,
+                width: "2vw",
+                height: "6vh",
+              }}
+              className="sideinButton"
             >
-              <svg width="15" height="15" viewBox="0 0 20 20">
-                <path d="M0 7 L 20 7 L 10 16" />
-              </svg>
+              <img src={arrow} alt="" />
             </motion.div>
           </motion.button>
         </motion.div>

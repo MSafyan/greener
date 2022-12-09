@@ -53,7 +53,7 @@ const mapSlideOutMotion = {
   },
   sCbO: {
     width: "100vw",
-    x: -380,
+    x: -340,
     height: "100vh",
     transition,
   },
@@ -87,6 +87,7 @@ const sensorSlideDownMotion = {
 const buttonDivSlideOutMotion = {
   buttonDivSlideOut: {
     x: -380,
+    y: 100,
     transition: {
       duration: 0.1,
     },
@@ -95,14 +96,14 @@ const buttonDivSlideOutMotion = {
 
 const buttonRotateMotion = {
   open: {
-    rotate: 90,
+    rotate: 360,
     transition: {
       duration: 0.2,
     },
   },
 
   close: {
-    rotate: -90,
+    rotate: -180,
     transition: {
       duration: 0.2,
     },
@@ -111,18 +112,18 @@ const buttonRotateMotion = {
 
 const buttonSlideDownRotateMotion = {
   up: {
-    rotate: 180,
+    rotate: 90,
     transition: {
       duration: 0.2,
     },
   },
 
-  // down: {
-  //   rotate: 180,
-  //   transition: {
-  //     duration: 0.2,
-  //   },
-  // },
+  down: {
+    rotate: -90,
+    transition: {
+      duration: 0.2,
+    },
+  },
 };
 
 export {
