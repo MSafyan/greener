@@ -70,6 +70,7 @@ const Sensor = ({ slideIn, sensorCollaspe, sensorAction }) => {
         style={{
           flexDirection: !slideIn && !sensorCollaspe ? "column" : "row",
           gap: !slideIn && !sensorCollaspe ? "2vh" : "",
+          width: !slideIn && !sensorCollaspe ? "20vw" : "70vw",
         }}
         className="sensors"
       >

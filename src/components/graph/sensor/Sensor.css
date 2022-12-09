@@ -29,7 +29,7 @@
 .sensors {
   display: flex;
   overflow: auto;
-  width: 70vw;
+  /* width: 70vw; */
 }
 
 .sensor {
