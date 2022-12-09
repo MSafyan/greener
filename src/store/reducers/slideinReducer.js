@@ -1,7 +1,7 @@
 import { SLIDE_IN } from "../types";
 
 const INITAL_AUTH_STATE = {
-  slideIn: false,
+  slideIn: true,
 };
 
 export default function slideinReducer(state = INITAL_AUTH_STATE, action) {
