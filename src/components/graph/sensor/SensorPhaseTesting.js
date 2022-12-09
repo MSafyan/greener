@@ -48,7 +48,7 @@ const Sensor = ({ slideIn, sensorCollaspe, sensorAction }) => {
         </div>
         <div>
           <button
-            whileTap={{ scale: 0.97 }}
+
             className="button"
             onClick={() => {
               console.log("On CLick");
@@ -156,13 +156,13 @@ export const options = {
 };
 
 export function Chart({ chartData }) {
-  const labels = chartData.dates.splice(0, 20);
+  const labels = chartData.dates.slice(0, 20);
 
   const data = {
     labels,
     datasets: [
       {
-        data: chartData.values.splice(0, 20),
+        data: chartData.values.slice(0, 20),
         borderColor: "#149ad7",
       },
     ],

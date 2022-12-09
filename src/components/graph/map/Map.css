@@ -2,3 +2,10 @@
   grid-area: map;
 }
 
+.triangle-down {
+	width: 0;
+	height: 0;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-top: 12px solid #FF7B7B;
+}
