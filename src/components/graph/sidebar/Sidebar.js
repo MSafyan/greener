@@ -50,18 +50,19 @@ const Sidebar = ({ slideIn, slideinAction, sensorCollaspe }) => {
             }}
             style={{ opacity: 1, display: "block" }}
           >
-            <motion.div
-              variants={buttonRotateMotion}
-              animate={buttonSlideInRotateAnimate}
+            <div
               style={{
                 originY: 0.55,
-                width: "2vw",
-                height: "6vh",
               }}
               className="sideinButton"
             >
-              <img src={arrow} alt="" />
-            </motion.div>
+              <motion.img
+                src={arrow}
+                alt=""
+                variants={buttonRotateMotion}
+                animate={buttonSlideInRotateAnimate}
+              />
+            </div>
           </motion.button>
         </motion.div>
       </div>

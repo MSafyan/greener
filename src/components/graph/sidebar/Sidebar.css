@@ -83,8 +83,20 @@
 .sideinButton {
   position: "absolute";
   z-index: "1000";
-  padding-top: 22%;
-  border: 0.1vh solid #b7b7b7;
+  padding-top: 25%;
+  padding-left: 30%;
+  margin-left: 60%;
+  width: 5vw;
+  height: 10vh;
+  /* background-color: rgba(255, 255, 255, 1); */
+  /* color: #000; */
+  /* border-radius: 5px; */
+  border-end-end-radius: 21px;
+  border-top-right-radius: 21px;
+
+  box-shadow: 0px 19px 38px 0px rgba(0, 0, 0, 0.3),
+    0px 15px 12px 0px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(10px);
 }
 
 @media screen and (min-width: 1600px) {
