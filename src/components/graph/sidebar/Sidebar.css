@@ -83,16 +83,15 @@
 .sideinButton {
   position: "absolute";
   z-index: "1000";
-  padding-top: 25%;
-  padding-left: 30%;
-  margin-left: 60%;
-  width: 5vw;
-  height: 10vh;
+  padding-top: 40%;
+  padding-left: 15%;
+  margin-left: 24%;
+  width: 2.47vw;
+  height: 8.68vh;
   /* background-color: rgba(255, 255, 255, 1); */
   /* color: #000; */
   /* border-radius: 5px; */
-  border-end-end-radius: 21px;
-  border-top-right-radius: 21px;
+  border-radius: 0px 8px 8px 0px;
 
   box-shadow: 0px 19px 38px 0px rgba(0, 0, 0, 0.3),
     0px 15px 12px 0px rgba(0, 0, 0, 0.22);
@@ -101,6 +100,6 @@
 
 @media screen and (min-width: 1600px) {
   .sideinButton {
-    padding-top: 46%;
+    padding-top: 70%;
   }
 }

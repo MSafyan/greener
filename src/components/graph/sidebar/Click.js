@@ -114,7 +114,7 @@ const sensorSlideDownMotion = {
 
 const buttonDivSlideOutMotion = {
   buttonDivSlideOut: {
-    x: -470,
+    x: -420,
     y: 100,
     transition: {
       duration: 0.1,
