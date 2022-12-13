@@ -44,7 +44,7 @@
 
 .sensor:hover .overlay {
   opacity: 1;
-  height: 16vh;
+  height: 16.5vh;
   border-bottom-left-radius: 0.7vw;
   border-bottom-right-radius: 0.7vw;
 }
