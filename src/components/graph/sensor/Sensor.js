@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import chartsensor from "../../../assets/images/bar-chart.png";
 import "./Sensor.css";
 import { ActivityData } from "../../../shippmentActivity";
@@ -29,63 +29,109 @@ import { SELECTED_GRAPH } from "../../../store/types";
 import arrow from "../../../assets/images/chevron-left.png";
 
 const Sensor = ({ slideIn, sensorCollaspe, sensorAction }) => {
-  return (
-    <motion.div
-      className="sensorWrapper"
-      style={{
-        overflowY: !slideIn && !sensorCollaspe ? "scroll" : "hidden",
-        height: !slideIn && !sensorCollaspe ? 990 : 300,
-      }}
-      variants={sensorSlideDownMotion}
-      animate={sensorAnimate}
-    >
-      <div
-        className={
-          !slideIn && !sensorCollaspe
-            ? "reportHeadingSensorChild"
-            : "reportHeadingSensor"
-        }
-      >
-        <div className="icon-wrapper-20">
-          <img src={chartsensor} alt="" height="50%" />
-        </div>
-        <div>
-          <p>Sensors</p>
-        </div>
-        <div>
-          <button
-            whileTap={{ scale: 0.97 }}
-            className="button"
-            onClick={() => {
-              console.log("On CLick");
-              sensorAction();
-            }}
-          >
-            <motion.div
-              variants={buttonSlideDownRotateMotion}
-              animate={buttonSlideDownRotateAnimate}
-              style={{ originY: 0.55 }}
-            >
-              <img src={arrow} alt="" />
-            </motion.div>
-          </button>
-        </div>
-      </div>
-      <div
+  const [width, setWidth] = useState(window.innerWidth);
+  const breakpoint = 500;
+  useEffect(() => {
+    const handleResizeWindow = () => setWidth(window.innerWidth);
+    // subscribe to window resize event "onComponentDidMount"
+    window.addEventListener("resize", handleResizeWindow);
+    return () => {
+      // unsubscribe "onComponentDestroy"
+      window.removeEventListener("resize", handleResizeWindow);
+    };
+  }, []);
+
+  if (width > breakpoint) {
+    return (
+      <motion.div
+        className="sensorWrapper"
         style={{
-          flexDirection: !slideIn && !sensorCollaspe ? "column" : "row",
-          gap: !slideIn && !sensorCollaspe ? "2vh" : "",
-          width: !slideIn && !sensorCollaspe ? "20vw" : "70vw",
-          height: !slideIn && !sensorCollaspe ? "96vh" : "",
+          overflowY: !slideIn && !sensorCollaspe ? "scroll" : "hidden",
+          height: !slideIn && !sensorCollaspe ? 990 : 300,
         }}
-        className="sensors"
+        variants={sensorSlideDownMotion}
+        animate={sensorAnimate}
       >
-        {ActivityData.sensors.map((_, i) => {
-          return <SensorCard _={_} />;
-        })}
+        <div
+          className={
+            !slideIn && !sensorCollaspe
+              ? "reportHeadingSensorChild"
+              : "reportHeadingSensor"
+          }
+        >
+          <div className="icon-wrapper-20">
+            <img src={chartsensor} alt="" height="50%" />
+          </div>
+          <div>
+            <p>Sensors</p>
+          </div>
+          <div>
+            <button
+              whileTap={{ scale: 0.97 }}
+              className="button"
+              onClick={() => {
+                console.log("On CLick");
+                sensorAction();
+              }}
+            >
+              <motion.div
+                variants={buttonSlideDownRotateMotion}
+                animate={buttonSlideDownRotateAnimate}
+                style={{ originY: 0.55 }}
+              >
+                <img src={arrow} alt="" />
+              </motion.div>
+            </button>
+          </div>
+        </div>
+        <div
+          style={{
+            flexDirection: !slideIn && !sensorCollaspe ? "column" : "row",
+            gap: !slideIn && !sensorCollaspe ? "2vh" : "",
+            width: !slideIn && !sensorCollaspe ? "20vw" : "70vw",
+            height: !slideIn && !sensorCollaspe ? "96vh" : "",
+          }}
+          className="sensors"
+        >
+          {ActivityData.sensors.map((_, i) => {
+            return <SensorCard _={_} />;
+          })}
+        </div>
+      </motion.div>
+    );
+  } else {
+    return (
+      <div
+        className="sensorWrapperMobile"
+        style={{
+          overflowY: "scroll",
+          height: 990,
+        }}
+      >
+        <div>
+          <div className="icon-wrapper-20">
+            <img src={chartsensor} alt="" height="50%" />
+          </div>
+          <div>
+            <p>Sensors</p>
+          </div>
+        </div>
+        <div
+          style={{
+            flexDirection: "column",
+            gap: "2vh",
+            width: "100vw",
+            height: "50vh",
+          }}
+          className="sensorsMobile"
+        >
+          {ActivityData.sensors.map((_, i) => {
+            return <SensorCard _={_} />;
+          })}
+        </div>
       </div>
-    </motion.div>
-  );
+    );
+  }
 };
 
 const SensorCard = ({ _, selectedGraphAction }) => {

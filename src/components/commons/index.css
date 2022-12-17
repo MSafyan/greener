@@ -106,11 +106,23 @@
   cursor: pointer;
   width: 2vw;
 }
+.icon-wrapper-20-mobile {
+  cursor: pointer;
+  width: 5vw;
+}
 .icon-wrapper-15 {
   cursor: pointer;
   width: 0.9vw;
   height: 0.9vw;
   margin-top: -15px;
+}
+
+.icon-wrapper-15-mobile {
+  cursor: pointer;
+  width: 0.9vw;
+  height: 0.9vw;
+  margin-top: -15px;
+  margin-left: -15px;
 }
 
 .icon-wrapper-12 {

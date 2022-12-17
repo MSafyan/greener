@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Calendar from "./Calendar";
 import Tracking from "./Tracking";
 import LatestReport from "./LatestReport";
@@ -16,58 +16,85 @@ import { buttonDivSlideOutMotion, buttonRotateMotion } from "./Click";
 import arrow from "../../../assets/images/chevron-left.png";
 
 const Sidebar = ({ slideIn, slideinAction, sensorCollaspe }) => {
-  return (
-    <>
-      <div style={{ position: "relative" }}>
-        <motion.div
-          className="sidebarWrapper"
-          variants={slideinMotion}
-          animate={slideIn ? "initial" : "hidden"}
-          initial={"initial"}
-        >
-          <Calendar />
-          <Tracking />
-          <LatestReport />
-          <Button />
-        </motion.div>
-        <motion.div
-          style={{
-            bottom: !slideIn && !sensorCollaspe ? 500 : 150,
-            right: !slideIn && !sensorCollaspe ? "" : -50,
-            left: !slideIn && !sensorCollaspe ? 400 : "",
-            position: "absolute",
-            // bottom: 150,
-            // right: -50,
-            zIndex: "1000",
-          }}
-          variants={buttonDivSlideOutMotion}
-          animate={buttonAnimate}
-        >
-          <motion.button
-            className="button"
-            onClick={() => {
-              slideinAction();
-            }}
-            style={{ opacity: 1, display: "block" }}
+  const [width, setWidth] = useState(window.innerWidth);
+  const breakpoint = 500;
+  useEffect(() => {
+    const handleResizeWindow = () => setWidth(window.innerWidth);
+    // subscribe to window resize event "onComponentDidMount"
+    window.addEventListener("resize", handleResizeWindow);
+    return () => {
+      // unsubscribe "onComponentDestroy"
+      window.removeEventListener("resize", handleResizeWindow);
+    };
+  }, []);
+
+  if (width > breakpoint) {
+    return (
+      <>
+        <div style={{ position: "relative" }}>
+          <motion.div
+            className="sidebarWrapper"
+            variants={slideinMotion}
+            animate={slideIn ? "initial" : "hidden"}
+            initial={"initial"}
           >
-            <div
-              style={{
-                originY: 0.55,
+            <Calendar />
+            <Tracking />
+            <LatestReport />
+            <Button />
+          </motion.div>
+          <motion.div
+            style={{
+              bottom: !slideIn && !sensorCollaspe ? 500 : 150,
+              right: !slideIn && !sensorCollaspe ? "" : -50,
+              left: !slideIn && !sensorCollaspe ? 400 : "",
+              position: "absolute",
+              // bottom: 150,
+              // right: -50,
+              zIndex: "1000",
+            }}
+            variants={buttonDivSlideOutMotion}
+            animate={buttonAnimate}
+          >
+            <motion.button
+              className="button"
+              onClick={() => {
+                slideinAction();
               }}
-              className="sideinButton"
+              style={{ opacity: 1, display: "block" }}
             >
-              <motion.img
-                src={arrow}
-                alt=""
-                variants={buttonRotateMotion}
-                animate={buttonSlideInRotateAnimate}
-              />
-            </div>
-          </motion.button>
-        </motion.div>
-      </div>
-    </>
-  );
+              <div
+                style={{
+                  originY: 0.55,
+                }}
+                className="sideinButton"
+              >
+                <motion.img
+                  src={arrow}
+                  alt=""
+                  variants={buttonRotateMotion}
+                  animate={buttonSlideInRotateAnimate}
+                />
+              </div>
+            </motion.button>
+          </motion.div>
+        </div>
+      </>
+    );
+  } else {
+    return (
+      <>
+        <div style={{ position: "relative" }}>
+          <div className="sidebarMobileWrapper">
+            <Calendar />
+            <Tracking />
+            <LatestReport />
+            <Button />
+          </div>
+        </div>
+      </>
+    );
+  }
 };
 
 const mapStateToProps = (state) => ({

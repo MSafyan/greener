@@ -1,59 +1,59 @@
 .card_explore {
-	display: grid;
-	height: 64vh;
-	grid-template-areas: 'dialogHeader dialogHeader' 'heading heading' 'body sidebar';
-	grid-template-columns: 33vw 14vw;
-	grid-template-rows: 3vh 4vh 50vh;
-	padding: 0.7vw 1vw 0.7vw 1vw;
-	grid-gap: 1vw;
-	background-color: white;
+  display: grid;
+  height: 64vh;
+  grid-template-areas: "dialogHeader dialogHeader" "heading heading" "body sidebar";
+  grid-template-columns: 33vw 14vw;
+  grid-template-rows: 3vh 4vh 50vh;
+  padding: 0.7vw 1vw 0.7vw 1vw;
+  grid-gap: 1vw;
+  background-color: white;
 }
 
 .dialogHeader {
-	grid-area: dialogHeader;
-	display: grid;
-	grid-template-areas: 'first second third forth';
-	grid-template-columns: 1fr 1fr 1fr 1.3fr;
+  grid-area: dialogHeader;
+  display: grid;
+  grid-template-areas: "first second third forth";
+  grid-template-columns: 1fr 1fr 1fr 1.3fr;
 }
 
 .heading_explore {
-	grid-area: heading;
-	display: flex;
+  grid-area: heading;
+  display: flex;
 }
 
 .body_explore {
-	grid-area: body;
-	position: relative;
+  grid-area: body;
+  position: relative;
 }
 
 .body_explore::after {
-	content: '';
-	position: absolute;
-	z-index: 1;
-	bottom: -1rem;
-	pointer-events: none;
-	background: url('../../../../public/shorizontalFade.png') center no-repeat;
-	width: 100%;
-	height: 15%;
+  content: "";
+  position: absolute;
+  z-index: 1;
+  bottom: -1rem;
+  pointer-events: none;
+  background: url("../../../../public/shorizontalFade.png") center no-repeat;
+  width: 100%;
+  height: 15%;
 }
 
 .sidebar_explore {
-	grid-area: sidebar;
+  grid-area: sidebar;
 }
 
 .chip_items {
-	display: flex;
-	padding: 0.5vw;
+  display: flex;
+  padding: 0.5vw;
 }
 
 .chip_item_explore {
-	height: 2vw;
-	border-radius: 5px;
-	margin: 0.3vw;
+  height: 2vw;
+  border-radius: 5px;
+  margin: 0.3vw;
 }
 .chip_item_explore:hover {
-	background-color: white;
-	color: var(--primary_da);
+  background-color: white;
+  color: var(--primary_da);
 }
 
 /* .chip_item_explore:hover .fs-20 {
@@ -61,136 +61,154 @@
 } */
 
 .chip_item_explore > div {
-	padding: 0.4vw;
-	display: flex;
-	align-items: center;
-	cursor: pointer;
+  padding: 0.4vw;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 }
 
 .sidebar_explore > div {
-	height: 100%;
-	padding: 1.5vw;
-	border-radius: 15px;
+  height: 100%;
+  padding: 1.5vw;
+  border-radius: 15px;
 }
 
 .head_sidebar_explore {
-	width: 100%;
-	height: 28%;
-	padding: 3vh;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	position: relative;
-	background-color: white;
+  width: 100%;
+  height: 28%;
+  padding: 3vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: white;
 }
 
 .head_sidebar_explore > div {
-	margin: 0 auto;
-	height: 100%;
-	overflow: hidden;
-	align-items: center;
+  margin: 0 auto;
+  height: 100%;
+  overflow: hidden;
+  align-items: center;
 }
 
 .img_sidebar_explore {
-	position: absolute;
+  position: absolute;
 }
 
 .body_sidebar_explore {
-	padding: 1vw 0vw;
+  padding: 1vw 0vw;
 }
 
 .body_item_explore {
 }
 
 .inserer_wrapper {
-	position: relative;
+  position: relative;
 }
 .postion_initial {
-	position: initial;
+  position: initial;
 }
 
 .inserer_wrapper::before {
-	content: '';
-	position: absolute;
-	z-index: 1;
-	bottom: -80%;
-	pointer-events: none;
-	background: url('../../../../public/sshorizontalFade.png') center no-repeat;
-	width: 100%;
-	height: 100%;
+  content: "";
+  position: absolute;
+  z-index: 1;
+  bottom: -80%;
+  pointer-events: none;
+  background: url("../../../../public/sshorizontalFade.png") center no-repeat;
+  width: 100%;
+  height: 100%;
 }
 
 .inserer_wrapper > div {
-	display: flex;
-	width: fit-content;
-	background-color: white;
-	border-radius: 1rem;
-	margin: 1vw;
+  display: flex;
+  width: fit-content;
+  background-color: white;
+  border-radius: 1rem;
+  margin: 1vw;
 }
 
 .body_chip_explore {
-	padding: 0.3vw;
-	display: inline-block;
+  padding: 0.3vw;
+  display: inline-block;
 }
 
 .body_chargements_explore {
-	height: 80%;
-	overflow: auto;
-	padding: 0px 1vw;
-	display: flex;
-	flex-direction: column;
-	align-items: flex-end;
-	margin: 1.3vw 0px;
+  height: 80%;
+  overflow: auto;
+  padding: 0px 1vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 1.3vw 0px;
 }
 
 .card_icons_explore {
-	grid-area: icon_card;
-	display: grid;
-	grid-template-areas: 'icons_icon' 'icons_dots';
-	grid-template-rows: 1fr auto;
-	grid-template-columns: 1fr;
-	align-items: center;
-	justify-items: center;
-	gap: 3px;
+  grid-area: icon_card;
+  display: grid;
+  grid-template-areas: "icons_icon" "icons_dots";
+  grid-template-rows: 1fr auto;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-items: center;
+  gap: 3px;
 }
 
 .transform3vh {
-	transform: translateY(3vh);
+  transform: translateY(3vh);
 }
 
 .dotted_border {
-	grid-area: icons_dots;
+  grid-area: icons_dots;
 }
 .body_chargement_explore {
-	display: grid;
-	grid-template-areas: 'date_card icon_card body_card';
-	grid-template-columns: 4vw auto 17vw;
-	align-items: center;
-	width: 30.8vw;
+  display: grid;
+  grid-template-areas: "date_card icon_card body_card";
+  grid-template-columns: 4vw auto 17vw;
+  align-items: center;
+  width: 30.8vw;
 }
 
 .body_card_explore {
-	grid-area: body_card;
-	padding: 1vw;
-	background-color: white;
-	margin: 0.7vw;
-	border-radius: 10px;
-	min-height: 7.4vh;
-	position: relative;
+  grid-area: body_card;
+  padding: 1vw;
+  background-color: white;
+  margin: 0.7vw;
+  border-radius: 10px;
+  min-height: 7.4vh;
+  position: relative;
 }
 
 .body_card_explore > div {
-	/* padding: 0.4vw; */
-	display: flex;
-	justify-content: space-between;
+  /* padding: 0.4vw; */
+  display: flex;
+  justify-content: space-between;
 }
 
 .card_body {
-	height: 90%;
+  height: 90%;
 }
 .card_body > div {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.body_chargement_explore_mobile {
+  display: grid;
+  grid-template-areas: "date_card icon_card body_card";
+  grid-template-columns: 19vw auto 17vw;
+  align-items: center;
+  width: 30.8vw;
+}
+
+.body_card_explore_mobile {
+  grid-area: body_card;
+  padding: 1vw;
+  background-color: white;
+  margin: 0.7vw;
+  border-radius: 10px;
+  min-height: 7.4vh;
+  position: relative;
 }

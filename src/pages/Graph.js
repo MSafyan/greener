@@ -18,13 +18,29 @@ import { SELECTED_GRAPH } from "../store/types";
 import {
   orderDetailsAction,
   orderEventsAction,
-} from '../store/actions/exploreAction';
+} from "../store/actions/exploreAction";
 
-const Graph = ({ slideIn, sensorCollaspe, selectedGraph, orderEventsAction,
-  orderDetailsAction, }) => {
+const Graph = ({
+  slideIn,
+  sensorCollaspe,
+  selectedGraph,
+  orderEventsAction,
+  orderDetailsAction,
+}) => {
   console.log("Inside graph", selectedGraph);
   const [graph, setGraph] = useState(-1);
   const dispatch = useDispatch();
+  const [width, setWidth] = useState(window.innerWidth);
+  const breakpoint = 500;
+  useEffect(() => {
+    const handleResizeWindow = () => setWidth(window.innerWidth);
+    // subscribe to window resize event "onComponentDidMount"
+    window.addEventListener("resize", handleResizeWindow);
+    return () => {
+      // unsubscribe "onComponentDestroy"
+      window.removeEventListener("resize", handleResizeWindow);
+    };
+  }, []);
 
   useEffect(() => {
     orderEventsAction();
@@ -32,22 +48,34 @@ const Graph = ({ slideIn, sensorCollaspe, selectedGraph, orderEventsAction,
     dispatch({ type: SELECTED_GRAPH, payload: false });
   }, [dispatch]);
 
-  if (!slideIn && !sensorCollaspe) {
+  if (width > breakpoint) {
+    if (!slideIn && !sensorCollaspe) {
+      return (
+        <div className={`graphWrapper-child`}>
+          <Sidebar />
+          {!selectedGraph ? <Map /> : <Chart data={selectedGraph} />}
+          <Sensor />
+        </div>
+      );
+    }
     return (
-      <div className={`graphWrapper-child`}>
-        <Sidebar />
+      <div className={`graphWrapper`}>
+        <Sidebar/>
         {!selectedGraph ? <Map /> : <Chart data={selectedGraph} />}
         <Sensor />
       </div>
     );
+  } else {
+    return (
+      <>
+        <div className={`graphMobileWrapper`}>
+          <Sidebar />
+          {!selectedGraph ? <Map /> : <Chart data={selectedGraph} />}
+          <Sensor />
+        </div>
+      </>
+    );
   }
-  return (
-    <div className={`graphWrapper`}>
-      <Sidebar />
-      {!selectedGraph ? <Map /> : <Chart data={selectedGraph} />}
-      <Sensor />
-    </div>
-  );
 };
 
 const mapStateToProps = (state) => ({
