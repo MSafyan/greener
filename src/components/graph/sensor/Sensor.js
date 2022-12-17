@@ -59,7 +59,7 @@ const Sensor = ({ slideIn, sensorCollaspe, sensorAction }) => {
               : "reportHeadingSensor"
           }
         >
-          <div className="icon-wrapper-20">
+          <div className="icon-wrapper-20" >
             <img src={chartsensor} alt="" height="50%" />
           </div>
           <div>
@@ -105,10 +105,18 @@ const Sensor = ({ slideIn, sensorCollaspe, sensorAction }) => {
         className="sensorWrapperMobile"
         style={{
           overflowY: "scroll",
-          height: 990,
+          height: 850,
         }}
       >
-        <div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            marginTop: "2em",
+            marginLeft: "1em",
+            gap: "11vw"
+          }}
+        >
           <div className="icon-wrapper-20">
             <img src={chartsensor} alt="" height="50%" />
           </div>
@@ -119,9 +127,8 @@ const Sensor = ({ slideIn, sensorCollaspe, sensorAction }) => {
         <div
           style={{
             flexDirection: "column",
-            gap: "2vh",
+            gap: "5vh",
             width: "100vw",
-            height: "50vh",
           }}
           className="sensorsMobile"
         >
@@ -137,48 +144,106 @@ const Sensor = ({ slideIn, sensorCollaspe, sensorAction }) => {
 const SensorCard = ({ _, selectedGraphAction }) => {
   const [hover, setHover] = useState(false);
   const dispatch = useDispatch();
-  return (
-    <div
-      className="sensor"
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
-    >
+
+  const [width, setWidth] = useState(window.innerWidth);
+  const breakpoint = 500;
+  useEffect(() => {
+    const handleResizeWindow = () => setWidth(window.innerWidth);
+    // subscribe to window resize event "onComponentDidMount"
+    window.addEventListener("resize", handleResizeWindow);
+    return () => {
+      // unsubscribe "onComponentDestroy"
+      window.removeEventListener("resize", handleResizeWindow);
+    };
+  }, []);
+
+  if (width > breakpoint) {
+    return (
       <div
-        className="sensorCard"
-        style={{
-          backgroundColor: hover ? "#91C251" : "",
-          borderStartEndRadius: hover ? 7 : "",
-          borderStartStartRadius: hover ? 7 : "",
-        }}
+        className="sensor"
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
       >
-        <p className="sensorHeading">{_.name}</p>
-        <p className="sensorValue">11.06 C</p>
-      </div>
-      <div className="valueBar">
-        <div>
-          <p>Max :</p>
-          <p>{_.max}</p>
-        </div>
-        <div>
-          <p>Value Range : </p>
-          <p>{Number(_.avg).toFixed(2)}</p>
-        </div>
-      </div>
-      <div>
-        <Chart chartData={_.data} />
-      </div>
-      <div className="overlay">
-        <button
-          onClick={() => {
-            dispatch({ type: SELECTED_GRAPH, payload: _ });
+        <div
+          className="sensorCard"
+          style={{
+            backgroundColor: hover ? "#91C251" : "",
+            borderStartEndRadius: hover ? 7 : "",
+            borderStartStartRadius: hover ? 7 : "",
           }}
-          className="overlybutton"
         >
-          Open Graph
-        </button>
+          <p className="sensorHeading">{_.name}</p>
+          <p className="sensorValue">11.06 C</p>
+        </div>
+        <div className="valueBar">
+          <div>
+            <p>Max :</p>
+            <p>{_.max}</p>
+          </div>
+          <div>
+            <p>Value Range : </p>
+            <p>{Number(_.avg).toFixed(2)}</p>
+          </div>
+        </div>
+        <div>
+          <Chart chartData={_.data} />
+        </div>
+        <div className="overlay">
+          <button
+            onClick={() => {
+              dispatch({ type: SELECTED_GRAPH, payload: _ });
+            }}
+            className="overlybutton"
+          >
+            Open Graph
+          </button>
+        </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    return (
+      <div
+        className="sensorMobile"
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
+      >
+        <div
+          className="sensorCard"
+          style={{
+            backgroundColor: hover ? "#91C251" : "",
+            borderStartEndRadius: hover ? 7 : "",
+            borderStartStartRadius: hover ? 7 : "",
+          }}
+        >
+          <p className="sensorHeading">{_.name}</p>
+          <p className="sensorValue">11.06 C</p>
+        </div>
+        <div className="valueBar">
+          <div>
+            <p>Max :</p>
+            <p>{_.max}</p>
+          </div>
+          <div>
+            <p>Value Range : </p>
+            <p>{Number(_.avg).toFixed(2)}</p>
+          </div>
+        </div>
+        <div>
+          <Chart chartData={_.data} />
+        </div>
+        <div className="overlayMobile">
+          <button
+            onClick={() => {
+              dispatch({ type: SELECTED_GRAPH, payload: _ });
+            }}
+            className="overlybuttonmobile"
+          >
+            Open Graph
+          </button>
+        </div>
+      </div>
+    );
+  }
 };
 
 ChartJS.register(

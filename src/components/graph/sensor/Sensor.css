@@ -11,6 +11,7 @@
   width: 100%;
   position: relative;
   overflow: hidden;
+
   /* max-height: max-content; */
 }
 
@@ -43,6 +44,7 @@
 .sensorsMobile {
   display: flex;
   overflow: auto;
+
   /* width: 100vw; */
 }
 
@@ -56,11 +58,44 @@
   padding: 0vw 0vw 0.4vw 0vw;
 }
 
+.sensorMobile {
+  background-color: var(--bg-card);
+  position: relative;
+  width: 63.6vw;
+  /* height: 27.9vh; */
+  max-height: max-content;
+  margin-left: 16vw;
+  border-radius: 0.7vw;
+  padding: 0vw 0vw 0.4vw 0vw;
+}
+
 .sensor:hover .overlay {
   opacity: 1;
   height: 16.5vh;
   border-bottom-left-radius: 0.7vw;
   border-bottom-right-radius: 0.7vw;
+}
+
+.sensorMobile:hover .overlayMobile {
+  opacity: 1;
+  height: 75%;
+  /* max-height: max-content; */
+  border-bottom-left-radius: 0.7vw;
+  border-bottom-right-radius: 0.7vw;
+}
+
+.overlayMobile {
+  position: absolute;
+  margin-top: 7vh;
+  transition: 0.7s ease-in;
+  opacity: 0;
+  width: 63.5vw;
+  height: 0;
+  top: 0;
+  background-color: #a9a9a900;
+  -webkit-backdrop-filter: blur(30px) brightness(0.97);
+  backdrop-filter: blur(30px) brightness(0.97);
+  z-index: 6;
 }
 
 .overlay {
@@ -162,6 +197,13 @@
   cursor: pointer;
   margin-top: 6vh;
   margin-left: 9vh;
+}
+
+.overlybuttonmobile {
+  all: unset;
+  cursor: pointer;
+  margin-top: 3.5em;
+  margin-left: 5em;
 }
 
 @media screen and (min-width: 1600px) {
