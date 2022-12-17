@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from "react";
 import { chartSlideOutMotion } from "../sidebar/Click";
 import { chartAnimate } from "../../../helper/functions";
 import { ActivityData } from "../../../shippmentActivity";
@@ -68,43 +69,94 @@ export default function Chart({ data: original_data }) {
       },
     ],
   };
-  return (
-    <motion.div
-      variants={chartSlideOutMotion}
-      animate={chartAnimate}
-      className="mapWrapper"
-    >
-      <div className="d-flex">
-        <div style={{ width: "95%" }}>
-          <p className="displaynameheading">{displayData.name} Sensor</p>
+
+  const [width, setWidth] = useState(window.innerWidth);
+  const breakpoint = 500;
+  useEffect(() => {
+    const handleResizeWindow = () => setWidth(window.innerWidth);
+    // subscribe to window resize event "onComponentDidMount"
+    window.addEventListener("resize", handleResizeWindow);
+    return () => {
+      // unsubscribe "onComponentDestroy"
+      window.removeEventListener("resize", handleResizeWindow);
+    };
+  }, []);
+
+  if (width > breakpoint) {
+    return (
+      <motion.div
+        variants={chartSlideOutMotion}
+        animate={chartAnimate}
+        className="mapWrapper"
+      >
+        <div className="d-flex">
+          <div style={{ width: "95%" }}>
+            <p className="displaynameheading">{displayData.name} Sensor</p>
+          </div>
+          <div>
+            <img
+              src={cross}
+              alt=""
+              onClick={() => {
+                dispatch({ type: SELECTED_GRAPH });
+              }}
+            />
+          </div>
         </div>
-        <div>
-          <img
-            src={cross}
-            alt=""
-            onClick={() => {
-              dispatch({ type: SELECTED_GRAPH });
-            }}
-          />
+        <div className="d-flex justify-content-center">
+          <div className="p-2">
+            <p className="displayname">{displayData.name}</p>
+          </div>
+          <div className="p-2">
+            <p className="displayterms">Min: {displayData.min} C</p>
+          </div>
+          <div className="p-2">
+            {" "}
+            <p className="displayterms">Max: {displayData.max} C </p>
+          </div>
+          <div className="p-2">
+            {" "}
+            <p className="displayterms">Average: {displayData.avg} C</p>
+          </div>
         </div>
+        <Line options={options} data={data} />;
+      </motion.div>
+    );
+  } else {
+    return (
+      <div className="mapWrapper" style={{ width: "100vw", height: "50vh" }}>
+        <div className="d-flex">
+          <div style={{ width: "95%" }}>
+            <p className="displaynamemobile">{displayData.name} Sensor</p>
+          </div>
+          <div>
+            <img
+              src={cross}
+              alt=""
+              onClick={() => {
+                dispatch({ type: SELECTED_GRAPH });
+              }}
+            />
+          </div>
+        </div>
+        <div className="d-flex justify-content-center">
+          {/* <div className="p-2">
+            <p>{displayData.name}</p>
+          </div> */}
+          <div className="p-2">
+            <p>Min: {displayData.min} C</p>
+          </div>
+          <div className="p-2">
+            {" "}
+            <p>Max: {displayData.max} C </p>
+          </div>
+          <div className="p-2">
+            {" "}
+            <p>Average: {displayData.avg} C</p>
+          </div>
+        </div>
+        <Line options={options} data={data} />;
       </div>
-      <div className="d-flex justify-content-center">
-        <div className="p-2">
-          <p className="displayname">{displayData.name}</p>
-        </div>
-        <div className="p-2">
-          <p className="displayterms">Min: {displayData.min} C</p>
-        </div>
-        <div className="p-2">
-          {" "}
-          <p className="displayterms">Max: {displayData.max} C </p>
-        </div>
-        <div className="p-2">
-          {" "}
-          <p className="displayterms">Average: {displayData.avg} C</p>
-        </div>
-      </div>
-      <Line options={options} data={data} />;
-    </motion.div>
-  );
+    );
+  }
 }

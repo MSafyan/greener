@@ -177,6 +177,12 @@
   font-weight: 300;
 }
 
+.displaynamemobile {
+  font-size: 20px;
+  font-weight: 300;
+  text-align: center;
+}
+
 .displayterms {
   font-size: 25px;
   font-weight: 100;
