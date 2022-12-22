@@ -59,7 +59,7 @@ const Sensor = ({ slideIn, sensorCollaspe, sensorAction }) => {
               : "reportHeadingSensor"
           }
         >
-          <div className="icon-wrapper-20" >
+          <div className="icon-wrapper-20">
             <img src={chartsensor} alt="" height="50%" />
           </div>
           <div>
@@ -114,7 +114,7 @@ const Sensor = ({ slideIn, sensorCollaspe, sensorAction }) => {
             flexDirection: "row",
             marginTop: "2em",
             marginLeft: "1em",
-            gap: "11vw"
+            gap: "11vw",
           }}
         >
           <div className="icon-wrapper-20">
@@ -232,14 +232,16 @@ const SensorCard = ({ _, selectedGraphAction }) => {
           <Chart chartData={_.data} />
         </div>
         <div className="overlayMobile">
-          <button
-            onClick={() => {
-              dispatch({ type: SELECTED_GRAPH, payload: _ });
-            }}
-            className="overlybuttonmobile"
-          >
-            Open Graph
-          </button>
+          <a href="#chart">
+            <button
+              onClick={() => {
+                dispatch({ type: SELECTED_GRAPH, payload: _ });
+              }}
+              className="overlybuttonmobile"
+            >
+              Open Graph
+            </button>
+          </a>
         </div>
       </div>
     );

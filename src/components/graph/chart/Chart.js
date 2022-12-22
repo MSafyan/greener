@@ -124,7 +124,11 @@ export default function Chart({ data: original_data }) {
     );
   } else {
     return (
-      <div className="mapWrapper" style={{ width: "100vw", height: "50vh" }}>
+      <div
+        className="mapWrapper"
+        style={{ width: "100vw", height: "50vh" }}
+        id="chart"
+      >
         <div className="d-flex">
           <div style={{ width: "95%" }}>
             <p className="displaynamemobile">{displayData.name} Sensor</p>
